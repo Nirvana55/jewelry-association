@@ -2,8 +2,25 @@
 
 import Link from "next/link";
 import { Navbar } from "flowbite-react";
+import {
+  BsDribbble,
+  BsFacebook,
+  BsGithub,
+  BsInstagram,
+  BsTwitter,
+} from "react-icons/bs";
 
 const navList = [
+  { name: "Home", link: "#" },
+  { name: "Associates", link: "#" },
+  { name: "Executive Board", link: "#" },
+  { name: "Event", link: "#" },
+  { name: "Photo Gallery", link: "#" },
+  { name: "Home", link: "#" },
+  { name: "Contact us", link: "#" },
+];
+
+const navIconList = [
   { name: "Home", link: "#" },
   { name: "Associates", link: "#" },
   { name: "Executive Board", link: "#" },
@@ -27,12 +44,37 @@ const NavHeader = () => {
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
-      <Navbar.Collapse>
-        {navList.map((item) => (
-          <Navbar.Link href={item.link} key={item.name} active>
-            {item.name}
-          </Navbar.Link>
-        ))}
+
+      <Navbar.Collapse className='flex flex-col'>
+        <div className='flex flex-col gap-2'>
+          <div className='flex flex-row gap-5 justify-end items-center'>
+            <Navbar.Link className='text-primary text-base'>
+              <BsFacebook />
+            </Navbar.Link>
+            <Navbar.Link className='text-primary text-base'>
+              <BsInstagram />
+            </Navbar.Link>
+            <Navbar.Link className='text-primary text-base'>
+              <BsTwitter />
+            </Navbar.Link>
+
+            <Navbar.Link className='text-primary text-base'>
+              Calendar
+            </Navbar.Link>
+          </div>
+          <div className='flex gap-5'>
+            {navList.map((item) => (
+              <Navbar.Link
+                className='text-primary text-base'
+                href={item.link}
+                key={item.name}
+                active
+              >
+                {item.name}
+              </Navbar.Link>
+            ))}
+          </div>
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );
