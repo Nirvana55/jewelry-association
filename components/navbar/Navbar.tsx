@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Navbar } from "flowbite-react";
+import { Button, Navbar } from "flowbite-react";
 import {
-  BsDribbble,
   BsFacebook,
-  BsGithub,
   BsInstagram,
   BsTwitter,
+  BsMailbox,
+  BsClock,
 } from "react-icons/bs";
 
 const navList = [
@@ -16,67 +16,59 @@ const navList = [
   { name: "Executive Board", link: "#" },
   { name: "Event", link: "#" },
   { name: "Photo Gallery", link: "#" },
-  { name: "Home", link: "#" },
-  { name: "Contact us", link: "#" },
+  { name: "Join Now", link: "#" },
 ];
 
 const navIconList = [
-  { name: "Home", link: "#" },
-  { name: "Associates", link: "#" },
-  { name: "Executive Board", link: "#" },
-  { name: "Event", link: "#" },
-  { name: "Photo Gallery", link: "#" },
-  { name: "Home", link: "#" },
-  { name: "Contact us", link: "#" },
+  { icon: <BsFacebook />, link: "#" },
+  { icon: <BsInstagram />, link: "#" },
+  { icon: <BsTwitter />, link: "#" },
 ];
 
 const NavHeader = () => {
   return (
-    <Navbar fluid rounded>
-      <Navbar.Brand as={Link} href='https://flowbite-react.com'>
-        {/* <img
-          src='/favicon.svg'
-          className='mr-3 h-6 sm:h-9'
-          alt='Flowbite React Logo'
-        /> */}
-        <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
-          Logo
-        </span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-
-      <Navbar.Collapse className='flex flex-col'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-row gap-5 justify-end items-center'>
-            <Navbar.Link className='text-primary text-base'>
-              <BsFacebook />
-            </Navbar.Link>
-            <Navbar.Link className='text-primary text-base'>
-              <BsInstagram />
-            </Navbar.Link>
-            <Navbar.Link className='text-primary text-base'>
-              <BsTwitter />
-            </Navbar.Link>
-
-            <Navbar.Link className='text-primary text-base'>
-              Calendar
-            </Navbar.Link>
+    <div className='relative'>
+      <div className='flex flex-row items-center gap-10 bg-background-primary'>
+        <div className='flex flex-row gap-10 items-center px-8 py-2'>
+          {navIconList.map((item, index) => (
+            <Link key={index} href={item.link}>
+              {item.icon}
+            </Link>
+          ))}
+        </div>
+        <div className='flex justify-between items-center flex-1 bg-test px-8 py-2'>
+          <div className='flex flex-row gap-8  text-white'>
+            <div className='flex items-center gap-3'>
+              <BsMailbox />
+              <p className='text-caption'>mail@gmail.com</p>
+            </div>
+            <div className='flex items-center gap-3'>
+              <BsClock />
+              <p className='text-caption'>Open Hours Mon-Fri</p>
+            </div>
           </div>
-          <div className='flex gap-5'>
-            {navList.map((item) => (
-              <Navbar.Link
-                className='text-primary text-base'
-                href={item.link}
-                key={item.name}
-                active
-              >
+          <div className='text-caption text-white'>Jewelry / Complaints</div>
+        </div>
+      </div>
+
+      <div className='flex gap-32 bg-background-primary items-center py-3'>
+        <div className='px-8'>
+          <p>Logo</p>
+        </div>
+        <div className='flex justify-between flex-1 items-center'>
+          <div className='flex gap-10'>
+            {navList.map((item, index) => (
+              <Link key={index} className='text-navbar' href={item.link}>
                 {item.name}
-              </Navbar.Link>
+              </Link>
             ))}
           </div>
+          <div className='px-6'>
+            <Button className='text-white bg-navbar'>Get Started</Button>
+          </div>
         </div>
-      </Navbar.Collapse>
-    </Navbar>
+      </div>
+    </div>
   );
 };
 
