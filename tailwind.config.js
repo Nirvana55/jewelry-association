@@ -12,7 +12,7 @@ module.exports = {
       sm: "480px",
       md: "768px",
       lg: "976px",
-      xl: "1250px",
+      xl: "1270px",
     },
     colors: {
       blue: "#1fb6ff",
@@ -29,10 +29,13 @@ module.exports = {
       "primary-link": "#2F6BAE",
       primary: "#305586",
       navbar: "#305586",
+      test: "#243C59",
+      "background-primary": "#EEF3F9",
     },
     fontSize: {
       customSize: "16px",
-      navbar: "18px",
+      navbar: "16px",
+      caption: "12px",
     },
     extend: {
       spacing: {
