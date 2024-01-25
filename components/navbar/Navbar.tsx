@@ -1,14 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Navbar } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { Button } from "flowbite-react";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 const navList = [
   { name: "Home", link: "#" },
@@ -17,66 +11,67 @@ const navList = [
   { name: "Event", link: "#" },
   { name: "Photo Gallery", link: "#" },
   { name: "Home", link: "#" },
-  { name: "Contact us", link: "#" },
+  { name: "Join Now", link: "#" },
 ];
 
 const navIconList = [
-  { name: "Home", link: "#" },
-  { name: "Associates", link: "#" },
-  { name: "Executive Board", link: "#" },
-  { name: "Event", link: "#" },
-  { name: "Photo Gallery", link: "#" },
-  { name: "Home", link: "#" },
-  { name: "Contact us", link: "#" },
+  { icon: <BsFacebook />, link: "#" },
+  { icon: <BsInstagram />, link: "#" },
+  { icon: <BsTwitter />, link: "#" },
 ];
 
 const NavHeader = () => {
   return (
-    <Navbar fluid rounded>
-      <Navbar.Brand as={Link} href='https://flowbite-react.com'>
-        {/* <img
-          src='/favicon.svg'
-          className='mr-3 h-6 sm:h-9'
-          alt='Flowbite React Logo'
-        /> */}
-        <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
-          Logo
-        </span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-
-      <Navbar.Collapse className='flex flex-col'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-row gap-5 justify-end items-center'>
-            <Navbar.Link className='text-primary text-base'>
-              <BsFacebook />
-            </Navbar.Link>
-            <Navbar.Link className='text-primary text-base'>
-              <BsInstagram />
-            </Navbar.Link>
-            <Navbar.Link className='text-primary text-base'>
-              <BsTwitter />
-            </Navbar.Link>
-
-            <Navbar.Link className='text-primary text-base'>
-              Calendar
-            </Navbar.Link>
+    <div className='container mr-auto ml-auto'>
+      <nav className='flex flex-row items-center justify-between'>
+        <div>
+          <div>
+            <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
+              Logo
+            </span>
           </div>
-          <div className='flex gap-5'>
-            {navList.map((item) => (
-              <Navbar.Link
-                className='text-primary text-base'
-                href={item.link}
-                key={item.name}
-                active
-              >
-                {item.name}
-              </Navbar.Link>
-            ))}
+          <div />
+        </div>
+
+        <div className='flex flex-col'>
+          <div className='flex flex-col'>
+            <div className='flex flex-row gap-8 justify-end items-center py-5'>
+              {navIconList.map((item, index) => (
+                <Link className='text-primary' href={item.link} key={index}>
+                  {item.icon}
+                </Link>
+              ))}
+              <Link href='#' className='text-primary'>
+                Calendar
+              </Link>
+              <Link href='#' className='text-primary'>
+                Contact Us
+              </Link>
+            </div>
+            <hr className='h-px bg-gray-200 border-0 dark:bg-gray-700' />
+            <div className='flex gap-16 items-center'>
+              {navList.map((item) => (
+                <>
+                  {item.name === "Join Now" ? (
+                    <Button as='a' href={item.link} className='bg-primary'>
+                      {item.name}
+                    </Button>
+                  ) : (
+                    <Link
+                      className='text-navbar font-semibold py-5'
+                      href={item.link}
+                      key={item.name}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </>
+              ))}
+            </div>
           </div>
         </div>
-      </Navbar.Collapse>
-    </Navbar>
+      </nav>
+    </div>
   );
 };
 
