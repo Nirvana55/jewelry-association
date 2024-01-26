@@ -9,10 +9,10 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "480px",
+      sm: "280px",
       md: "768px",
-      lg: "976px",
-      xl: "1270px",
+      lg: "1024px",
+      xl: "1280px",
     },
     colors: {
       blue: "#1fb6ff",

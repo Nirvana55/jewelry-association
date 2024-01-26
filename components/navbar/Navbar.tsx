@@ -9,6 +9,8 @@ import {
   BsMailbox,
   BsClock,
 } from "react-icons/bs";
+import { FaHamburger } from "react-icons/fa";
+import "./styles.css";
 
 const navList = [
   { name: "Home", link: "#" },
@@ -16,7 +18,6 @@ const navList = [
   { name: "Executive Board", link: "#" },
   { name: "Event", link: "#" },
   { name: "Photo Gallery", link: "#" },
-  { name: "Join Now", link: "#" },
 ];
 
 const navIconList = [
@@ -27,9 +28,9 @@ const navIconList = [
 
 const NavHeader = () => {
   return (
-    <div className='relative'>
-      <div className='flex flex-row items-center gap-10 bg-background-primary'>
-        <div className='flex flex-row gap-10 items-center px-8 py-2'>
+    <nav>
+      <div className='hidden md:flex flex-row items-center gap-10 bg-background-primary'>
+        <div className='flex flex-row gap-10 items-center px-8 py-2 text-navbar'>
           {navIconList.map((item, index) => (
             <Link key={index} href={item.link}>
               {item.icon}
@@ -51,12 +52,15 @@ const NavHeader = () => {
         </div>
       </div>
 
-      <div className='flex gap-32 bg-background-primary items-center py-3'>
-        <div className='px-8'>
-          <p>Logo</p>
+      <div className='flex sm:justify-between md:gap-32  bg-background-primary items-center py-3'>
+        <div className='px-8 '>
+          <p cursor-pointer>Logo</p>
         </div>
-        <div className='flex justify-between flex-1 items-center'>
-          <div className='flex gap-10'>
+        <div className='md:hidden text-primary menuFont px-8 cursor-pointer'>
+          <FaHamburger className='ml-auto  text-lg' />
+        </div>
+        <div className='hidden md:flex justify-between flex-1 items-center'>
+          <div className='flex gap-10 font-semibold'>
             {navList.map((item, index) => (
               <Link key={index} className='text-navbar' href={item.link}>
                 {item.name}
@@ -64,11 +68,11 @@ const NavHeader = () => {
             ))}
           </div>
           <div className='px-6'>
-            <Button className='text-white bg-navbar'>Get Started</Button>
+            <Button className='text-white bg-navbar'>Join Now</Button>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
