@@ -6,13 +6,13 @@ import "./styles.css";
 
 const TopicsBar = () => {
   return (
-    <div className='py-16 h-[600px]'>
+    <div className='container m-auto py-16 h-[600px]'>
       <h5 className='titleFont text-center font-semibold tracking-tight text-gray-900 dark:text-white'>
         Message From President
       </h5>
       <div className='flex flex-row py-20 w-[100%] gap-10 justify-center items-center'>
         <div className='relative w-[500px] h-[300px]'>
-          <Image objectFit='cover' fill src='/1.jpeg' alt={`images`} />
+          <Image fill src='/1.jpeg' alt={`images`} />
         </div>
         <div className='w-[30%] self-start'>
           <p className='sub-titleFont font-semibold'>

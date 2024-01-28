@@ -10,11 +10,13 @@ const CarouselBar = () => {
     <>
       <Carousel>
         {images.map((item, index) => (
-          <div key={index} className='relative h-[800px]'>
+          <div key={index} className='relative w-full h-[800px]'>
             <Image
-              loading='lazy'
-              object-fit='cover'
-              fill
+              className='w-[100%]'
+              objectFit='cover'
+              quality={100}
+              unoptimized
+              layout='fill'
               src={item}
               alt={`images-${item}`}
             />

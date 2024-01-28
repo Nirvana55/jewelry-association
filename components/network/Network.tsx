@@ -33,11 +33,11 @@ const newsData = [
 
 const NetworkSection = () => {
   return (
-    <>
-      <h1 className='text-3xl font-bold tracking-tight text-gray-900 dark:text-white'>
-        News Section
-      </h1>
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-2'>
+    <div className='container m-auto mt-10'>
+      <h5 className='titleFont text-center font-semibold tracking-tight text-gray-900 dark:text-white'>
+        News
+      </h5>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-2 py-20'>
         {newsData.map((item, index) => (
           <div key={index} className='grid gap-2'>
             <Card
@@ -71,7 +71,7 @@ const NetworkSection = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
