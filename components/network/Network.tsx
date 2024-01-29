@@ -33,15 +33,14 @@ const newsData = [
 
 const NetworkSection = () => {
   return (
-    <div className='container m-auto mt-10'>
+    <div className='container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2'>
       <h5 className='titleFont text-center font-semibold tracking-tight text-gray-900 dark:text-white'>
         News
       </h5>
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-2 py-20'>
+      <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-16 justify-center'>
         {newsData.map((item, index) => (
           <div key={index} className='grid gap-2'>
             <Card
-              className='max-w-sm'
               renderImage={() => (
                 <Image width={500} height={500} src={item.image} alt='images' />
               )}
