@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Navbar } from "flowbite-react";
+import { Button } from "flowbite-react";
 import {
   BsFacebook,
   BsInstagram,
@@ -28,37 +28,10 @@ const navIconList = [
 
 const NavHeader = () => {
   return (
-    <nav className='sticky top-0 z-50 bg-background-primary'>
-      <div className='md:container m-auto flex sm:justify-between md:gap-32 py-1 items-center'>
-        <div className='px-8 '>
-          <p className='cursor-pointer'>Logo</p>
-        </div>
-        <div className='md:hidden text-primary menuFont px-8 cursor-pointer'>
-          <FaHamburger className='ml-auto  text-lg' />
-        </div>
-        <div className='hidden md:flex justify-between items-center'>
-          <div className='flex gap-10 font-semibold'>
-            {navList.map((item, index) => (
-              <Link key={index} className='text-navbar' href={item.link}>
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-        <div className='hidden md:block px-6 text-caption'>
-          <Button className='text-white bg-navbar'>Join Now</Button>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-export default NavHeader;
-
-{
-  /* <div className='hidden md:flex flex-row items-center gap-10 bg-background-primary'>
-        <div className='flex justify-between items-center flex-1 bg-test px-8 py-1'>
-          <div className='flex flex-row gap-8  text-white'>
+    <nav className='sticky top-0 z-50 bg-background-primary shadow-md'>
+      <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test'>
+        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-2 flex-1 py-1'>
+          <div className='flex flex-row gap-8 text-white'>
             <div className='flex items-center gap-3'>
               <BsMailbox />
               <p className='text-caption'>mail@gmail.com</p>
@@ -68,7 +41,7 @@ export default NavHeader;
               <p className='text-caption'>Open Hours Mon-Fri</p>
             </div>
           </div>
-          <div className='flex flex-row gap-8 items-center px-8 py-2 text-white'>
+          <div className='flex flex-row gap-8 items-center text-white'>
             {navIconList.map((item, index) => (
               <Link key={index} href={item.link}>
                 {item.icon}
@@ -76,5 +49,31 @@ export default NavHeader;
             ))}
           </div>
         </div>
-      </div> */
-}
+      </div>
+      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center'>
+        <div>
+          <p className='cursor-pointer'>Logo</p>
+        </div>
+        <div className='xl:hidden text-primary menuFont cursor-pointer'>
+          <FaHamburger className='ml-auto  text-lg' />
+        </div>
+        <div className='hidden xl:flex justify-between items-center'>
+          <div className='flex gap-10 font-semibold'>
+            {navList.map((item, index) => (
+              <Link key={index} className='text-navbar' href={item.link}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className='hidden xl:block buttonText'>
+          <Button className='text-white bg-primary-danger font-semibold'>
+            Become A Member
+          </Button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default NavHeader;

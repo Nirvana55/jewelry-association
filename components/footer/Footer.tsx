@@ -12,7 +12,7 @@ import {
 const FooterBar = () => {
   return (
     <Footer container>
-      <div className='w-full'>
+      <div className='container mx-auto w-full'>
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div>
             {/* <Footer.Brand
@@ -28,20 +28,20 @@ const FooterBar = () => {
               <Footer.Title title='about' />
               <Footer.LinkGroup col>
                 <Footer.Link href='#'>Jewelry Association</Footer.Link>
-                <Footer.Link href='#'>Tailwind CSS</Footer.Link>
+                <Footer.Link href='#'>About</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title='Follow us' />
+              <Footer.Title title='Join Us' />
               <Footer.LinkGroup col>
-                <Footer.Link href='#'>Github</Footer.Link>
-                <Footer.Link href='#'>Discord</Footer.Link>
+                <Footer.Link href='#'>Associates</Footer.Link>
+                <Footer.Link href='#'>Executive Board</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.Title title='Legal' />
               <Footer.LinkGroup col>
-                <Footer.Link href='#'>Privacy Policy</Footer.Link>
+                <Footer.Link href='#'>Event</Footer.Link>
                 <Footer.Link href='#'>Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>

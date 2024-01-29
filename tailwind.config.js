@@ -9,10 +9,11 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "280px",
+      sm: "640px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
+      "2xl": "1536px",
     },
     colors: {
       blue: "#1fb6ff",
@@ -29,7 +30,7 @@ module.exports = {
       "primary-link": "#2F6BAE",
       primary: "#305586",
       navbar: "#305586",
-      test: "#243C59",
+      test: "#202F46",
       "background-primary": "#EEF3F9",
     },
     fontSize: {
@@ -39,8 +40,19 @@ module.exports = {
     },
     extend: {
       spacing: {
+        112: "28rem",
         128: "32rem",
-        144: "36rem",
+      },
+      container: {
+        center: true,
+      },
+      flexBasis: {
+        "1/7": "14.2857143%",
+        "2/7": "28.5714286%",
+        "3/7": "42.8571429%",
+        "4/7": "57.1428571%",
+        "5/7": "71.4285714%",
+        "6/7": "85.7142857%",
       },
       borderRadius: {
         "4xl": "2rem",
