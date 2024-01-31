@@ -8,6 +8,27 @@
   width: 30%;
 }
 
+.arrowFontSize {
+  font-size: 25px;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.borderBottomIndicator {
+  border-bottom: 1px solid white;
+}
+
+.borderBottomIndicatorActive {
+  border-bottom: 2px solid #4390fa;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.titleHeader {
+  font-size: 100px;
+}
+
 /* @media (min-width:280px){
   max
 } */
