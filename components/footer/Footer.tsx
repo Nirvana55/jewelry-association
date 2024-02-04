@@ -1,17 +1,53 @@
 "use client";
 
 import { Footer } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
+
+const footerData = [
+  {
+    title: "about",
+    footerLink: [
+      {
+        link: "#",
+        name: "Jewelry Association",
+      },
+      {
+        link: "#",
+        name: "About",
+      },
+    ],
+  },
+  {
+    title: "Join Us",
+    footerLink: [
+      {
+        link: "#",
+        name: "Associates",
+      },
+      {
+        link: "#",
+        name: "Executive Board",
+      },
+    ],
+  },
+  {
+    title: "Legal",
+    footerLink: [
+      {
+        link: "#",
+        name: "Event",
+      },
+      {
+        link: "#",
+        name: "Terms & Conditions",
+      },
+    ],
+  },
+];
 
 const FooterBar = () => {
   return (
-    <Footer container>
+    <Footer className='bg-test rounded-none text-white' container>
       <div className='container mx-auto w-full'>
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div>
@@ -24,38 +60,32 @@ const FooterBar = () => {
             <p>Logo</p>
           </div>
           <div className='grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6'>
-            <div>
-              <Footer.Title title='about' />
-              <Footer.LinkGroup col>
-                <Footer.Link href='#'>Jewelry Association</Footer.Link>
-                <Footer.Link href='#'>About</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title title='Join Us' />
-              <Footer.LinkGroup col>
-                <Footer.Link href='#'>Associates</Footer.Link>
-                <Footer.Link href='#'>Executive Board</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title title='Legal' />
-              <Footer.LinkGroup col>
-                <Footer.Link href='#'>Event</Footer.Link>
-                <Footer.Link href='#'>Terms &amp; Conditions</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
+            {footerData.map((item, index) => (
+              <div key={index}>
+                <Footer.Title className='text-white' title={item.title} />
+                <Footer.LinkGroup col>
+                  {item.footerLink.map((item) => (
+                    <Footer.Link key={item.name} href={item.link}>
+                      {item.name}
+                    </Footer.Link>
+                  ))}
+                </Footer.LinkGroup>
+              </div>
+            ))}
           </div>
         </div>
         <Footer.Divider />
         <div className='w-full sm:flex sm:items-center sm:justify-between'>
-          <Footer.Copyright href='#' by='RubixxCube™' year={2024} />
+          <Footer.Copyright
+            className='text-white'
+            href='#'
+            by='RubixxCube™'
+            year={2024}
+          />
           <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center'>
-            <Footer.Icon href='#' icon={BsFacebook} />
-            <Footer.Icon href='#' icon={BsInstagram} />
-            <Footer.Icon href='#' icon={BsTwitter} />
-            <Footer.Icon href='#' icon={BsGithub} />
-            <Footer.Icon href='#' icon={BsDribbble} />
+            <Footer.Icon className='text-white' href='#' icon={BsFacebook} />
+            <Footer.Icon className='text-white' href='#' icon={BsInstagram} />
+            <Footer.Icon className='text-white' href='#' icon={BsYoutube} />
           </div>
         </div>
       </div>

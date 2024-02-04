@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import Navbar from "../../components/navbar/Navbar";
+import FooterBar from "../../components/footer/Footer";
+
 import "./global.css";
 
 export const metadata: Metadata = {
@@ -20,7 +23,9 @@ export default function RootLayout({
   return (
     <html className='scroll-smooth' lang='en'>
       <body className={`${poppins.className} bg-background-primary`}>
+        <Navbar />
         {children}
+        <FooterBar />
       </body>
     </html>
   );

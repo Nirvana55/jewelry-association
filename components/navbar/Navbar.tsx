@@ -9,15 +9,15 @@ import {
   BsMailbox,
   BsClock,
 } from "react-icons/bs";
-import { FaHamburger } from "react-icons/fa";
+import { CgMenuRight } from "react-icons/cg";
 import "./styles.css";
 
 const navList = [
-  { name: "Home", link: "#" },
-  { name: "Associates", link: "#" },
-  { name: "Executive Board", link: "#" },
-  { name: "Event", link: "#" },
-  { name: "Photo Gallery", link: "#" },
+  { name: "Home", link: "/" },
+  { name: "Associates", link: "/associates" },
+  { name: "Executive Board", link: "/executive-board" },
+  { name: "Event", link: "/event" },
+  { name: "Photo Gallery", link: "/gallery" },
 ];
 
 const navIconList = [
@@ -55,7 +55,7 @@ const NavHeader = () => {
           <p className='cursor-pointer'>Logo</p>
         </div>
         <div className='xl:hidden text-primary menuFont cursor-pointer'>
-          <FaHamburger className='ml-auto  text-lg' />
+          <CgMenuRight className='ml-auto  text-lg' />
         </div>
         <div className='hidden xl:flex justify-between items-center'>
           <div className='flex gap-10 font-semibold'>
