@@ -24,7 +24,7 @@ const CarouselBar = () => {
     leave: {
       opacity: 0,
     },
-    config: { duration: 2000 },
+    config: { duration: 3000 },
     onRest: (_a, _b, index) => {
       if (carouselIndex === index) {
         setCarouselIndex((prev) => (prev + 1) % imageSlides.length);
@@ -84,7 +84,7 @@ const CarouselBar = () => {
           />
         ))}
       </div>
-      <div className='bg-test bg-opacity-60 w-100% h-[800px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
+      <div className='bg-test bg-opacity-45 w-100% h-[800px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
       <div
         onClick={handlePrevious}
         className='z-20 absolute left-7 top-[35%] cursor-pointer'

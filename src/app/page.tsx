@@ -1,19 +1,21 @@
 import Carousel from "../../components/carousel/Carousel";
-import FooterBar from "../../components/footer/Footer";
+import MotiveSection from "../../components/Motive/MotiveSection";
 import GraphSection from "../../components/graph/Graph";
-import Navbar from "../../components/navbar/Navbar";
-import NetworkSection from "../../components/network/Network";
-import TopicsBar from "../../components/topics/Topics";
+import NewsSection from "../../components/NewsSection/NewsSection";
+import MessageSection from "../../components/MessageSection/MessageSection";
+import TeamsSection from "../../components/team/TeamsSection";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Carousel />
-      <TopicsBar />
+      <MessageSection />
       {/* <GraphSection /> */}
-      <NetworkSection />
-      <FooterBar />
+      <MotiveSection />
+      <TeamsSection />
+      <NewsSection />
+      <NewsLetter />
     </>
   );
 }

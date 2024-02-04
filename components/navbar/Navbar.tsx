@@ -13,11 +13,11 @@ import { FaHamburger } from "react-icons/fa";
 import "./styles.css";
 
 const navList = [
-  { name: "Home", link: "#" },
-  { name: "Associates", link: "#" },
-  { name: "Executive Board", link: "#" },
-  { name: "Event", link: "#" },
-  { name: "Photo Gallery", link: "#" },
+  { name: "Home", link: "/" },
+  { name: "Associates", link: "/associates" },
+  { name: "Executive Board", link: "/executive-board" },
+  { name: "Event", link: "/event" },
+  { name: "Photo Gallery", link: "/gallery" },
 ];
 
 const navIconList = [
