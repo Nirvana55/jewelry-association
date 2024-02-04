@@ -11,27 +11,31 @@ const newsData = [
     image: "/1.jpeg",
     title: "Noteworthy technology acquisitions 2021",
     body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
+    buttonText: "Read in 2 minutes",
   },
   {
     image: "/1.jpeg",
     title: "Noteworthy technology acquisitions 2021",
     body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
+    buttonText: "Read in 10 minutes",
   },
   {
     image: "/1.jpeg",
     title: "Noteworthy technology acquisitions 2021",
     body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
+    buttonText: "Read in 5 minutes",
   },
   {
     image: "/1.jpeg",
     title: "Noteworthy technology acquisitions 2021",
     body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
+    buttonText: "Read in 3 minutes",
   },
 ];
 
 const NewsSection = () => {
   return (
-    <section className='bg-white'>
+    <section className='bg-primary-background'>
       <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10'>
         <div className='mx-auto max-w-screen-sm lg:mb-8 text-center'>
           <h2 className='titleFont text-center font-bold tracking-tight text-gray-900 dark:text-white'>
@@ -63,7 +67,7 @@ const NewsSection = () => {
                   {item.body}
                 </p>
                 <Button className='text-primary-danger self-end'>
-                  Read more
+                  {item.buttonText}
                   <FaArrowRightLong className='ml-2' />
                 </Button>
               </Card>

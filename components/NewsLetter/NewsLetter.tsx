@@ -5,7 +5,7 @@ import { HiMail } from "react-icons/hi";
 
 const NewsLetter = () => {
   return (
-    <section className=' bg-primary-background dark:bg-gray-900'>
+    <section className=' bg-white dark:bg-gray-900'>
       <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-14'>
         <div className='mx-auto max-w-screen-md sm:text-center'>
           <h2 className='titleFont text-center font-bold tracking-tight text-gray-900 dark:text-white'>
