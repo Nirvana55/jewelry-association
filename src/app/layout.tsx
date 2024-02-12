@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Navbar from "../../components/navbar/Navbar";
 import FooterBar from "../../components/footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./global.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${poppins.className} bg-background-primary`}>
         <Navbar />
         {children}
+        <Analytics />
         <FooterBar />
       </body>
     </html>
