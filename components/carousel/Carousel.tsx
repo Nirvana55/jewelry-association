@@ -5,12 +5,11 @@ import { Button, Carousel } from "flowbite-react";
 import { useTransition, animated } from "@react-spring/web";
 import "./styles.css";
 import { useState } from "react";
-import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import {
   IoIosArrowUp,
   IoIosArrowDown,
-  IoIosArrowDropleft,
-  IoIosArrowDropright,
+  IoIosArrowForward,
+  IoIosArrowBack,
 } from "react-icons/io";
 
 const imageSlides = ["/1.jpeg", "/2.jpeg", "/3.jpeg"];
@@ -95,14 +94,14 @@ const CarouselBar = () => {
         className='z-20 absolute left-[20%] right-[50%] bottom-10 lg:left-7 lg:top-[35%] cursor-pointer'
       >
         <IoIosArrowUp className='hidden lg:block text-white arrowFontSize border-spacing-2' />
-        <IoIosArrowDropleft className='block lg:hidden text-white arrowFontSize border-spacing-2' />
+        <IoIosArrowBack className='block lg:hidden text-white arrowFontSize border-spacing-2' />
       </div>
       <div
         onClick={handleNext}
         className='z-20 absolute right-[20%] bottom-10 border-solid lg:left-7 lg:top-[70%] cursor-pointer'
       >
         <IoIosArrowDown className='hidden lg:block text-white arrowFontSize' />
-        <IoIosArrowDropright className='block lg:hidden text-white arrowFontSize border-spacing-2' />
+        <IoIosArrowForward className='block lg:hidden text-white arrowFontSize border-spacing-2' />
       </div>
       <div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 lg:top-[40%] lg:left-10 text-center z-20 flex flex-row lg:flex-col'>
         {renderIndicators()}

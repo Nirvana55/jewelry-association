@@ -1,7 +1,6 @@
 import React from "react";
 import { sanityClient } from "../../../utils/sanity/client";
-import { Avatar, Blockquote, Button, Card } from "flowbite-react";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { Avatar, Button, Card } from "flowbite-react";
 import Image from "next/image";
 import { Events } from "../../../types/events";
 import imageUrlBuilder from "@sanity/image-url";
@@ -39,7 +38,7 @@ const Event = async () => {
         <div className='relative w-full h-[300px] md:w-[500px] md:h-[450px] lg:w-[450px] xl:w-[800px] shadow border shrink md:shrink-0 lg:h-[450px] my-4 md:my-0'>
           <Image fill src='/1.jpeg' alt={`images`} />
         </div>
-        <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start gap-6 inline-flex'>
+        <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start gap-12 md:gap-36 lg:gap-12 inline-flex'>
           <div className='self-stretch h-[161px] flex-col justify-start items-start gap-4 flex'>
             <div className='justify-start items-center gap-4 inline-flex'>
               <div className='py-1 bg-zinc-100 justify-start items-start flex'>
