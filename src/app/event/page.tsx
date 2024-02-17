@@ -5,10 +5,11 @@ import Image from "next/image";
 import { Events } from "../../../types/events";
 import imageUrlBuilder from "@sanity/image-url";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import Link from "next/link";
 
 const Event = async () => {
   const blogCardListData = await sanityClient.fetch<Events[]>(
-    `*[_type=="blog"]{title,cardInfoText,readTime,author,_id,mainImage,author}`
+    `*[_type=="blog"]{title,cardInfoText,readTime,author,_id,mainImage,author,slug}`
   );
   const builder = imageUrlBuilder(sanityClient);
 
@@ -77,56 +78,66 @@ const Event = async () => {
           {blogCardListData.length > 0 ? (
             <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 justify-center cursor-pointer'>
               {blogCardListData.map((item) => (
-                <div key={item._id} className='grid gap-2'>
-                  <Card
-                    renderImage={() => (
-                      <Image
-                        width={500}
-                        height={400}
-                        src={builder
-                          .image(item.mainImage.asset._ref)
-                          .width(500)
-                          .height(400)
-                          .url()}
-                        alt='images'
-                      />
-                    )}
-                  >
-                    <div className='flex flex-col gap-2'>
-                      <div className='justify-start items-center gap-4 inline-flex'>
-                        <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                          <div className='text-red bg-blue-100  p-2 rounded text-sm font-semibold leading-[21px]'>
-                            Category
+                <Link
+                  href={`/event/${item.slug.current}`}
+                  key={item._id}
+                  className='grid gap-2'
+                >
+                  <div>
+                    <Card
+                      renderImage={() => (
+                        <Image
+                          width={500}
+                          height={400}
+                          src={builder
+                            .image(item.mainImage.asset._ref)
+                            .width(500)
+                            .height(400)
+                            .url()}
+                          alt='images'
+                        />
+                      )}
+                    >
+                      <div className='flex flex-col gap-2'>
+                        <div className='justify-start items-center gap-4 inline-flex'>
+                          <div className='py-1 bg-zinc-100 justify-start items-start flex'>
+                            <div className='text-red bg-blue-100  p-2 rounded text-sm font-semibold leading-[21px]'>
+                              Category
+                            </div>
+                          </div>
+                          <div className='text-black text-sm font-semibold leading-[21px]'>
+                            {item.readTime}
                           </div>
                         </div>
-                        <div className='text-black text-sm font-semibold leading-[21px]'>
-                          {item.readTime}
-                        </div>
-                      </div>
-                      <div className='py-2'>
-                        <h5 className='text-[20px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
-                          {item.title}
-                        </h5>
-                        <p className='font-normal py-4 text-gray-700 dark:text-gray-400 '>
-                          {item.cardInfoText}
-                          asdas
-                        </p>
-                      </div>
-
-                      <div className='flex justify-between items-center'>
-                        <div className='inline-flex items-center'>
-                          <Avatar img='/1.jpeg' alt='avatar of Jese' rounded />
-                          <p className='font-semibold text-gray-700 px-2 self-start dark:text-gray-400'>
-                            {item.author}
+                        <div className='py-2'>
+                          <h5 className='text-[20px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                            {item.title}
+                          </h5>
+                          <p className='font-normal py-4 text-gray-700 dark:text-gray-400 '>
+                            {item.cardInfoText}
+                            asdas
                           </p>
                         </div>
-                        <Button className='text-primary-danger'>
-                          Read more <MdKeyboardArrowRight />
-                        </Button>
+
+                        <div className='flex justify-between items-center'>
+                          <div className='inline-flex items-center'>
+                            <Avatar
+                              img='/1.jpeg'
+                              alt='avatar of Jese'
+                              rounded
+                            />
+                            <p className='font-semibold text-gray-700 px-2 self-start dark:text-gray-400'>
+                              {item.author}
+                            </p>
+                          </div>
+                          <Button className='text-primary-danger'>
+                            Read more <MdKeyboardArrowRight />
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </div>
+                    </Card>
+                  </div>
+                </Link>
               ))}
             </div>
           ) : (
