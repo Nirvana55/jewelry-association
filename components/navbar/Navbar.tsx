@@ -55,6 +55,8 @@ const NavHeader = () => {
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
+
+        {/* input button for nav bar drawer */}
         <input
           id='my-drawer-2'
           type='checkbox'
@@ -68,20 +70,27 @@ const NavHeader = () => {
             <CgMenuRight className='ml-auto text-lg' />
           </label>
         </div>
+
         <div className='hidden xl:flex justify-between items-center'>
           <div className='flex gap-10 font-semibold'>
             {navList.map((item, index) => (
-              <Link key={index} className='text-navbar' href={item.link}>
+              <Link
+                key={index}
+                className='text-navbar text-[16px] tracking-normal'
+                href={item.link}
+              >
                 {item.name}
               </Link>
             ))}
           </div>
+          <div className='hidden xl:block buttonText ml-10'>
+            <Button className='text-white bg-primary-danger font-semibold'>
+              Become A Member
+            </Button>
+          </div>
         </div>
-        <div className='hidden xl:block buttonText'>
-          <Button className='text-white bg-primary-danger font-semibold'>
-            Become A Member
-          </Button>
-        </div>
+
+        {/* drawer */}
         <div className='drawer-side lg:hidden'>
           <label
             htmlFor='my-drawer-2'
@@ -97,7 +106,7 @@ const NavHeader = () => {
             <div className='mt-7'>
               {navList.map((item, index) => (
                 <li key={index} className='my-5'>
-                  <Link className='text-white' href={item.link}>
+                  <Link className='text-white text-[16px]' href={item.link}>
                     {item.name}
                   </Link>
                 </li>
