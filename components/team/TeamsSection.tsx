@@ -41,18 +41,18 @@ const teamData = [
 const TeamsSection = () => {
   return (
     <section className='bg-white dark:bg-gray-900'>
-      <div className='py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6'>
-        <div className='mx-auto mb-8 max-w-screen-sm lg:mb-16'>
-          <h2 className='titleFont text-center font-bold tracking-tight text-gray-900 dark:text-white'>
+      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
+        <div className='max-w-screen-sm'>
+          <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Team
           </h2>
-          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[16px] md:text-[18px] py-[12px] md:py-[24px]'>
             Harmony in Craft, Strength in Unity: Our team, a mosaic of talents,
             dedicated to crafting brilliance in every facet of the jewelry
             industry.
           </p>
         </div>
-        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-[80px]'>
           {teamData.map((item, index) => (
             <div
               key={index}
@@ -67,12 +67,12 @@ const TeamsSection = () => {
                 />
               </div>
 
-              <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+              <h3 className='pt-[16px] text-[16px] font-bold tracking-tight text-gray-900 dark:text-white'>
                 <Link href='#'>{item.name}</Link>
               </h3>
               <p>{item.role}</p>
-              <ul className='flex justify-center mt-4 space-x-4'>
-                <li>
+              <ul className='flex justify-center mt-4'>
+                <li className='px-2'>
                   <Link
                     href={item.facebookLink}
                     className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'
@@ -80,7 +80,7 @@ const TeamsSection = () => {
                     <FaFacebook />
                   </Link>
                 </li>
-                <li>
+                <li className='px-2'>
                   <Link
                     href={item.instagramLink}
                     className='text-[#d62976] hover:text-gray-900 dark:hover:text-white'
@@ -88,7 +88,7 @@ const TeamsSection = () => {
                     <FaInstagram />
                   </Link>
                 </li>
-                <li>
+                <li className='px-2'>
                   <Link
                     href={item.youtubeLink}
                     className='text-[#FF0000] hover:text-gray-900 dark:hover:text-white dark:text-gray-300'

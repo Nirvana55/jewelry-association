@@ -4,7 +4,7 @@ const ExecutiveBoard = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-sm lg:mb-8'>
-        <h2 className='text-[40px] font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight text-gray-900 dark:text-white'>
           Our Board Members
         </h2>
         <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>

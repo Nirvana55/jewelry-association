@@ -10,7 +10,6 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
-import { IoIosClose } from "react-icons/io";
 
 import "./styles.css";
 
@@ -52,10 +51,12 @@ const NavHeader = () => {
           </div>
         </div>
       </div>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center drawer'>
+      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center max-md:drawer'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
+
+        {/* input button for nav bar drawer */}
         <input
           id='my-drawer-2'
           type='checkbox'
@@ -66,24 +67,31 @@ const NavHeader = () => {
             htmlFor='my-drawer-2'
             className='drawer-button bg-white border-none lg:hidden'
           >
-            <CgMenuRight className='ml-auto text-lg' />
+            <CgMenuRight className='ml-auto text-lg text-black' />
           </label>
         </div>
+
         <div className='hidden xl:flex justify-between items-center'>
           <div className='flex gap-10 font-semibold'>
             {navList.map((item, index) => (
-              <Link key={index} className='text-navbar' href={item.link}>
+              <Link
+                key={index}
+                className='text-navbar text-[16px] tracking-tight md:tracking-normal'
+                href={item.link}
+              >
                 {item.name}
               </Link>
             ))}
           </div>
+          <div className='hidden xl:block buttonText ml-10'>
+            <Button className='text-white bg-primary-danger font-semibold'>
+              Become A Member
+            </Button>
+          </div>
         </div>
-        <div className='hidden xl:block buttonText'>
-          <Button className='text-white bg-primary-danger font-semibold'>
-            Become A Member
-          </Button>
-        </div>
-        <div className='drawer-side md:hidden'>
+
+        {/* drawer */}
+        <div className='drawer-side lg:hidden'>
           <label
             htmlFor='my-drawer-2'
             aria-label='close sidebar'
@@ -98,7 +106,7 @@ const NavHeader = () => {
             <div className='mt-7'>
               {navList.map((item, index) => (
                 <li key={index} className='my-5'>
-                  <Link className='text-white' href={item.link}>
+                  <Link className='text-white text-[16px]' href={item.link}>
                     {item.name}
                   </Link>
                 </li>
