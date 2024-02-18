@@ -10,7 +10,6 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
-import { IoIosClose } from "react-icons/io";
 
 import "./styles.css";
 

@@ -6,15 +6,17 @@ import { HiMail } from "react-icons/hi";
 const NewsLetter = () => {
   return (
     <section className=' bg-white dark:bg-gray-900'>
-      <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-14'>
-        <div className='mx-auto max-w-screen-md sm:text-center'>
-          <h2 className='titleFont text-center font-bold tracking-tight text-gray-900 dark:text-white'>
+      <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[112px]'>
+        <div className='max-w-screen-sm'>
+          <h2 className='text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
             Sign up for our newsletter
           </h2>
-          <p className='mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400'>
+          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[18px] py-[24px]'>
             Stay up to date with the roadmap progress, announcements and
             exclusive discounts feel free to sign up with your email.
           </p>
+        </div>
+        <div className='pt-[80px]'>
           <form action='#'>
             <div className='items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex sm:space-y-0'>
               <div className='relative w-full'>

@@ -5,17 +5,17 @@ import { MdBusinessCenter } from "react-icons/md";
 const MotiveSection = () => {
   return (
     <section className='bg-background-primary'>
-      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-14'>
-        <div className='mb-8 mx-auto lg:mb-16 text-center max-w-screen-sm'>
-          <h2 className='titleFont text-center font-bold tracking-tight text-gray-900 dark:text-white'>
+      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[112px]'>
+        <div className='max-w-screen-sm'>
+          <h2 className='text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
             Our Main Motive
           </h2>
-          <Blockquote className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+          <Blockquote className='font-light text-[18px] text-gray-500 sm:text-xl dark:text-gray-400 py-[24px]'>
             &quot;Unite in Brilliance, Sparkle in Unity: Together, we elevate
             the artistry, integrity, and future of the jewelry industry. &quot;
           </Blockquote>
         </div>
-        <div className='space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 py-5'>
+        <div className='space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 pt-[80px]'>
           <div>
             <div className='flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-test'>
               <svg
@@ -31,14 +31,11 @@ const MotiveSection = () => {
                 ></path>
               </svg>
             </div>
-            <h3 className='mb-2 text-xl font-bold dark:text-white'>
+            <h3 className='mb-2 text-[32px] text-black font-bold dark:text-white py-[24px]'>
               Networking and Collaboration
             </h3>
-            <p className='text-gray-500 dark:text-gray-400'>
-              Showcase the association&aspos;s commitment to facilitating
-              connections and collaborations within the jewelry industry. This
-              can include events, forums, and platforms that bring together
-              professionals for networking opportunities.
+            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+              Connect with industry professionals and expand your network.
             </p>
           </div>
           <div>
@@ -56,16 +53,14 @@ const MotiveSection = () => {
                 ></path>
                 <path d='M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z'></path>
               </svg>
-            </div>{" "}
-            <h3 className='mb-2 text-xl font-bold dark:text-white'>
-              Education and Training:
+            </div>
+            <h3 className='mb-2 text-[32px] py-[24px] text-black font-bold dark:text-white'>
+              Exclusive Benefits
             </h3>
-            <p className='text-gray-500 dark:text-gray-400'>
-              Highlight the association&aspos;s dedication to advancing the
-              skills and knowledge of its members. This may involve promoting
-              workshops, seminars, and educational resources that cover various
-              aspects of the jewelry industry, such as design trends, gemology,
-              and business practices.
+            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+              As a member of our association, you&apos;ll have access to
+              exclusive resources, industry updates, and networking
+              opportunities.
             </p>
           </div>
           <div>
@@ -82,16 +77,13 @@ const MotiveSection = () => {
                   clipRule='evenodd'
                 ></path>
               </svg>
-            </div>{" "}
-            <h3 className='mb-2 text-xl font-bold dark:text-white'>
-              Ethical Standards and Industry Advocacy
+            </div>
+            <h3 className='mb-2 text-[32px] py-[24px] text-black font-bold dark:text-white'>
+              Industry Insights
             </h3>
-            <p className='text-gray-500 dark:text-gray-400'>
-              Emphasize the organization&aspos;s focus on promoting ethical
-              standards and advocating for the interests of the jewelry
-              industry. This can include information on the association&aspos;s
-              efforts to establish and maintain high ethical standards and its
-              involvement in advocating for favorable regulations and policies.
+            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+              Stay up-to-date with the latest trends and developments in the
+              industry.
             </p>
           </div>
         </div>

@@ -108,10 +108,10 @@ const CarouselBar = () => {
       </div>
       <div className='container z-20 mx-auto'>
         <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 z-20 rounded'>
-          <p className='text-white font-bold text-[40px] uppercase md:text-[50px]'>
+          <p className='text-white font-bold text-[40px] uppercase md:text-[56px]'>
             Welcome To Negja
           </p>
-          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] text-lg sm:text-xl md:text-2xl'>
+          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] text-lg sm:text-xl md:text-[18px]'>
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>
