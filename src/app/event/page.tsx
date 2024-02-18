@@ -25,17 +25,15 @@ const Event = async () => {
 
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
-      <div className='max-w-screen-sm'>
-        <h2 className='text-[40px] font-bold tracking-tight text-gray-900 dark:text-white'>
+      <div className='max-w-screen-md'>
+        <h2 className='text-[52px] font-extrabold tracking-tight text-gray-900 dark:text-white'>
           Stay updated with insights
         </h2>
         <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
-          Words that Sparkle, Ideas that Shine: Each article is a gem,
-          meticulously crafted to illuminate, educate, and inspire the world of
-          jewelry.
+          Words that Sparkle, Ideas that Shine: Each article is a gem.
         </p>
       </div>
-      <div className='flex flex-wrap justify-start items-center w-full py-12 lg:w-[1312px]'>
+      <div className='flex flex-wrap justify-start items-center w-full py-12 lg:w-[1400px]'>
         <div className='relative w-full h-[300px] md:w-[500px] md:h-[450px] lg:w-[450px] xl:w-[800px] shadow border shrink md:shrink-0 lg:h-[450px] my-4 md:my-0'>
           <Image fill src='/1.jpeg' alt={`images`} />
         </div>
@@ -52,7 +50,7 @@ const Event = async () => {
               </div>
             </div>
             <div className='self-stretch h-[116px] flex-col justify-start items-start gap-2 flex'>
-              <div className='self-stretch text-black text-[32px] font-bold'>
+              <div className='self-stretch text-black text-[30px] font-bold'>
                 The Importance of Gold and Silver Investments
               </div>
               <div className='self-stretch text-black text-base leading-normal'>

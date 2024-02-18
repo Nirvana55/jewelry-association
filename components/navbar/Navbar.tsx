@@ -52,7 +52,7 @@ const NavHeader = () => {
           </div>
         </div>
       </div>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center drawer'>
+      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center max-md:drawer'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
@@ -83,7 +83,7 @@ const NavHeader = () => {
             Become A Member
           </Button>
         </div>
-        <div className='drawer-side md:hidden'>
+        <div className='drawer-side lg:hidden'>
           <label
             htmlFor='my-drawer-2'
             aria-label='close sidebar'
