@@ -41,12 +41,12 @@ const teamData = [
 const TeamsSection = () => {
   return (
     <section className='bg-white dark:bg-gray-900'>
-      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[112px]'>
+      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
         <div className='max-w-screen-sm'>
-          <h2 className='text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
+          <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Team
           </h2>
-          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[18px] py-[24px]'>
+          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[16px] md:text-[18px] py-[12px] md:py-[24px]'>
             Harmony in Craft, Strength in Unity: Our team, a mosaic of talents,
             dedicated to crafting brilliance in every facet of the jewelry
             industry.
@@ -71,8 +71,8 @@ const TeamsSection = () => {
                 <Link href='#'>{item.name}</Link>
               </h3>
               <p>{item.role}</p>
-              <ul className='flex justify-center mt-4 '>
-                <li>
+              <ul className='flex justify-center mt-4'>
+                <li className='px-2'>
                   <Link
                     href={item.facebookLink}
                     className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'
@@ -80,7 +80,7 @@ const TeamsSection = () => {
                     <FaFacebook />
                   </Link>
                 </li>
-                <li>
+                <li className='px-2'>
                   <Link
                     href={item.instagramLink}
                     className='text-[#d62976] hover:text-gray-900 dark:hover:text-white'
@@ -88,7 +88,7 @@ const TeamsSection = () => {
                     <FaInstagram />
                   </Link>
                 </li>
-                <li>
+                <li className='px-2'>
                   <Link
                     href={item.youtubeLink}
                     className='text-[#FF0000] hover:text-gray-900 dark:hover:text-white dark:text-gray-300'

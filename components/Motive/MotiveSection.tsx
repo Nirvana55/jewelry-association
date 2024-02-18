@@ -1,16 +1,15 @@
 import { Blockquote } from "flowbite-react";
 import React from "react";
-import { MdBusinessCenter } from "react-icons/md";
 
 const MotiveSection = () => {
   return (
     <section className='bg-background-primary'>
-      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[112px]'>
+      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
         <div className='max-w-screen-sm'>
-          <h2 className='text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
+          <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Main Motive
           </h2>
-          <Blockquote className='font-light text-[18px] text-gray-500 sm:text-xl dark:text-gray-400 py-[24px]'>
+          <Blockquote className='font-light text-[16px] md:text-[18px] text-gray-500 sm:text-xl dark:text-gray-400 py-[12px] md:py-[24px]'>
             &quot;Unite in Brilliance, Sparkle in Unity: Together, we elevate
             the artistry, integrity, and future of the jewelry industry. &quot;
           </Blockquote>
@@ -31,10 +30,10 @@ const MotiveSection = () => {
                 ></path>
               </svg>
             </div>
-            <h3 className='mb-2 text-[32px] text-black font-bold dark:text-white py-[24px]'>
+            <h3 className='text-[24px] md:text-[32px] text-black font-bold dark:text-white py-[12px] md:py-[24px]'>
               Networking and Collaboration
             </h3>
-            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+            <p className='text-gray-500 text-[16px] tracking-tight md:tracking-normal dark:text-gray-400'>
               Connect with industry professionals and expand your network.
             </p>
           </div>
@@ -54,10 +53,10 @@ const MotiveSection = () => {
                 <path d='M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z'></path>
               </svg>
             </div>
-            <h3 className='mb-2 text-[32px] py-[24px] text-black font-bold dark:text-white'>
+            <h3 className='mb-2 text-[24px] md:text-[32px] text-black font-bold dark:text-white py-[12px] md:py-[24px]'>
               Exclusive Benefits
             </h3>
-            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+            <p className='text-gray-500 text-[16px] tracking-tight md:tracking-normal dark:text-gray-400'>
               As a member of our association, you&apos;ll have access to
               exclusive resources, industry updates, and networking
               opportunities.
@@ -78,10 +77,10 @@ const MotiveSection = () => {
                 ></path>
               </svg>
             </div>
-            <h3 className='mb-2 text-[32px] py-[24px] text-black font-bold dark:text-white'>
+            <h3 className='mb-2 text-[24px] md:text-[32px] text-black font-bold dark:text-white py-[12px] md:py-[24px]'>
               Industry Insights
             </h3>
-            <p className='text-gray-500 text-[16px] tracking-normal dark:text-gray-400'>
+            <p className='text-gray-500 text-[16px] tracking-tight md:tracking-normal dark:text-gray-400'>
               Stay up-to-date with the latest trends and developments in the
               industry.
             </p>

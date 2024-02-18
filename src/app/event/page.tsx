@@ -26,55 +26,55 @@ const Event = async () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-md'>
-        <h2 className='text-[52px] font-extrabold tracking-tight text-gray-900 dark:text-white'>
+        <h1 className='text-[42px] md:text-[52px] font-extrabold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
           Stay updated with insights
-        </h2>
-        <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+        </h1>
+        <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[16px] pt-[20px] md:text-[18px] md:pt-[24px]'>
           Words that Sparkle, Ideas that Shine: Each article is a gem.
         </p>
       </div>
-      <div className='flex flex-wrap justify-start items-center w-full py-12 lg:w-[1400px]'>
-        <div className='relative w-full h-[300px] md:w-[500px] md:h-[450px] lg:w-[450px] xl:w-[800px] shadow border shrink md:shrink-0 lg:h-[450px] my-4 md:my-0'>
+      <div className='flex flex-wrap justify-start items-center w-full py-[48px] md:py-[80px] lg:w-[1450px] '>
+        <div className='relative w-full h-[221px] md:w-[656px] md:h-[500px] shadow border shrink md:shrink-0 my-4 md:my-0'>
           <Image fill src='/1.jpeg' alt={`images`} />
         </div>
         <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start gap-12 md:gap-36 lg:gap-12 inline-flex'>
           <div className='self-stretch h-[161px] flex-col justify-start items-start gap-4 flex'>
             <div className='justify-start items-center gap-4 inline-flex'>
               <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                <div className='text-red bg-blue-100  p-2 rounded text-sm font-semibold leading-[21px]'>
+                <div className='text-primary-danger bg-blue-200 text-[14px] p-2 rounded font-semibold leading-[21px]'>
                   Category
                 </div>
               </div>
-              <div className='text-black text-sm font-semibold leading-[21px]'>
+              <div className='text-black text-[14px] text-sm font-semibold leading-[21px]'>
                 5 min read
               </div>
             </div>
             <div className='self-stretch h-[116px] flex-col justify-start items-start gap-2 flex'>
-              <div className='self-stretch text-black text-[30px] font-bold'>
+              <div className='self-stretch text-black text-[24px] md:text-[32px] font-bold'>
                 The Importance of Gold and Silver Investments
               </div>
-              <div className='self-stretch text-black text-base leading-normal'>
+              <div className='self-stretch text-black text-base md:text-[16px] pt-[8px] leading-normal'>
                 Discover why investing in gold and silver is a smart choice.
               </div>
             </div>
           </div>
-          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-5 text-primary-danger cursor-pointer'>
+          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[24px] text-[16px] text-primary-danger cursor-pointer'>
             Read more <MdKeyboardArrowRight />
           </div>
         </div>
       </div>
       <div>
         <div className='max-w-screen-sm'>
-          <h2 className='text-[40px] font-bold tracking-tight text-gray-900 dark:text-white'>
+          <h2 className='text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Latest
           </h2>
-          <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+          <p className='font-light text-gray-500 sm:text-xl text-[16px] pt-[24px] dark:text-gray-400'>
             Stay informed with our latest articles.
           </p>
         </div>
-        <div className='py-12'>
+        <div className='py-[64px]'>
           {blogCardListData.length > 0 ? (
-            <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 justify-center cursor-pointer'>
+            <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
               {blogCardListData.map((item) => (
                 <Link
                   href={`/event/${item.slug.current}`}
@@ -85,12 +85,12 @@ const Event = async () => {
                     <Card
                       renderImage={() => (
                         <Image
-                          width={500}
-                          height={400}
+                          width={416}
+                          height={300}
                           src={builder
                             .image(item.mainImage.asset._ref)
-                            .width(500)
-                            .height(400)
+                            .width(416)
+                            .height(300)
                             .url()}
                           alt='images'
                         />
@@ -99,15 +99,15 @@ const Event = async () => {
                       <div className='flex flex-col gap-2'>
                         <div className='justify-start items-center gap-4 inline-flex'>
                           <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                            <div className='text-red bg-blue-100  p-2 rounded text-sm font-semibold leading-[21px]'>
+                            <div className='text-primary-danger bg-blue-100 p-2 rounded text-[14px] font-semibold leading-[21px]'>
                               Category
                             </div>
                           </div>
-                          <div className='text-black text-sm font-semibold leading-[21px]'>
+                          <div className='text-black text-[14px] font-semibold leading-[21px]'>
                             {item.readTime}
                           </div>
                         </div>
-                        <div className='py-2'>
+                        <div className='pt-[16px]'>
                           <h5 className='text-[20px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                             {item.title}
                           </h5>
@@ -117,8 +117,8 @@ const Event = async () => {
                           </p>
                         </div>
 
-                        <div className='flex justify-between items-center'>
-                          <div className='inline-flex items-center'>
+                        <div className='flex'>
+                          {/* <div className='inline-flex items-center'>
                             <Avatar
                               img='/1.jpeg'
                               alt='avatar of Jese'
@@ -127,10 +127,10 @@ const Event = async () => {
                             <p className='font-semibold text-gray-700 px-2 self-start dark:text-gray-400'>
                               {item.author}
                             </p>
-                          </div>
-                          <Button className='text-primary-danger'>
+                          </div> */}
+                          <div className='w-[109px] justify-center items-center gap-2 inline-flex pt-[24px] text-primary-danger cursor-pointer'>
                             Read more <MdKeyboardArrowRight />
-                          </Button>
+                          </div>
                         </div>
                       </div>
                     </Card>
@@ -140,7 +140,7 @@ const Event = async () => {
             </div>
           ) : (
             <div className='mx-auto max-w-screen-sm lg:my-8 py-28 text-center'>
-              <h2 className='text-[30px] font-bold tracking-tight text-gray-900 dark:text-white'>
+              <h2 className='text-[32px]  font-bold tracking-tight text-gray-900 dark:text-white'>
                 Oops! No Data
               </h2>
               <p className='font-light text-gray-500 sm:text-xl text-[20px] dark:text-gray-400'>

@@ -73,7 +73,7 @@ const CarouselBar = () => {
   };
 
   return (
-    <div className='relative h-[820px]'>
+    <div className='relative h-[780px] md:h-[820px]'>
       <div className='relative w-full h-full'>
         {carouselTransitions((style, index) => (
           <animated.img
@@ -88,7 +88,7 @@ const CarouselBar = () => {
           />
         ))}
       </div>
-      <div className='bg-test bg-opacity-65 w-100% h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
+      <div className='bg-test bg-opacity-65 w-100% h-[780px] md:h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
       <div
         onClick={handlePrevious}
         className='z-20 absolute left-[20%] right-[50%] bottom-10 lg:left-7 lg:top-[35%] cursor-pointer'
@@ -108,10 +108,10 @@ const CarouselBar = () => {
       </div>
       <div className='container z-20 mx-auto'>
         <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 z-20 rounded'>
-          <p className='text-white font-bold text-[40px] uppercase md:text-[56px]'>
+          <p className='text-white font-bold text-[42px] uppercase md:text-[56px]'>
             Welcome To Negja
           </p>
-          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] text-lg sm:text-xl md:text-[18px]'>
+          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] sm:text-xl text-base md:text-[18px]'>
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>

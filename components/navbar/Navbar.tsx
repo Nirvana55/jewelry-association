@@ -67,7 +67,7 @@ const NavHeader = () => {
             htmlFor='my-drawer-2'
             className='drawer-button bg-white border-none lg:hidden'
           >
-            <CgMenuRight className='ml-auto text-lg' />
+            <CgMenuRight className='ml-auto text-lg text-black' />
           </label>
         </div>
 
@@ -76,7 +76,7 @@ const NavHeader = () => {
             {navList.map((item, index) => (
               <Link
                 key={index}
-                className='text-navbar text-[16px] tracking-normal'
+                className='text-navbar text-[16px] tracking-tight md:tracking-normal'
                 href={item.link}
               >
                 {item.name}

@@ -7,17 +7,17 @@ import "./styles.css";
 const MessageSection = () => {
   return (
     <section className='bg-white'>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[112px]'>
+      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px]'>
         <div className='grid xs:grid-cols-1 lg:grid-cols-2 md:text-center lg:text-left gap-10 items-center'>
           <div className='lg:self-center lg:w-[90%] xl:w-[80%]'>
-            <h2 className='text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
+            <h2 className='text-[36px] md:text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
               Message From President
             </h2>
             <div className='py-[24px]'>
-              <Blockquote className='sm:text-xl lg:text-[20px] dark:text-gray-400'>
+              <Blockquote className='sm:text-lg md:text-[20px] dark:text-gray-400'>
                 &quot; Namaste All Respected Viewers &quot; <br />
               </Blockquote>
-              <p className='mt-6 flow-root text-[18px] font-normal text-gray-700  dark:text-gray-400'>
+              <p className='mt-6 flow-root text-[16px] md:text-[18px] font-normal text-gray-700  dark:text-gray-400'>
                 I feel much honored to welcome you in this website as the
                 president of Nepal Gem and Jewellery Association. I believe this
                 website can provide various information about our association
@@ -41,7 +41,7 @@ const MessageSection = () => {
               </svg>
             </Button>
           </div>
-          <div className='relative md:w-[500px] lg:w-[450px] xl:w-[616px] h-[640px]'>
+          <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[616px] md:h-[640px]'>
             <Image fill src='/1.jpeg' alt={`images`} />
           </div>
         </div>
