@@ -46,7 +46,7 @@ const NewsLetter = () => {
               </Button>
             </div>
             <div className='mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300'>
-              We care about the protection of your data.{" "}
+              We care about the protection of your data.
               <Link
                 href='#'
                 className='font-medium text-primary-600 dark:text-primary-500 hover:underline'

@@ -26,9 +26,9 @@ const Event = async () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-md'>
-        <h1 className='text-[42px] md:text-[52px] font-extrabold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
+        <h2 className='text-[42px] md:text-[52px] font-extrabold tracking-tight text-gray-900 dark:text-white'>
           Stay updated with insights
-        </h1>
+        </h2>
         <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[16px] pt-[20px] md:text-[18px] md:pt-[24px]'>
           Words that Sparkle, Ideas that Shine: Each article is a gem.
         </p>
@@ -37,8 +37,8 @@ const Event = async () => {
         <div className='relative w-full h-[221px] md:w-[656px] md:h-[500px] shadow border shrink md:shrink-0 my-4 md:my-0'>
           <Image fill src='/1.jpeg' alt={`images`} />
         </div>
-        <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start gap-12 md:gap-36 lg:gap-12 inline-flex'>
-          <div className='self-stretch h-[161px] flex-col justify-start items-start gap-4 flex'>
+        <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start inline-flex'>
+          <div className='self-stretch h-[161px] flex-col justify-start items-start flex'>
             <div className='justify-start items-center gap-4 inline-flex'>
               <div className='py-1 bg-zinc-100 justify-start items-start flex'>
                 <div className='text-primary-danger bg-blue-200 text-[14px] p-2 rounded font-semibold leading-[21px]'>
@@ -49,7 +49,7 @@ const Event = async () => {
                 5 min read
               </div>
             </div>
-            <div className='self-stretch h-[116px] flex-col justify-start items-start gap-2 flex'>
+            <div className='self-stretch h-[116px] flex-col justify-start items-start pt-[16px] flex'>
               <div className='self-stretch text-black text-[24px] md:text-[32px] font-bold'>
                 The Importance of Gold and Silver Investments
               </div>
@@ -58,7 +58,7 @@ const Event = async () => {
               </div>
             </div>
           </div>
-          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[24px] text-[16px] text-primary-danger cursor-pointer'>
+          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[20px] text-[16px] text-primary-danger cursor-pointer'>
             Read more <MdKeyboardArrowRight />
           </div>
         </div>
@@ -111,7 +111,7 @@ const Event = async () => {
                           <h5 className='text-[20px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                             {item.title}
                           </h5>
-                          <p className='font-normal py-4 text-gray-700 dark:text-gray-400 '>
+                          <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 '>
                             {item.cardInfoText}
                             asdas
                           </p>
