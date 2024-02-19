@@ -1,6 +1,7 @@
 import { Button, TextInput } from "flowbite-react";
 import Link from "next/link";
 import React from "react";
+import { HiMail } from "react-icons/hi";
 
 const SubscribeBlog = () => {
   return (
@@ -12,17 +13,19 @@ const SubscribeBlog = () => {
         <p>Receive the latest news and updates</p>
       </div>
       <div>
-        <form className='flex flex-col sm:flex-row items-center w-full max-w-md gap-4 mb-4'>
-          <TextInput
-            id='email'
-            type='email'
-            placeholder='Enter your email'
-            required
-            className='flex-1 rounded-md text-black'
-          />
+        <form className='flex flex-col sm:flex-row items-center w-full max-w-lg gap-4 mb-4'>
+          <div className='relative w-full'>
+            <TextInput
+              id='email'
+              type='email'
+              icon={HiMail}
+              placeholder='Enter your email'
+              required
+            />
+          </div>
           <Button
             type='submit'
-            className='border-2 border-gray-300 rounded-md text-black bg-white'
+            className='max-sm:w-full border-2 border-gray-300 rounded-md text-white bg-primary-danger'
           >
             Join
           </Button>
