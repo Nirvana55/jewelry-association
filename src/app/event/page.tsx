@@ -8,10 +8,16 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
 import NoData from "../../../components/NoData/NoData";
 
-const Event = async () => {
-  const blogCardListData = await sanityClient.fetch<Events[]>(
+async function getAllPosts() {
+  const res = await sanityClient.fetch<Events[]>(
     `*[_type=="blog"]{title,cardInfoText,readTime,author,_id,mainImage,author,slug}`
   );
+
+  return res;
+}
+
+const Event = async () => {
+  const blogCardListData = await getAllPosts();
   const builder = imageUrlBuilder(sanityClient);
 
   const dateFormat = (date: string) => {
