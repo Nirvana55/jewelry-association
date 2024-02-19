@@ -4,7 +4,7 @@ import GraphSection from "../../components/graph/Graph";
 import NewsSection from "../../components/NewsSection/NewsSection";
 import MessageSection from "../../components/MessageSection/MessageSection";
 import TeamsSection from "../../components/team/TeamsSection";
-import NewsLetter from "../../components/NewsLetter/NewsLetter";
+import NewsLetter from "../../components/HomeNewsSubscribe/NewsLetter";
 
 export default function Home() {
   return (

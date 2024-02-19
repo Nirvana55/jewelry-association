@@ -5,6 +5,7 @@ import React from "react";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import JoinAssociation from "../../../../components/JoinAssociation";
 import SubscribeBlog from "../../../../components/subscribeBlog";
+import NoData from "../../../../components/NoData/NoData";
 
 const navIconList = [
   { icon: <BsFacebook />, link: "#" },
@@ -13,6 +14,10 @@ const navIconList = [
 ];
 
 const EventDetails = () => {
+  const blogData = `*[_type == "post" && slug.current == $slug][0]{
+  content,author
+}`;
+
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-xl'>
@@ -94,14 +99,7 @@ const EventDetails = () => {
           ))} */}
         </div>
       ) : (
-        <div className='mx-auto max-w-screen-sm lg:my-8 py-28 text-center'>
-          <h2 className='text-[30px] font-bold tracking-tight text-gray-900 dark:text-white'>
-            Oops! No Data
-          </h2>
-          <p className='font-light text-gray-500 sm:text-xl text-[20px] dark:text-gray-400'>
-            Coming soon
-          </p>
-        </div>
+        <NoData />
       )}
       <JoinAssociation />
       <SubscribeBlog />

@@ -1,11 +1,12 @@
 import React from "react";
 import { sanityClient } from "../../../utils/sanity/client";
-import { Avatar, Button, Card } from "flowbite-react";
+import { Card } from "flowbite-react";
 import Image from "next/image";
 import { Events } from "../../../types/events";
 import imageUrlBuilder from "@sanity/image-url";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
+import NoData from "../../../components/NoData/NoData";
 
 const Event = async () => {
   const blogCardListData = await sanityClient.fetch<Events[]>(
@@ -139,14 +140,7 @@ const Event = async () => {
               ))}
             </div>
           ) : (
-            <div className='mx-auto max-w-screen-sm lg:my-8 py-28 text-center'>
-              <h2 className='text-[32px]  font-bold tracking-tight text-gray-900 dark:text-white'>
-                Oops! No Data
-              </h2>
-              <p className='font-light text-gray-500 sm:text-xl text-[20px] dark:text-gray-400'>
-                Coming soon
-              </p>
-            </div>
+            <NoData />
           )}
         </div>
       </div>
