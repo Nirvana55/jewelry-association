@@ -79,7 +79,7 @@ const Event = async () => {
             Stay informed with our latest articles.
           </p>
         </div>
-        <div className='py-[64px]'>
+        <div className='pt-[42px] md:pt-[80px]'>
           {blogCardListData.length > 0 ? (
             <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
               {blogCardListData.map((item) => (
@@ -115,7 +115,7 @@ const Event = async () => {
                           </div>
                         </div>
                         <div className='pt-[16px]'>
-                          <h5 className='text-[20px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                          <h5 className='text-[20px] md:text-[24px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                             {item.title}
                           </h5>
                           <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 '>

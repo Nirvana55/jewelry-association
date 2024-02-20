@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Carousel } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { useTransition, animated } from "@react-spring/web";
 import "./styles.css";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import {
   IoIosArrowBack,
 } from "react-icons/io";
 
-const imageSlides = ["/1.jpeg", "/2.jpeg", "/3.jpeg"];
+const imageSlides = ["/sad3.jpeg", "/sad.jpg", "/sad2.jpeg"];
 
 const CarouselBar = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -28,7 +28,7 @@ const CarouselBar = () => {
     leave: {
       opacity: 0,
     },
-    config: { duration: 3000 },
+    config: { duration: 4000 },
     onRest: (_a, _b, index) => {
       if (carouselIndex === index) {
         setCarouselIndex((prev) => (prev + 1) % imageSlides.length);
@@ -76,16 +76,23 @@ const CarouselBar = () => {
     <div className='relative h-[780px] md:h-[820px]'>
       <div className='relative w-full h-full'>
         {carouselTransitions((style, index) => (
-          <animated.img
-            className='h-full'
+          <animated.div
             style={{
               ...style,
+              position: "relative",
               width: "100%",
+              height: "100%",
               overflow: "hidden",
             }}
-            src={imageSlides[index]}
-            alt='photos-football'
-          />
+          >
+            <Image
+              src={imageSlides[index]}
+              alt='HD photo'
+              fill
+              quality={100}
+              className='object-cover'
+            />
+          </animated.div>
         ))}
       </div>
       <div className='bg-test bg-opacity-65 w-100% h-[780px] md:h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
