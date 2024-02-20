@@ -16,7 +16,7 @@ const NewsLetter = () => {
             exclusive discounts feel free to sign up with your email.
           </p>
         </div>
-        <div className='pt-[80px]'>
+        <div className='pt-[42px] md:pt-[80px]'>
           <form action='#'>
             <div className='items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex sm:space-y-0'>
               <div className='relative w-full'>
