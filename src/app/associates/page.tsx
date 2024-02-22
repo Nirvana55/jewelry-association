@@ -8,6 +8,7 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import TablePagination from "../../../components/tablePagination/Pagination";
 
 const Associates = () => {
   return (
@@ -23,81 +24,85 @@ const Associates = () => {
         </p>
       </div>
       <div className='py-[48px] md:py-[80px]'>
-        {["a"].length > 0 ? (
-          <div className='overflow-x-auto'>
-            <Table>
-              <TableHead>
-                <TableHeadCell className='bg-navbar text-white'>
-                  Name
-                </TableHeadCell>
-                <TableHeadCell className='bg-navbar text-white'>
-                  Address
-                </TableHeadCell>
-                <TableHeadCell className='bg-navbar text-white'>
-                  Phone Number
-                </TableHeadCell>
-                <TableHeadCell className='bg-navbar text-white'>
-                  Store Name
-                </TableHeadCell>
-                <TableHeadCell className='bg-navbar text-white'>
-                  Action
-                </TableHeadCell>
-              </TableHead>
-              <TableBody className='divide-y'>
-                <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                  <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                    {'Bruno Lama"'}
-                  </TableCell>
-                  <TableCell>New Road</TableCell>
-                  <TableCell>Kathmandu</TableCell>
-                  <TableCell>Gold and silver</TableCell>
-                  <TableCell>
-                    <a
-                      href='#'
-                      className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                    >
-                      Edit
-                    </a>
-                  </TableCell>
-                </TableRow>
-                <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                  <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                    {'Bruno Lama2"'}
-                  </TableCell>
-                  <TableCell>New Road</TableCell>
-                  <TableCell>Kathmandu</TableCell>
-                  <TableCell>Gold and silver</TableCell>
-                  <TableCell>
-                    <a
-                      href='#'
-                      className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                    >
-                      Edit
-                    </a>
-                  </TableCell>
-                </TableRow>
-                <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                  <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                    {'Bruno Lama3"'}
-                  </TableCell>
-                  <TableCell>New Road</TableCell>
-                  <TableCell>Kathmandu</TableCell>
-                  <TableCell>Gold and silver</TableCell>
-                  <TableCell>
-                    <a
-                      href='#'
-                      className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                    >
-                      Edit
-                    </a>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-        ) : (
-          <NoData />
-        )}
+        <div></div>
+        <div>
+          {["a"].length > 0 ? (
+            <div className='overflow-x-auto'>
+              <Table>
+                <TableHead>
+                  <TableHeadCell className='bg-navbar text-white'>
+                    Name
+                  </TableHeadCell>
+                  <TableHeadCell className='bg-navbar text-white'>
+                    Address
+                  </TableHeadCell>
+                  <TableHeadCell className='bg-navbar text-white'>
+                    Phone Number
+                  </TableHeadCell>
+                  <TableHeadCell className='bg-navbar text-white'>
+                    Store Name
+                  </TableHeadCell>
+                  <TableHeadCell className='bg-navbar text-white'>
+                    Action
+                  </TableHeadCell>
+                </TableHead>
+                <TableBody className='divide-y'>
+                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                      {'Bruno Lama"'}
+                    </TableCell>
+                    <TableCell>New Road</TableCell>
+                    <TableCell>Kathmandu</TableCell>
+                    <TableCell>Gold and silver</TableCell>
+                    <TableCell>
+                      <a
+                        href='#'
+                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
+                      >
+                        Edit
+                      </a>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                      {'Bruno Lama2"'}
+                    </TableCell>
+                    <TableCell>New Road</TableCell>
+                    <TableCell>Kathmandu</TableCell>
+                    <TableCell>Gold and silver</TableCell>
+                    <TableCell>
+                      <a
+                        href='#'
+                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
+                      >
+                        Edit
+                      </a>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                      {'Bruno Lama3"'}
+                    </TableCell>
+                    <TableCell>New Road</TableCell>
+                    <TableCell>Kathmandu</TableCell>
+                    <TableCell>Gold and silver</TableCell>
+                    <TableCell>
+                      <a
+                        href='#'
+                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
+                      >
+                        Edit
+                      </a>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              {/* <TablePagination /> */}
+            </div>
+          ) : (
+            <NoData />
+          )}
+        </div>
       </div>
     </div>
   );
