@@ -28,27 +28,25 @@ const Gallery = () => {
           <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
             {data.map((item) => (
               <Link href={`/gallery/${item.id}`} key={item.id}>
-                <div>
-                  <Card
-                    renderImage={() => (
-                      <Image
-                        width={416}
-                        height={300}
-                        src={item.albumImage}
-                        alt='images'
-                      />
-                    )}
-                  >
-                    <div>
-                      <h5 className='text-[20px] md:text-[24px]  font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
-                        {item.albumTitle}
-                      </h5>
-                      <p className='text-[16px] md:text-[18px] pt-[8px]  font-light text-gray-500 sm:text-xl dark:text-gray-400'>
-                        Words that Sparkle
-                      </p>
-                    </div>
-                  </Card>
-                </div>
+                <Card
+                  renderImage={() => (
+                    <Image
+                      width={416}
+                      height={300}
+                      src={item.albumImage}
+                      alt='images'
+                    />
+                  )}
+                >
+                  <div>
+                    <h5 className='text-[20px] md:text-[24px]  font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                      {item.albumTitle}
+                    </h5>
+                    <p className='text-[16px] md:text-[18px] pt-[8px]  font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+                      Words that Sparkle
+                    </p>
+                  </div>
+                </Card>
               </Link>
             ))}
           </div>
