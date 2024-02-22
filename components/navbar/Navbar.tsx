@@ -10,6 +10,7 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
+import { IoMdArrowDropup } from "react-icons/io";
 
 import "./styles.css";
 
@@ -19,12 +20,21 @@ const navList = [
   { name: "Executive Board", link: "/executive-board" },
   { name: "Event", link: "/event" },
   { name: "Photo Gallery", link: "/gallery" },
+  { name: "Graph", link: "/graph" },
 ];
 
 const navIconList = [
   { icon: <BsFacebook />, link: "#" },
   { icon: <BsInstagram />, link: "#" },
   { icon: <BsTwitter />, link: "#" },
+];
+
+const goldAndSilverPrice = [
+  {
+    name: "Gold",
+    price: 100000,
+  },
+  { name: "Silver", price: 50000 },
 ];
 
 const NavHeader = () => {
@@ -51,7 +61,7 @@ const NavHeader = () => {
           </div>
         </div>
       </div>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-5 items-center max-md:drawer'>
+      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-3 items-center max-md:drawer'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
@@ -91,7 +101,7 @@ const NavHeader = () => {
         </div>
 
         {/* drawer */}
-        <div className='drawer-side lg:hidden'>
+        <div className='drawer-side z-30 lg:hidden'>
           <label
             htmlFor='my-drawer-2'
             aria-label='close sidebar'
@@ -115,6 +125,25 @@ const NavHeader = () => {
           </ul>
         </div>
       </div>
+      {/* <hr className='border-1 dark:bg-gray-900' /> */}
+      {/* <div className='bg-test'> */}
+      {/* <div className='container flex mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-11 py-2 items-center'>
+        {goldAndSilverPrice.map((item) => (
+          <div
+            key={item.name}
+            className='flex flex-row items-center max-md:mr-2 cursor-pointer'
+          >
+            <div>
+              <p className='font-semibold text-[14px]'>{item.name}</p>{" "}
+            </div>
+            <div>
+              <IoMdArrowDropup className='ml-1 text-green-500 text-xl' />
+            </div>
+            <p className='text-[14px]'>{item.price}</p>
+          </div>
+        ))}
+      </div> */}
+      {/* </div> */}
     </nav>
   );
 };
