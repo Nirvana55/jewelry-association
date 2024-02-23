@@ -8,6 +8,7 @@ const data = [
   { id: 1, albumImage: "/sad.jpg", albumTitle: "This is all about test" },
   { id: 2, albumImage: "/sad2.jpeg", albumTitle: "This is all about test2" },
   { id: 3, albumImage: "/sad.jpg", albumTitle: "This is all about test3" },
+  { id: 4, albumImage: "/sad.jpg", albumTitle: "This is all about test3" },
 ];
 
 const Gallery = () => {

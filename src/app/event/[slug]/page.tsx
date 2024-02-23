@@ -8,6 +8,7 @@ import SubscribeBlog from "../../../../components/subscribeBlog";
 import NoData from "../../../../components/NoData/NoData";
 import { sanityClient } from "../../../../utils/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { PortableText } from "@portabletext/react";
 
 const navIconList = [
   { icon: <BsFacebook />, link: "#" },
@@ -88,43 +89,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
           </div>
 
           <div className='text-[18px] text-black'>
-            {/* {blogCardListData[0].content[0].children[0].text} */}
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Asperiores, quisquam non nam consequatur, ut ducimus nostrum magni,
-            sit reiciendis possimus deserunt cupiditate molestias? Dolorem modi
-            dolore a debitis laudantium ut. Eum totam quo neque, unde doloribus
-            et cum repellat vel dignissimos nisi quas tenetur nostrum quam nemo
-            eaque dolorum magnam sapiente repudiandae, recusandae maiores
-            ratione possimus? Numquam culpa quibusdam nobis? Iusto omnis ullam
-            molestias fugiat, consectetur nesciunt id commodi aperiam
-            repudiandae error sint neque officia adipisci earum provident
-            sapiente? Soluta amet veritatis sed, vel dolore maxime veniam eum
-            voluptatem quis. Sequi non sint iure omnis placeat ex delectus
-            veniam laboriosam illo nulla odio, expedita officia voluptates
-            soluta quidem atque. Tenetur deserunt magni maiores nam odit quam
-            corporis vel ipsam sunt! Eos placeat debitis, dolores veritatis
-            architecto officiis magni quibusdam sit sunt temporibus adipisci
-            cumque vitae odit quo ut fugit explicabo cupiditate? Praesentium,
-            excepturi voluptates? A ipsum eligendi laborum molestias voluptas?
-            Accusamus, quos. Quae omnis voluptatem quibusdam doloremque
-            obcaecati, consectetur quisquam voluptatibus laborum asperiores,
-            ducimus in mollitia esse. Deleniti suscipit provident ducimus, aut
-            reprehenderit obcaecati consectetur sit, rerum, aspernatur veritatis
-            amet! Enim quae, sapiente necessitatibus voluptatem id pariatur
-            blanditiis dicta perspiciatis nisi unde at sequi aperiam nulla
-            obcaecati ea tempora cumque rem optio labore, nam accusamus dolor
-            possimus. Nisi, impedit quam. <br /> <br />
-            Exercitationem totam ipsa possimus facere repellendus dolor commodi
-            eveniet nisi voluptatibus voluptatum! Amet debitis distinctio
-            obcaecati quasi similique sunt reprehenderit quas quisquam
-            recusandae laborum, animi quia, ex, dolorem aspernatur blanditiis.
-            Explicabo at totam reprehenderit perferendis ea autem natus
-            possimus, unde nobis quam est deserunt veritatis nulla vel commodi
-            laboriosam ducimus perspiciatis corporis ipsa dignissimos dolorum
-            corrupti earum fugit officia! Nam. In aperiam impedit voluptatibus
-            voluptatem magnam. Odio, sit? Qui cupiditate ipsa laudantium maiores
-            optio quis, ut, animi eum laboriosam doloribus soluta veritatis cum
-            repudiandae? Debitis tenetur ex itaque aperiam incidunt.
+            <PortableText value={blogCardListData[0].content} />
           </div>
         </>
       ) : (
