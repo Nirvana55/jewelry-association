@@ -13,6 +13,7 @@ import { CgMenuRight } from "react-icons/cg";
 import { IoMdArrowDropup } from "react-icons/io";
 
 import "./styles.css";
+import { useRouter } from "next/navigation";
 
 const navList = [
   { name: "Home", link: "/" },
@@ -38,6 +39,8 @@ const goldAndSilverPrice = [
 ];
 
 const NavHeader = () => {
+  const router = useRouter();
+
   return (
     <nav className='sticky top-0 z-50 bg-background-primary shadow-md'>
       <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test'>
@@ -94,7 +97,10 @@ const NavHeader = () => {
             ))}
           </div>
           <div className='hidden xl:block buttonText ml-10'>
-            <Button className='text-white bg-primary-danger font-semibold'>
+            <Button
+              onClick={() => router.push(`/contact`)}
+              className='text-white bg-primary-danger font-semibold'
+            >
               Become A Member
             </Button>
           </div>
