@@ -29,7 +29,7 @@ const data = [
 const ExecutiveBoard = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
-      <div className='flex justify-between'>
+      <div className='flex flex-col lg:flex-row lg:justify-between'>
         <div className='max-w-screen-sm'>
           <h2 className='text-[42px] md:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white'>
             Our Board Members
@@ -40,18 +40,14 @@ const ExecutiveBoard = () => {
             of jewelry.
           </p>
         </div>
-        <div className='max-w-xs flex-1 self-end'>
+        <div className='max-w-lg sm:max-w-xs flex-1 max-lg:mt-8 lg:self-end'>
           {/* <div className='mb-2 block'>
             <Label htmlFor='countries' value='Select your country' />
           </div> */}
-          <Select id='countries' required>
-            <option>United States</option>
-            <option>Canada</option>
-            <option>France</option>
-            <option>Germany</option>
-            <option>Germany</option>
-            <option>Germany</option>
-            <option>Germany</option>
+          <Select id='dates' required>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
           </Select>
         </div>
       </div>
