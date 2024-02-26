@@ -42,7 +42,7 @@ const MessageSection = () => {
             </Button>
           </div>
           <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[550px] md:h-[640px]'>
-            <Image fill src='/asd.jpg' alt={`images`} />
+            <Image fill src='/person.jpeg' alt={`images`} />
           </div>
         </div>
       </div>

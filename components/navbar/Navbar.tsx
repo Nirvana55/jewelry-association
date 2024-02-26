@@ -10,7 +10,7 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
-import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
+import { BsGraphDown, BsGraphUp } from "react-icons/bs";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
@@ -66,9 +66,9 @@ const NavHeader = () => {
                 </div>
                 <div>
                   {item.name === "Silver" ? (
-                    <IoMdArrowDropdown className='ml-1 text-primary-danger text-xl' />
+                    <BsGraphDown className='mx-2 text-primary-danger text-lg' />
                   ) : (
-                    <IoMdArrowDropup className='ml-1 text-teal-500 text-xl' />
+                    <BsGraphUp className='mx-2 text-teal-500 text-lg' />
                   )}
                 </div>
                 <p
@@ -84,14 +84,18 @@ const NavHeader = () => {
             ))}
 
             {navIconList.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <Link
+                key={index}
+                className={index === 2 ? "mr-1" : ""}
+                href={item.link}
+              >
                 {item.icon}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-3 items-center max-md:drawer'>
+      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
