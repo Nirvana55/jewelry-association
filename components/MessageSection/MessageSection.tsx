@@ -25,7 +25,7 @@ const MessageSection = () => {
               </p>
             </div>
 
-            <Button className='max-lg:hidden bg-primary-danger mt-5'>
+            <Button className='max-lg:hidden bg-primary-btn-color mt-5'>
               Read more
               <svg
                 className='-mr-1 ml-2 h-4 w-4'
@@ -41,8 +41,8 @@ const MessageSection = () => {
               </svg>
             </Button>
           </div>
-          <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[616px] md:h-[640px]'>
-            <Image fill src='/1.jpeg' alt={`images`} />
+          <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[550px] md:h-[640px]'>
+            <Image fill src='/person.jpeg' alt={`images`} />
           </div>
         </div>
       </div>

@@ -10,14 +10,22 @@ import {
 } from "flowbite-react";
 import TablePagination from "../../../components/tablePagination/Pagination";
 
+const tableHeaders = [
+  "Name",
+  "Address",
+  "Phone Number",
+  "Store Name",
+  "Action",
+];
+
 const Associates = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-sm'>
-        <h2 className='text-[42px] md:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Our Associates
         </h2>
-        <p className='font-light text-[16px] md:text-[18px] text-gray-500 dark:text-gray-400'>
+        <p className='font-light text-base md:text-lg text-gray-500 dark:text-gray-400'>
           Words that Sparkle, Ideas that Shine: Each article is a gem,
           meticulously crafted to illuminate, educate, and inspire the world of
           jewelry.
@@ -30,21 +38,14 @@ const Associates = () => {
             <div className='overflow-x-auto'>
               <Table>
                 <TableHead>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Name
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Address
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Phone Number
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Store Name
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Action
-                  </TableHeadCell>
+                  {tableHeaders.map((item, index) => (
+                    <TableHeadCell
+                      key={index}
+                      className='bg-primary-text text-white'
+                    >
+                      {item}
+                    </TableHeadCell>
+                  ))}
                 </TableHead>
                 <TableBody className='divide-y'>
                   <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>

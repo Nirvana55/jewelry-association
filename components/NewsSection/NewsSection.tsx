@@ -66,7 +66,7 @@ const NewsSection = () => {
                 <p className='font-[16px] text-gray-700 dark:text-gray-400'>
                   {item.body}
                 </p>
-                <Button className='text-primary-danger self-end'>
+                <Button className='text-primary-btn-color self-end'>
                   {item.buttonText}
                   <FaArrowRightLong className='ml-2' />
                 </Button>

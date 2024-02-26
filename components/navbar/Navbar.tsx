@@ -10,7 +10,7 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
-import { IoMdArrowDropup } from "react-icons/io";
+import { BsGraphDown, BsGraphUp } from "react-icons/bs";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
@@ -42,9 +42,9 @@ const NavHeader = () => {
   const router = useRouter();
 
   return (
-    <nav className='sticky top-0 z-50 bg-background-primary shadow-md'>
+    <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
       <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test'>
-        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-2 flex-1 py-1'>
+        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2'>
           <div className='flex flex-row gap-8 text-white'>
             <div className='flex items-center gap-3'>
               <BsMailbox />
@@ -56,15 +56,46 @@ const NavHeader = () => {
             </div>
           </div>
           <div className='flex flex-row gap-8 items-center text-white'>
+            {goldAndSilverPrice.map((item) => (
+              <div
+                key={item.name}
+                className='flex flex-row items-center max-md:mr-2 cursor-pointer'
+              >
+                <div>
+                  <p className='font-semibold text-base'>{item.name}</p>
+                </div>
+                <div>
+                  {item.name === "Silver" ? (
+                    <BsGraphDown className='mx-2 text-primary-danger text-lg' />
+                  ) : (
+                    <BsGraphUp className='mx-2 text-teal-500 text-lg' />
+                  )}
+                </div>
+                <p
+                  className={`text-base  ${
+                    item.name === "Silver"
+                      ? "text-primary-danger"
+                      : "text-teal-500"
+                  }`}
+                >
+                  {item.price}
+                </p>
+              </div>
+            ))}
+
             {navIconList.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <Link
+                key={index}
+                className={index === 2 ? "mr-1" : ""}
+                href={item.link}
+              >
                 {item.icon}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-auto flex justify-between max-lg:px-2 md:gap-32 py-3 items-center max-md:drawer'>
+      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
@@ -89,7 +120,7 @@ const NavHeader = () => {
             {navList.map((item, index) => (
               <Link
                 key={index}
-                className='text-navbar text-[16px] tracking-tight md:tracking-normal'
+                className='text-primary-text text-base tracking-tight md:tracking-normal'
                 href={item.link}
               >
                 {item.name}
@@ -99,7 +130,7 @@ const NavHeader = () => {
           <div className='hidden xl:block buttonText ml-10'>
             <Button
               onClick={() => router.push(`/contact`)}
-              className='text-white bg-primary-danger font-semibold'
+              className='text-white bg-primary-btn-color font-semibold'
             >
               Become A Member
             </Button>
@@ -131,25 +162,6 @@ const NavHeader = () => {
           </ul>
         </div>
       </div>
-      {/* <hr className='border-1 dark:bg-gray-900' /> */}
-      {/* <div className='bg-test'> */}
-      {/* <div className='container flex mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-11 py-2 items-center'>
-        {goldAndSilverPrice.map((item) => (
-          <div
-            key={item.name}
-            className='flex flex-row items-center max-md:mr-2 cursor-pointer'
-          >
-            <div>
-              <p className='font-semibold text-[14px]'>{item.name}</p>{" "}
-            </div>
-            <div>
-              <IoMdArrowDropup className='ml-1 text-green-500 text-xl' />
-            </div>
-            <p className='text-[14px]'>{item.price}</p>
-          </div>
-        ))}
-      </div> */}
-      {/* </div> */}
     </nav>
   );
 };
