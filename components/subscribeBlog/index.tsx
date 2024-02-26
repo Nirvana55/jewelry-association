@@ -25,7 +25,7 @@ const SubscribeBlog = () => {
           </div>
           <Button
             type='submit'
-            className='max-sm:w-full border-2 border-gray-300 rounded-md text-white bg-primary-danger'
+            className='max-sm:w-full rounded-md text-white bg-primary-btn-color'
           >
             Join
           </Button>

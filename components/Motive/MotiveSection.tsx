@@ -3,7 +3,7 @@ import React from "react";
 
 const MotiveSection = () => {
   return (
-    <section className='bg-background-primary'>
+    <section className='bg-background-body'>
       <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>

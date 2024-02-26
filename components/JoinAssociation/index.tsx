@@ -14,7 +14,7 @@ const JoinAssociation = () => {
           Become a member of our association and gain access to exclusive
           benefits and information about gold and silver.
         </p>
-        <Button className='max-sm:w-full bg-primary-danger hover:bg-blue-700 text-white font-bold px-4 rounded'>
+        <Button className='max-sm:w-full bg-primary-btn-color hover:bg-blue-700 text-white font-bold px-4 rounded'>
           Join
         </Button>
       </div>

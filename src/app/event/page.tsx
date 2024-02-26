@@ -48,11 +48,11 @@ const Event = async () => {
           <div className='self-stretch h-[161px] flex-col justify-start items-start flex'>
             <div className='justify-start items-center gap-4 inline-flex'>
               <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                <div className='text-primary-danger bg-blue-200 text-[14px] p-2 rounded font-semibold leading-[21px]'>
+                <div className='text-primary-btn-color bg-blue-200 text-[14px] p-2 rounded font-semibold leading-[21px]'>
                   Category
                 </div>
               </div>
-              <div className='text-black text-[14px] text-sm font-semibold leading-[21px]'>
+              <div className='text-black text-sm font-semibold leading-[21px]'>
                 5 min read
               </div>
             </div>
@@ -65,17 +65,17 @@ const Event = async () => {
               </div>
             </div>
           </div>
-          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[20px] text-[16px] text-primary-danger cursor-pointer'>
+          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[20px] text-base text-primary-btn-color cursor-pointer'>
             Read more <MdKeyboardArrowRight />
           </div>
         </div>
       </div>
       <div>
         <div className='max-w-screen-sm'>
-          <h2 className='text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
+          <h2 className='text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Latest
           </h2>
-          <p className='font-light text-gray-500 sm:text-xl text-[16px] pt-[24px] dark:text-gray-400'>
+          <p className='font-light text-gray-500 text-base sm:text-xl  pt-[24px] dark:text-gray-400'>
             Stay informed with our latest articles.
           </p>
         </div>
@@ -106,7 +106,7 @@ const Event = async () => {
                       <div className='flex flex-col gap-2'>
                         <div className='justify-start items-center gap-4 inline-flex'>
                           <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                            <div className='text-primary-danger bg-blue-100 p-2 rounded text-[14px] font-semibold leading-[21px]'>
+                            <div className='text-primary-btn-color bg-blue-100 p-2 rounded text-sm font-semibold leading-[21px]'>
                               Category
                             </div>
                           </div>
@@ -115,12 +115,11 @@ const Event = async () => {
                           </div>
                         </div>
                         <div className='pt-[16px]'>
-                          <h5 className='text-[20px] md:text-[24px] font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                          <h5 className='text-xl md:text-2xl font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                             {item.title}
                           </h5>
                           <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 '>
                             {item.cardInfoText}
-                            asdas
                           </p>
                         </div>
 
@@ -135,7 +134,7 @@ const Event = async () => {
                               {item.author}
                             </p>
                           </div> */}
-                          <div className='w-[109px] justify-center items-center gap-2 inline-flex pt-[24px] text-primary-danger cursor-pointer'>
+                          <div className='w-[109px] justify-center items-center gap-2 inline-flex pt-[24px] text-primary-btn-color cursor-pointer'>
                             Read more <MdKeyboardArrowRight />
                           </div>
                         </div>

@@ -10,6 +10,14 @@ import {
 } from "flowbite-react";
 import TablePagination from "../../../components/tablePagination/Pagination";
 
+const tableHeaders = [
+  "Name",
+  "Address",
+  "Phone Number",
+  "Store Name",
+  "Action",
+];
+
 const Associates = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
@@ -30,21 +38,14 @@ const Associates = () => {
             <div className='overflow-x-auto'>
               <Table>
                 <TableHead>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Name
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Address
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Phone Number
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Store Name
-                  </TableHeadCell>
-                  <TableHeadCell className='bg-navbar text-white'>
-                    Action
-                  </TableHeadCell>
+                  {tableHeaders.map((item, index) => (
+                    <TableHeadCell
+                      key={index}
+                      className='bg-primary-text text-white'
+                    >
+                      {item}
+                    </TableHeadCell>
+                  ))}
                 </TableHead>
                 <TableBody className='divide-y'>
                   <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>

@@ -62,7 +62,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
             {navIconList.map((item, index) => (
               <Link
                 key={index}
-                className='bg-blue-400 rounded-3xl text-center p-2 md:p-3'
+                className='bg-primary-btn-color rounded-3xl text-white text-center p-2 md:p-3'
                 href={item.link}
               >
                 {item.icon}

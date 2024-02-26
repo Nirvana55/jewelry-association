@@ -42,9 +42,9 @@ const NavHeader = () => {
   const router = useRouter();
 
   return (
-    <nav className='sticky top-0 z-50 bg-background-primary shadow-md'>
+    <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
       <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test'>
-        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-2 flex-1 py-1'>
+        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2'>
           <div className='flex flex-row gap-8 text-white'>
             <div className='flex items-center gap-3'>
               <BsMailbox />
@@ -62,17 +62,17 @@ const NavHeader = () => {
                 className='flex flex-row items-center max-md:mr-2 cursor-pointer'
               >
                 <div>
-                  <p className='font-semibold text-[14px]'>{item.name}</p>
+                  <p className='font-semibold text-base'>{item.name}</p>
                 </div>
                 <div>
                   {item.name === "Silver" ? (
-                    <IoMdArrowDropdown className='ml-1 text-red-500 text-xl' />
+                    <IoMdArrowDropdown className='ml-1 text-primary-danger text-xl' />
                   ) : (
-                    <IoMdArrowDropup className='ml-1 text-primary-btn-color text-xl' />
+                    <IoMdArrowDropup className='ml-1 text-teal-500 text-xl' />
                   )}
                 </div>
                 <p
-                  className={`text-[14px]  ${
+                  className={`text-base  ${
                     item.name === "Silver"
                       ? "text-primary-danger"
                       : "text-teal-500"
@@ -82,6 +82,7 @@ const NavHeader = () => {
                 </p>
               </div>
             ))}
+
             {navIconList.map((item, index) => (
               <Link key={index} href={item.link}>
                 {item.icon}
@@ -115,7 +116,7 @@ const NavHeader = () => {
             {navList.map((item, index) => (
               <Link
                 key={index}
-                className='text-navbar text-[16px] tracking-tight md:tracking-normal'
+                className='text-primary-text text-base tracking-tight md:tracking-normal'
                 href={item.link}
               >
                 {item.name}

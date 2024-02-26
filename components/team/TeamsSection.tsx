@@ -67,15 +67,15 @@ const TeamsSection = () => {
                 />
               </div>
 
-              <h3 className='pt-[16px] text-base font-bold tracking-tight text-gray-900 dark:text-white'>
+              <h3 className='text-base md:text-lg font-bold tracking-tight text-gray-900 dark:text-white'>
                 <Link href='#'>{item.name}</Link>
               </h3>
-              <p>{item.role}</p>
+              <p className='text-sm'>{item.role}</p>
               <ul className='flex justify-center mt-4'>
                 <li className='px-2'>
                   <Link
                     href={item.facebookLink}
-                    className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'
+                    className='text-test hover:text-[#39569c] dark:hover:text-white'
                   >
                     <FaFacebook />
                   </Link>
@@ -83,7 +83,7 @@ const TeamsSection = () => {
                 <li className='px-2'>
                   <Link
                     href={item.instagramLink}
-                    className='text-[#d62976] hover:text-gray-900 dark:hover:text-white'
+                    className='text-pink hover:text-[#d62976] dark:hover:text-white'
                   >
                     <FaInstagram />
                   </Link>
@@ -91,7 +91,7 @@ const TeamsSection = () => {
                 <li className='px-2'>
                   <Link
                     href={item.youtubeLink}
-                    className='text-[#FF0000] hover:text-gray-900 dark:hover:text-white dark:text-gray-300'
+                    className='text-primary-danger hover:text-[#FF0000] dark:hover:text-white dark:text-gray-300'
                   >
                     <FaYoutube />
                   </Link>

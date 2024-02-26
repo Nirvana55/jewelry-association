@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className='scroll-smooth' lang='en'>
-      <body className={`${poppins.className} bg-background-primary`}>
+      <body className={`${poppins.className} bg-background-body`}>
         <Navbar />
         {children}
         <Analytics />
