@@ -32,7 +32,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-xl'>
-        <h2 className='text-[42px] capitalize md:text-[52px] font-extrabold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='capitalize text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
           {blogCardListData[0].title}
         </h2>
 

@@ -6,7 +6,7 @@ const MotiveSection = () => {
     <section className='bg-background-primary'>
       <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
         <div className='max-w-screen-sm'>
-          <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
+          <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Main Motive
           </h2>
           <Blockquote className='font-light text-[16px] md:text-[18px] text-gray-500 sm:text-xl dark:text-gray-400 py-[12px] md:py-[24px]'>

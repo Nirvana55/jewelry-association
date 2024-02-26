@@ -33,7 +33,7 @@ const Event = async () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-md'>
-        <h2 className='text-[42px] md:text-[52px] font-extrabold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
           Stay updated with insights
         </h2>
         <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400 text-[16px] pt-[20px] md:text-[18px] md:pt-[24px]'>

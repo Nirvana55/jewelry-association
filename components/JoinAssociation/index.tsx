@@ -5,7 +5,7 @@ const JoinAssociation = () => {
   return (
     <div className='flex flex-col md:flex-row items-center md:items-start justify-between py-8 md:py-14 lg:py-16'>
       <div className='max-w-2xl mb-8 md:mb-0'>
-        <h2 className='text-[36px] md:text-[48px] font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Join our Association Today!
         </h2>
       </div>

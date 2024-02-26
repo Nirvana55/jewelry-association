@@ -10,7 +10,7 @@ import {
   BsClock,
 } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
-import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
@@ -56,6 +56,32 @@ const NavHeader = () => {
             </div>
           </div>
           <div className='flex flex-row gap-8 items-center text-white'>
+            {goldAndSilverPrice.map((item) => (
+              <div
+                key={item.name}
+                className='flex flex-row items-center max-md:mr-2 cursor-pointer'
+              >
+                <div>
+                  <p className='font-semibold text-[14px]'>{item.name}</p>
+                </div>
+                <div>
+                  {item.name === "Silver" ? (
+                    <IoMdArrowDropdown className='ml-1 text-red-500 text-xl' />
+                  ) : (
+                    <IoMdArrowDropup className='ml-1 text-primary-btn-color text-xl' />
+                  )}
+                </div>
+                <p
+                  className={`text-[14px]  ${
+                    item.name === "Silver"
+                      ? "text-primary-danger"
+                      : "text-teal-500"
+                  }`}
+                >
+                  {item.price}
+                </p>
+              </div>
+            ))}
             {navIconList.map((item, index) => (
               <Link key={index} href={item.link}>
                 {item.icon}
@@ -99,7 +125,7 @@ const NavHeader = () => {
           <div className='hidden xl:block buttonText ml-10'>
             <Button
               onClick={() => router.push(`/contact`)}
-              className='text-white bg-primary-danger font-semibold'
+              className='text-white bg-primary-btn-color font-semibold'
             >
               Become A Member
             </Button>
@@ -131,25 +157,6 @@ const NavHeader = () => {
           </ul>
         </div>
       </div>
-      {/* <hr className='border-1 dark:bg-gray-900' /> */}
-      {/* <div className='bg-test'> */}
-      {/* <div className='container flex mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-11 py-2 items-center'>
-        {goldAndSilverPrice.map((item) => (
-          <div
-            key={item.name}
-            className='flex flex-row items-center max-md:mr-2 cursor-pointer'
-          >
-            <div>
-              <p className='font-semibold text-[14px]'>{item.name}</p>{" "}
-            </div>
-            <div>
-              <IoMdArrowDropup className='ml-1 text-green-500 text-xl' />
-            </div>
-            <p className='text-[14px]'>{item.price}</p>
-          </div>
-        ))}
-      </div> */}
-      {/* </div> */}
     </nav>
   );
 };

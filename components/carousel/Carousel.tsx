@@ -115,14 +115,14 @@ const CarouselBar = () => {
       </div>
       <div className='container z-20 mx-auto'>
         <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 z-20 rounded'>
-          <p className='text-white font-bold text-[42px] uppercase md:text-[56px]'>
+          <p className='text-white font-bold text-5xl uppercase md:text-6xl'>
             Welcome To Negja
           </p>
-          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] sm:text-xl text-base md:text-[18px]'>
+          <p className='text-white w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] sm:text-xl text-base md:text-lg'>
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>
-          <Button className='bg-primary-danger mt-5 text-white font-medium py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
+          <Button className='bg-primary-btn-color mt-5 text-white font-medium px-3 py-1 rounded hover:bg-primary-dark transition duration-300'>
             Explore Now
           </Button>
         </div>

@@ -15,7 +15,7 @@ const Gallery = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-sm'>
-        <h2 className='text-[42px] md:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Our Gallery
         </h2>
         <p className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>
@@ -40,10 +40,10 @@ const Gallery = () => {
                   )}
                 >
                   <div>
-                    <h5 className='text-[20px] md:text-[24px]  font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                    <h5 className='text-xl md:text-2xl  font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                       {item.albumTitle}
                     </h5>
-                    <p className='text-[16px] md:text-[18px] pt-[8px]  font-light text-gray-500 sm:text-xl dark:text-gray-400'>
+                    <p className='text-base md:text-lg pt-[8px]  font-light text-gray-500 sm:text-xl dark:text-gray-400'>
                       Words that Sparkle
                     </p>
                   </div>

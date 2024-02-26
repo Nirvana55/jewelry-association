@@ -53,7 +53,7 @@ const ExecutiveBoard = () => {
       </div>
       {data.length > 0 ? (
         <>
-          <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10 pt-[80px] justify-center'>
+          <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10 pt-[80px]'>
             {data.map((item) => (
               <div key={item.name}>
                 <div className='relative max-w-full h-[300px] md:h-[250px] shadow border shrink md:shrink-0 my-4 md:my-0'>
@@ -72,7 +72,7 @@ const ExecutiveBoard = () => {
             ))}
           </div>
           <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-800' />
-          <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10 justify-center'>
+          <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10'>
             {data.map((item) => (
               <div key={item.name}>
                 <div className='relative max-w-full h-[300px] md:h-[250px] shadow border shrink md:shrink-0 my-4 md:my-0'>

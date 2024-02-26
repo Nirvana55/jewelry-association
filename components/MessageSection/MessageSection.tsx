@@ -25,7 +25,7 @@ const MessageSection = () => {
               </p>
             </div>
 
-            <Button className='max-lg:hidden bg-primary-danger mt-5'>
+            <Button className='max-lg:hidden bg-primary-btn-color mt-5'>
               Read more
               <svg
                 className='-mr-1 ml-2 h-4 w-4'
