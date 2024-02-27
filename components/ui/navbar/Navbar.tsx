@@ -48,11 +48,11 @@ const NavHeader = () => {
           <div className='flex flex-row gap-8 text-white'>
             <div className='flex items-center gap-3'>
               <BsMailbox />
-              <p className='text-caption'>mail@gmail.com</p>
+              <p className='text-caption'>nepalgja@mos.com.np</p>
             </div>
             <div className='flex items-center gap-3'>
               <BsClock />
-              <p className='text-caption'>Open Hours Mon-Fri</p>
+              <p className='text-caption'>Open Hours Sun-Fri</p>
             </div>
           </div>
           <div className='flex flex-row gap-8 items-center text-white'>

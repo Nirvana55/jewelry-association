@@ -14,7 +14,7 @@ type NewsSectionProps = {
   newsData: NewsData[];
 };
 
-const NewsSection = ({ newsData }: NewsSectionProps) => {
+const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
   const builder = imageUrlBuilder(sanityClient);
 
@@ -39,12 +39,12 @@ const NewsSection = ({ newsData }: NewsSectionProps) => {
               className='grid gap-2 cursor-pointer'
             >
               <Card
-                className='rounded-lg'
+                className='rounded-t-lg'
                 renderImage={() => (
                   <Image
                     width={500}
                     height={500}
-                    className='rounded-lg'
+                    className='rounded-t-lg'
                     src={builder
                       .image(item.mainImage.asset._ref)
                       .width(420)
@@ -81,4 +81,4 @@ const NewsSection = ({ newsData }: NewsSectionProps) => {
   );
 };
 
-export default NewsSection;
+export default EventSection;

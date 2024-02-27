@@ -1,6 +1,6 @@
 import Carousel from "../../components/home/carousel/Carousel";
 import MotiveSection from "../../components/home/motive/MotiveSection";
-import NewsSection from "../../components/home/event-section/NewsSection";
+import EventSection from "../../components/home/event-section/EventSection";
 import MessageSection from "../../components/home/message-section/MessageSection";
 import TeamsSection from "../../components/home/team/TeamsSection";
 import NewsLetter from "../../components/home/news-subscribe/NewsLetter";
@@ -32,7 +32,7 @@ const Home = async () => {
       <MessageSection />
       <MotiveSection />
       <TeamsSection />
-      <NewsSection newsData={newsSectionPost} />
+      <EventSection newsData={newsSectionPost} />
       <NewsLetter />
     </>
   );

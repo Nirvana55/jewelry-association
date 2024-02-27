@@ -9,6 +9,7 @@ import NoData from "../../../../components/ui/no-data/NoData";
 import { sanityClient } from "../../../../utils/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
+import { RichTextComponent } from "../../../../components/RickTextComponent";
 
 const navIconList = [
   { icon: <BsFacebook />, link: "#" },
@@ -44,6 +45,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
                 height={56}
                 referrerPolicy='no-referrer'
                 src='/asd.jpg'
+                loading='lazy'
                 width={56}
                 {...props}
               />
@@ -51,7 +53,9 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
             rounded
           >
             <div className='space-y-1 font-medium dark:text-white'>
-              <div className='text-lg text-black font-bold'>Jese Leos</div>
+              <div className='text-lg text-black font-bold'>
+                {blogCardListData[0]?.author}
+              </div>
               <div className='text-sm flex text-gray-500 dark:text-gray-400'>
                 January 11, 2022 &nbsp;<p>{blogCardListData[0]?.readTime}</p>
               </div>
@@ -84,12 +88,16 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
                   .height(600)
                   .url()}
                 alt='images'
+                loading='lazy'
               />
             </div>
           </div>
 
           <div className='text-[18px] text-black'>
-            <PortableText value={blogCardListData[0].content} />
+            <PortableText
+              value={blogCardListData[0].content}
+              components={RichTextComponent}
+            />
           </div>
         </>
       ) : (
