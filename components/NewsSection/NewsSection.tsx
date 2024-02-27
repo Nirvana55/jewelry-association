@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import "./styles.css";
+import { useRouter } from "next/navigation";
 
 const newsData = [
   {
@@ -34,6 +35,8 @@ const newsData = [
 ];
 
 const NewsSection = () => {
+  const router = useRouter();
+
   return (
     <section className='bg-primary-background'>
       <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
@@ -47,7 +50,7 @@ const NewsSection = () => {
             of jewelry.
           </p>
         </div>
-        <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 pt-[80px] justify-center'>
+        <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center'>
           {newsData.map((item, index) => (
             <div key={index} className='grid gap-2'>
               <Card
@@ -73,6 +76,14 @@ const NewsSection = () => {
               </Card>
             </div>
           ))}
+        </div>
+        <div className='sm:float-right'>
+          <Button
+            onClick={() => router.push(`/event`)}
+            className='bg-primary-btn-color px-5 py-1 max-sm:w-full'
+          >
+            Show All
+          </Button>
         </div>
       </div>
     </section>
