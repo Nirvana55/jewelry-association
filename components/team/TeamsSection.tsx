@@ -36,6 +36,14 @@ const teamData = [
     instagramLink: "#",
     youtubeLink: "#",
   },
+  {
+    image: "/asd.jpg",
+    name: "Bonnie Green",
+    role: "CEO/Co-founder",
+    facebookLink: "#",
+    instagramLink: "#",
+    youtubeLink: "#",
+  },
 ];
 
 const TeamsSection = () => {
@@ -52,7 +60,7 @@ const TeamsSection = () => {
             industry.
           </p>
         </div>
-        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-[42px] md:pt-[80px]'>
+        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-[42px] md:pt-[80px]'>
           {teamData.map((item, index) => (
             <div
               key={index}
