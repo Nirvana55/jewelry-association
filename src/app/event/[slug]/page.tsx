@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
-import JoinAssociation from "../../../../components/JoinAssociation";
-import SubscribeBlog from "../../../../components/subscribeBlog";
-import NoData from "../../../../components/NoData/NoData";
+import JoinAssociation from "../../../../components/event/join-association";
+import SubscribeBlog from "../../../../components/event/subscribe-blog";
+import NoData from "../../../../components/ui/no-data/NoData";
 import { sanityClient } from "../../../../utils/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
+import { RichTextComponent } from "../../../../components/RickTextComponent";
 
 const navIconList = [
   { icon: <BsFacebook />, link: "#" },
@@ -33,7 +34,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-xl'>
         <h2 className='capitalize text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
-          {blogCardListData[0].title}
+          {blogCardListData[0]?.title}
         </h2>
 
         <div className='flex flex-col md:flex-row justify-between pt-12 md:pt-14 items-center'>
@@ -44,6 +45,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
                 height={56}
                 referrerPolicy='no-referrer'
                 src='/asd.jpg'
+                loading='lazy'
                 width={56}
                 {...props}
               />
@@ -51,9 +53,11 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
             rounded
           >
             <div className='space-y-1 font-medium dark:text-white'>
-              <div className='text-lg text-black font-bold'>Jese Leos</div>
+              <div className='text-lg text-black font-bold'>
+                {blogCardListData[0]?.author}
+              </div>
               <div className='text-sm flex text-gray-500 dark:text-gray-400'>
-                January 11, 2022 &nbsp;<p>{blogCardListData[0].readTime}</p>
+                January 11, 2022 &nbsp;<p>{blogCardListData[0]?.readTime}</p>
               </div>
             </div>
           </Avatar>
@@ -84,12 +88,16 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
                   .height(600)
                   .url()}
                 alt='images'
+                loading='lazy'
               />
             </div>
           </div>
 
           <div className='text-[18px] text-black'>
-            <PortableText value={blogCardListData[0].content} />
+            <PortableText
+              value={blogCardListData[0].content}
+              components={RichTextComponent}
+            />
           </div>
         </>
       ) : (

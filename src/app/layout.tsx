@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import Navbar from "../../components/navbar/Navbar";
-import FooterBar from "../../components/footer/Footer";
+import Navbar from "../../components/ui/navbar/Navbar";
+import FooterBar from "../../components/ui/footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
-
+import Providers from "../../components/Provider";
 import "./global.css";
 
 export const metadata: Metadata = {
@@ -24,10 +24,12 @@ export default function RootLayout({
   return (
     <html className='scroll-smooth' lang='en'>
       <body className={`${poppins.className} bg-background-body`}>
-        <Navbar />
-        {children}
-        <Analytics />
-        <FooterBar />
+        <Providers>
+          <Navbar />
+          {children}
+          <Analytics />
+          <FooterBar />
+        </Providers>
       </body>
     </html>
   );

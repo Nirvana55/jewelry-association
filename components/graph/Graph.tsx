@@ -107,8 +107,8 @@ const GraphSection = () => {
 
   return (
     <div>
-      <div className='flex flex-row py-10 justify-center items-center gap-10'>
-        <div className='w-[50%]'>
+      <div className='flex flex-col md:flex-row py-10 justify-center items-center gap-10'>
+        <div className='w-full md:w-[50%]'>
           <div className='flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-primary-btn-color'>
             <AiFillGold className='text-2xl' />
           </div>
@@ -122,7 +122,7 @@ const GraphSection = () => {
           </p>
         </div>
 
-        <div className='h-[400px] flex-1'>
+        <div className='h-[400px] flex-1 w-full'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
               width={730}
@@ -145,8 +145,8 @@ const GraphSection = () => {
           </ResponsiveContainer>
         </div>
       </div>
-      <div className='flex flex-row py-10 justify-center items-center gap-10'>
-        <div className='w-[50%]'>
+      <div className='flex flex-col md:flex-row py-10 justify-center items-center gap-10'>
+        <div className='w-full md:w-[50%]'>
           <div className='flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-primary-btn-color'>
             <PiDiamondsFourBold className='text-2xl' />
           </div>
@@ -160,7 +160,7 @@ const GraphSection = () => {
           </p>
         </div>
 
-        <div className='h-[400px] flex-1'>
+        <div className='h-[400px] flex-1 w-full'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
               width={730}

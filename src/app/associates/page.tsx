@@ -1,5 +1,5 @@
 import React from "react";
-import NoData from "../../../components/NoData/NoData";
+import NoData from "../../../components/ui/no-data/NoData";
 import {
   Table,
   TableBody,
@@ -8,7 +8,6 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
-import TablePagination from "../../../components/tablePagination/Pagination";
 
 const tableHeaders = [
   "Name",
