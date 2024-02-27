@@ -3,39 +3,20 @@
 import { Button, Card } from "flowbite-react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
+import imageUrlBuilder from "@sanity/image-url";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
+import { sanityClient } from "../../../utils/sanity/client";
+import { NewsData } from "../../../types/events";
 
-const newsData = [
-  {
-    image: "/1.jpeg",
-    title: "Noteworthy technology acquisitions 2021",
-    body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
-    buttonText: "Read in 2 minutes",
-  },
-  {
-    image: "/1.jpeg",
-    title: "Noteworthy technology acquisitions 2021",
-    body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
-    buttonText: "Read in 10 minutes",
-  },
-  {
-    image: "/1.jpeg",
-    title: "Noteworthy technology acquisitions 2021",
-    body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
-    buttonText: "Read in 5 minutes",
-  },
-  {
-    image: "/1.jpeg",
-    title: "Noteworthy technology acquisitions 2021",
-    body: "Here are the biggest enterprise technology acquisitions of 2021 so far in reverse chronological order.",
-    buttonText: "Read in 3 minutes",
-  },
-];
+type NewsSectionProps = {
+  newsData: NewsData[];
+};
 
-const NewsSection = () => {
+const NewsSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
+  const builder = imageUrlBuilder(sanityClient);
 
   return (
     <section className='bg-primary-background'>
@@ -51,26 +32,36 @@ const NewsSection = () => {
           </p>
         </div>
         <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center'>
-          {newsData.map((item, index) => (
-            <div key={index} className='grid gap-2'>
+          {newsData?.map((item: NewsData) => (
+            <div
+              onClick={() => router.push(`event/${item.slug.current}`)}
+              key={item._id}
+              className='grid gap-2 cursor-pointer'
+            >
               <Card
+                className='rounded-lg'
                 renderImage={() => (
                   <Image
                     width={500}
                     height={500}
-                    src={item.image}
+                    className='rounded-lg'
+                    src={builder
+                      .image(item.mainImage.asset._ref)
+                      .width(420)
+                      .height(400)
+                      .url()}
                     alt='images'
                   />
                 )}
               >
                 <h5 className='text-[24px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
-                  {item.title}
+                  {item?.title}
                 </h5>
                 <p className='font-[16px] text-gray-700 dark:text-gray-400'>
-                  {item.body}
+                  {item?.cardInfoText}
                 </p>
                 <Button className='text-primary-btn-color self-end'>
-                  {item.buttonText}
+                  {item?.readTime}
                   <FaArrowRightLong className='ml-2' />
                 </Button>
               </Card>

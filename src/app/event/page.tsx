@@ -6,7 +6,7 @@ import { Events } from "../../../types/events";
 import imageUrlBuilder from "@sanity/image-url";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
-import NoData from "../../../components/NoData/NoData";
+import NoData from "../../../components/ui/no-data/NoData";
 
 async function getAllPosts() {
   const res = await sanityClient.fetch<Events[]>(

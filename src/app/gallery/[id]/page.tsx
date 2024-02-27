@@ -1,7 +1,7 @@
 import { Card } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
-import NoData from "../../../../components/NoData/NoData";
+import NoData from "../../../../components/ui/no-data/NoData";
 
 const imageSlides = [
   { id: 1, name: "/sad3.jpeg" },

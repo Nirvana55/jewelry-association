@@ -1,5 +1,5 @@
 import React from "react";
-import NoData from "../../../components/NoData/NoData";
+import NoData from "../../../components/ui/no-data/NoData";
 import Link from "next/link";
 import { Card } from "flowbite-react";
 import Image from "next/image";

@@ -14,6 +14,16 @@ export interface Events {
   cardInfoText: string;
 }
 
+export interface NewsData {
+  cardInfoText: string;
+  readTime: string;
+  author: string;
+  _id: string;
+  mainImage: MainImage;
+  title: string;
+  slug: Slug;
+}
+
 export interface Content {
   _key: string;
   _type: string;
