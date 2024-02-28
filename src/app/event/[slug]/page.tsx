@@ -18,8 +18,8 @@ const navIconList = [
 ];
 
 async function getPost(params: string) {
-  const res = await await sanityClient.fetch(
-    `*[_type == "blog" && slug.current == "${params}"]{
+  const res = await sanityClient.fetch(
+    `*[_type == "blog" && slug.current == "${params}"][0]{
   content,author,readTime,mainImage,title}`
   );
 
@@ -34,7 +34,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-xl'>
         <h2 className='capitalize text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
-          {blogCardListData[0]?.title}
+          {blogCardListData?.title}
         </h2>
 
         <div className='flex flex-col md:flex-row justify-between pt-12 md:pt-14 items-center'>
@@ -54,10 +54,10 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
           >
             <div className='space-y-1 font-medium dark:text-white'>
               <div className='text-lg text-black font-bold'>
-                {blogCardListData[0]?.author}
+                {blogCardListData?.author}
               </div>
               <div className='text-sm flex text-gray-500 dark:text-gray-400'>
-                January 11, 2022 &nbsp;<p>{blogCardListData[0]?.readTime}</p>
+                January 11, 2022 &nbsp;<p>{blogCardListData?.readTime}</p>
               </div>
             </div>
           </Avatar>
@@ -76,14 +76,14 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
 
-      {blogCardListData.length > 0 ? (
+      {blogCardListData ? (
         <>
           <div className='py-[80px]'>
             <div className='relative lg:h-[600px]'>
               <Image
                 fill
                 src={builder
-                  .image(blogCardListData[0].mainImage.asset._ref)
+                  .image(blogCardListData.mainImage.asset._ref)
                   .width(1312)
                   .height(600)
                   .url()}
@@ -95,7 +95,7 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
 
           <div className='text-[18px] text-black'>
             <PortableText
-              value={blogCardListData[0].content}
+              value={blogCardListData.content}
               components={RichTextComponent}
             />
           </div>
