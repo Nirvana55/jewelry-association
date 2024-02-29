@@ -99,8 +99,9 @@ const NavHeader = () => {
           </div>
         </div>
       </div>
-      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer animate-fade-right animate-ease-in'>
-        <div>
+
+      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
+        <div className='animate-fade-right md:animate-ease-in'>
           <p className='cursor-pointer'>Logo</p>
         </div>
 
@@ -115,7 +116,7 @@ const NavHeader = () => {
             htmlFor='my-drawer-2'
             className='drawer-button bg-white border-none lg:hidden'
           >
-            <CgMenuRight className='ml-auto text-lg text-black' />
+            <CgMenuRight className='ml-auto text-lg text-black animate-fade-right md:animate-ease-in' />
           </label>
         </div>
 
@@ -142,7 +143,7 @@ const NavHeader = () => {
         </div>
 
         {/* drawer */}
-        <div className='drawer-side z-30 lg:hidden'>
+        <div className='drawer-side z-30 xl:hidden'>
           <label
             htmlFor='my-drawer-2'
             aria-label='close sidebar'
