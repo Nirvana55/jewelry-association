@@ -1,14 +1,8 @@
 import React from "react";
 import NoData from "../../../components/ui/no-data/NoData";
-import GraphSection from "../../../components/graph/Graph";
+import GraphSection from "./Graph";
 
-const data = [
-  { id: 1, albumImage: "/sad.jpg", albumTitle: "This is all about test" },
-  { id: 2, albumImage: "/sad2.jpeg", albumTitle: "This is all about test2" },
-  { id: 3, albumImage: "/sad.jpg", albumTitle: "This is all about test3" },
-];
-
-const Gallery = () => {
+const Graph = () => {
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-sm'>
@@ -28,4 +22,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Graph;

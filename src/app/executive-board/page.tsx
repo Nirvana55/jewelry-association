@@ -1,32 +1,56 @@
 import React from "react";
 import NoData from "../../../components/ui/no-data/NoData";
 import Image from "next/image";
-import { Label, Select } from "flowbite-react";
+import { sanityClient } from "../../../utils/sanity/client";
+import BoardSearch from "./searchOptions";
+import imageUrlBuilder from "@sanity/image-url";
+import { Roles } from "./enum";
 
-const data = [
-  {
-    name: "Tim Cook",
-    positions: "CEO",
-    imageUrl: "/sad.jpg",
-  },
-  {
-    name: "Katherine Adams",
-    positions: "Senior Vice President and General Counsel",
-    imageUrl: "/sad2.jpeg",
-  },
-  {
-    name: "Eddy Cue",
-    positions: "Senior Vice President Services",
-    imageUrl: "/sad2.jpeg",
-  },
-  {
-    name: "Craig Federighi",
-    positions: "Senior Vice President Software Engineering",
-    imageUrl: "/sad2.jpeg",
-  },
-];
+async function getExecutiveBoard(query: { date?: string }) {
+  const res = await sanityClient.fetch(
+    `*[_type=="executiveBoard"  ${
+      query.date
+        ? '&& boardMemberYears->boardMemberYear =="' + query.date + '"'
+        : ""
+    }] {boardMembers,boardMemberYears->{
+    boardMemberYear
+  }}`
+  );
 
-const ExecutiveBoard = () => {
+  return { data: res };
+}
+
+async function getExecutiveBoardDates() {
+  const res = await sanityClient.fetch(
+    `*[_type=="boardMemberYears"] | order(publishedAt desc) {_id,boardMemberYear} `
+  );
+
+  return { data: res };
+}
+
+const ExecutiveBoard = async ({
+  searchParams,
+}: {
+  searchParams: {
+    selectedDate?: string;
+  };
+}) => {
+  const date = searchParams?.selectedDate || "";
+  const builder = imageUrlBuilder(sanityClient);
+
+  function findKeysByValue(value: string): string[] {
+    const keys = Object.keys(Roles).filter(
+      (key) => Roles[key as keyof typeof Roles] === value
+    );
+    return keys;
+  }
+
+  const { data } = await getExecutiveBoard({
+    date,
+  });
+
+  const { data: boardDates } = await getExecutiveBoardDates();
+
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='flex flex-col lg:flex-row lg:justify-between'>
@@ -41,52 +65,32 @@ const ExecutiveBoard = () => {
           </p>
         </div>
         <div className='max-w-lg sm:max-w-xs flex-1 max-lg:mt-8 lg:self-end'>
-          {/* <div className='mb-2 block'>
-            <Label htmlFor='countries' value='Select your country' />
-          </div> */}
-          <Select id='dates' required>
-            <option>2021</option>
-            <option>2022</option>
-            <option>2023</option>
-          </Select>
+          <BoardSearch data={boardDates} />
         </div>
       </div>
       {data.length > 0 ? (
         <>
           <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10 pt-[80px]'>
-            {data.map((item) => (
-              <div key={item.name}>
+            {data[0].boardMembers.map((item: any) => (
+              <div key={item._key}>
                 <div className='relative max-w-full h-[300px] md:h-[250px] shadow border shrink md:shrink-0 my-4 md:my-0'>
                   <Image
-                    fill
-                    src={item.imageUrl}
-                    className='rounded-lg'
-                    alt={item.imageUrl}
+                    width={500}
+                    height={300}
+                    className='rounded-t-lg'
+                    loading='lazy'
+                    src={builder
+                      .image(item.image.asset._ref)
+                      .width(420)
+                      .height(300)
+                      .url()}
+                    alt='images'
                   />
                 </div>
-                <h2 className='mt-4 font-semibold text-xl text-black'>
-                  {item.name}
+                <h2 className='mt-4 font-semibold text-xl text-black capitalize'>
+                  {item.executiveMemberName}
                 </h2>
-                <p className='text-gray-600'>{item.positions}</p>
-              </div>
-            ))}
-          </div>
-          <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-800' />
-          <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10'>
-            {data.map((item) => (
-              <div key={item.name}>
-                <div className='relative max-w-full h-[300px] md:h-[250px] shadow border shrink md:shrink-0 my-4 md:my-0'>
-                  <Image
-                    fill
-                    src={item.imageUrl}
-                    className='rounded-lg'
-                    alt={item.imageUrl}
-                  />
-                </div>
-                <h2 className='mt-4 font-semibold text-xl text-black'>
-                  {item.name}
-                </h2>
-                <p className='text-gray-600'>Past President</p>
+                <p className='text-gray-600'>{findKeysByValue(item.role)}</p>
               </div>
             ))}
           </div>

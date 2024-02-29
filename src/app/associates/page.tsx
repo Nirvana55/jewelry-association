@@ -1,5 +1,5 @@
 import React from "react";
-import NoData from "../../../components/ui/no-data/NoData";
+import { sanityClient } from "../../../utils/sanity/client";
 import {
   Table,
   TableBody,
@@ -8,16 +8,41 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import TableSearch from "../../../components/ui/table-search/TableSearch";
+import TablePagination from "../../../components/ui/table-pagination/Pagination";
 
-const tableHeaders = [
-  "Name",
-  "Address",
-  "Phone Number",
-  "Store Name",
-  "Action",
-];
+const tableHeaders = ["Name", "Email", "Address", "Phone Number", "Store Name"];
 
-const Associates = () => {
+async function getAssociates(query: { search?: string; page?: string }) {
+  const res = await sanityClient.fetch(
+    `*[_type=="associateMembers"  ${
+      query.search ? '&& name match "' + query.search + '"' : ""
+    }] | order(publishedAt desc)[0...10]`
+  );
+
+  const dataCount = await sanityClient.fetch(
+    `count(*[_type=="associateMembers"])`
+  );
+
+  return { data: res, dataCount };
+}
+
+const Associates = async ({
+  searchParams,
+}: {
+  searchParams: {
+    search?: string;
+    page?: string;
+  };
+}) => {
+  const search = searchParams?.search || "";
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const { data, dataCount } = await getAssociates({
+    search,
+    page: currentPage.toString(),
+  });
+
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
       <div className='max-w-screen-sm'>
@@ -30,79 +55,56 @@ const Associates = () => {
           jewelry.
         </p>
       </div>
-      <div className='py-[48px] md:py-[80px]'>
-        <div></div>
-        <div>
-          {["a"].length > 0 ? (
-            <div className='overflow-x-auto'>
-              <Table>
-                <TableHead>
-                  {tableHeaders.map((item, index) => (
-                    <TableHeadCell
-                      key={index}
-                      className='bg-primary-text text-white'
-                    >
-                      {item}
-                    </TableHeadCell>
-                  ))}
-                </TableHead>
-                <TableBody className='divide-y'>
-                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                      {'Bruno Lama"'}
+      <div className='py-[48px] md:py-[60px]'>
+        <TableSearch />
+
+        <div className='overflow-x-auto py-[30px]'>
+          <Table hoverable>
+            <TableHead>
+              {tableHeaders.map((item, index) => (
+                <TableHeadCell
+                  key={index}
+                  className='bg-primary-text text-white'
+                >
+                  {item}
+                </TableHeadCell>
+              ))}
+            </TableHead>
+            <TableBody className='divide-y'>
+              {data.length > 0 ? (
+                data?.map((item: any, index: number) => (
+                  <TableRow
+                    key={index}
+                    className='bg-white dark:border-gray-700 dark:bg-gray-800'
+                  >
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
+                      {item.name}
                     </TableCell>
-                    <TableCell>New Road</TableCell>
-                    <TableCell>Kathmandu</TableCell>
-                    <TableCell>Gold and silver</TableCell>
-                    <TableCell>
-                      <a
-                        href='#'
-                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                      >
-                        Edit
-                      </a>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
+                      {item.email}
                     </TableCell>
-                  </TableRow>
-                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                      {'Bruno Lama2"'}
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
+                      {item.address}
                     </TableCell>
-                    <TableCell>New Road</TableCell>
-                    <TableCell>Kathmandu</TableCell>
-                    <TableCell>Gold and silver</TableCell>
-                    <TableCell>
-                      <a
-                        href='#'
-                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                      >
-                        Edit
-                      </a>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
+                      {item.phoneNumber}
+                    </TableCell>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
+                      {item.storeName}
                     </TableCell>
                   </TableRow>
-                  <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                      {'Bruno Lama3"'}
-                    </TableCell>
-                    <TableCell>New Road</TableCell>
-                    <TableCell>Kathmandu</TableCell>
-                    <TableCell>Gold and silver</TableCell>
-                    <TableCell>
-                      <a
-                        href='#'
-                        className='font-medium text-cyan-600 hover:underline dark:text-cyan-500'
-                      >
-                        Edit
-                      </a>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-              {/* <TablePagination /> */}
-            </div>
-          ) : (
-            <NoData />
-          )}
+                ))
+              ) : (
+                <TableRow className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                  <TableCell colSpan={5} style={{ textAlign: "center" }}>
+                    No Data
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
         </div>
+        {data.length > 1 && <TablePagination />}
       </div>
     </div>
   );

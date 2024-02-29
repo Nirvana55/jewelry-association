@@ -1,19 +1,29 @@
 "use client";
 
 import { Pagination } from "flowbite-react";
-import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
-const TablePagination = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+type TablePaginationProps = {
+  currentPage?: number;
+};
 
-  const onPageChange = (page: number) => setCurrentPage(page);
+const TablePagination = (props: TablePaginationProps) => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get("page")) || 1;
+
+  const createPageUrl = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", pageNumber.toString());
+    return `${pathname}?${params.toString()}`;
+  };
 
   return (
-    <div className='flex overflow-x-auto sm:justify-center'>
+    <div className='flex overflow-x-auto sm:justify-end'>
       <Pagination
         currentPage={currentPage}
-        totalPages={100}
-        onPageChange={onPageChange}
+        totalPages={0}
+        onPageChange={createPageUrl}
         showIcons
       />
     </div>

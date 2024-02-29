@@ -1,3 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .custom-link {
+    @apply text-primary-text text-base tracking-tight md:tracking-normal;
+  }
+  .custom-link:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #305586;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out; /* Adjust the duration according to your theme */
+  }
+  .custom-link:hover:after {
+    transform: scaleX(1);
+  }
+}
+
 .menuFont {
   font-size: 22px;
 }
