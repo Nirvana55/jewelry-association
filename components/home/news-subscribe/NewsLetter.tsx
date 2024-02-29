@@ -1,12 +1,22 @@
+"use client";
+
 import { Button, TextInput } from "flowbite-react";
+import { useInView } from "framer-motion";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import { HiMail } from "react-icons/hi";
 
 const NewsLetter = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className=' bg-white dark:bg-gray-900'>
-      <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px]'>
+    <section ref={ref} className=' bg-white dark:bg-gray-900'>
+      <div
+        className={`container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px] ${
+          isInView ? "animate-fade-right animate-ease-in" : ""
+        }`}
+      >
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Sign up for our newsletter

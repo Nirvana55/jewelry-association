@@ -1,6 +1,8 @@
 "use client";
 
 import { Footer } from "flowbite-react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
 const footerData = [
@@ -46,9 +48,17 @@ const footerData = [
 ];
 
 const FooterBar = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <Footer className='bg-test rounded-none text-white' container>
-      <div className='container mx-auto w-full'>
+    <Footer className={`bg-test rounded-none text-white`} container>
+      <div
+        ref={ref}
+        className={`container mx-auto w-full ${
+          isInView ? "animate-fade-right animate-ease-in" : ""
+        }`}
+      >
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div>
             {/* <Footer.Brand

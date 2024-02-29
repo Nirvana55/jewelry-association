@@ -3,11 +3,22 @@
 import { Blockquote, Button } from "flowbite-react";
 import Image from "next/image";
 import "./styles.css";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const MessageSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className='bg-white animate-fade-left animate-ease-in'>
-      <div className='container max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px] '>
+    <section ref={ref} className='bg-white animate-fade-left animate-ease-in'>
+      <div
+        id='sad'
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px] sad ${
+          isInView ? "animate-fade-right animate-ease-in" : ""
+        }`}
+      >
+        {" "}
         <div className='grid xs:grid-cols-1 lg:grid-cols-2 md:text-center lg:text-left gap-10 items-center'>
           <div className='lg:self-center lg:w-[90%] xl:w-[80%]'>
             <h2 className='text-[36px] md:text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>

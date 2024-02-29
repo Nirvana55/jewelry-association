@@ -31,7 +31,7 @@ const Event = async () => {
   };
 
   return (
-    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
+    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
       <div className='max-w-screen-md'>
         <h2 className='text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
           Stay updated with insights
@@ -118,7 +118,7 @@ const Event = async () => {
                           <h5 className='text-xl md:text-2xl font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
                             {item.title}
                           </h5>
-                          <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 '>
+                          <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 line-clamp-3'>
                             {item.cardInfoText}
                           </p>
                         </div>

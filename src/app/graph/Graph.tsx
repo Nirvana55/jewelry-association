@@ -107,7 +107,7 @@ const GraphSection = () => {
 
   return (
     <div>
-      <div className='flex flex-col md:flex-row py-10 justify-center items-center gap-10'>
+      <div className='flex flex-col md:flex-row py-10 justify-center items-center gap-10 animate-fade-right animate-ease-in'>
         <div className='w-full md:w-[50%]'>
           <div className='flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-primary-btn-color'>
             <AiFillGold className='text-2xl' />

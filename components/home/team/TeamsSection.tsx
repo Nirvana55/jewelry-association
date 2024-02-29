@@ -1,6 +1,9 @@
+"use client";
+
+import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const teamData = [
@@ -47,9 +50,16 @@ const teamData = [
 ];
 
 const TeamsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className='bg-white dark:bg-gray-900'>
-      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
+    <section ref={ref} className=' bg-white dark:bg-gray-900'>
+      <div
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px] ${
+          isInView ? "animate-fade-right animate-ease-in" : ""
+        }`}
+      >
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Team
