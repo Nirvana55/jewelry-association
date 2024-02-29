@@ -16,10 +16,15 @@ const tableHeaders = ["Name", "Email", "Address", "Phone Number", "Store Name"];
 async function getAssociates(query: { search?: string; page?: string }) {
   const res = await sanityClient.fetch(
     `*[_type=="associateMembers"  ${
-      query.search ? '&& title match "' + query.search + '"' : ""
-    } ] | order(publishedAt desc)[0...10]`
+      query.search ? '&& name match "' + query.search + '"' : ""
+    }] | order(publishedAt desc)[0...10]`
   );
-  return res;
+
+  const dataCount = await sanityClient.fetch(
+    `count(*[_type=="associateMembers"])`
+  );
+
+  return { data: res, dataCount };
 }
 
 const Associates = async ({
@@ -32,9 +37,11 @@ const Associates = async ({
 }) => {
   const search = searchParams?.search || "";
   const currentPage = Number(searchParams?.page) || 1;
-  const lastIds = [];
 
-  const data = await getAssociates({ search, page: currentPage.toString() });
+  const { data, dataCount } = await getAssociates({
+    search,
+    page: currentPage.toString(),
+  });
 
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
@@ -97,7 +104,7 @@ const Associates = async ({
             </TableBody>
           </Table>
         </div>
-        {data && data.length > 10 && <TablePagination />}
+        {data.length > 1 && <TablePagination />}
       </div>
     </div>
   );

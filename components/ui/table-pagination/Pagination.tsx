@@ -2,7 +2,6 @@
 
 import { Pagination } from "flowbite-react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useState } from "react";
 
 type TablePaginationProps = {
   currentPage?: number;
