@@ -9,6 +9,8 @@ import "./styles.css";
 import { useRouter } from "next/navigation";
 import { sanityClient } from "../../../utils/sanity/client";
 import { NewsData } from "../../../types/events";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 type NewsSectionProps = {
   newsData: NewsData[];
@@ -17,10 +19,16 @@ type NewsSectionProps = {
 const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
   const builder = imageUrlBuilder(sanityClient);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section className='bg-primary-background'>
-      <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]'>
+    <section ref={ref} className='bg-primary-background'>
+      <div
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]  ${
+          isInView ? "animate-fade-right animate-ease-in" : ""
+        }`}
+      >
         <div className='max-w-screen-sm'>
           <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Articles
@@ -60,7 +68,7 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
                 <p className='font-[16px] text-gray-700 dark:text-gray-400 line-clamp-3'>
                   {item?.cardInfoText}
                 </p>
-                <div className='text-primary-btn-color font-semi-bold self-start flex text-md items-center'>
+                <div className='text-primary-btn-color font-semi-bold self-start flex text-md items-center pt-[24px]'>
                   <p>Read {item?.readTime}</p>
                   <FaArrowRightLong className='ml-2' />
                 </div>

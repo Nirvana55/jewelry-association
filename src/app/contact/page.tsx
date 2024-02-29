@@ -4,7 +4,7 @@ import ContactForm from "../../../components/contact-form/ContactForm";
 
 const Gallery = () => {
   return (
-    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor'>
+    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
       <div className='max-w-screen-sm'>
         <h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Contact Page
@@ -16,7 +16,7 @@ const Gallery = () => {
         </p>
       </div>
       <div className='pt-[42px] md:pt-[80px]'>
-        {["asd"].length > 0 ? <ContactForm /> : <NoData />}
+        <ContactForm />
       </div>
     </div>
   );
