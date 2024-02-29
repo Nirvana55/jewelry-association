@@ -1,6 +1,6 @@
 import React from "react";
 import NoData from "../../../components/ui/no-data/NoData";
-import GraphSection from "../../../components/graph/Graph";
+import GraphSection from "./Graph";
 
 const Graph = () => {
   return (

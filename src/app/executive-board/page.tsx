@@ -78,6 +78,7 @@ const ExecutiveBoard = async ({
                     width={500}
                     height={300}
                     className='rounded-t-lg'
+                    loading='lazy'
                     src={builder
                       .image(item.image.asset._ref)
                       .width(420)
@@ -86,7 +87,7 @@ const ExecutiveBoard = async ({
                     alt='images'
                   />
                 </div>
-                <h2 className='mt-4 font-semibold text-xl text-black'>
+                <h2 className='mt-4 font-semibold text-xl text-black capitalize'>
                   {item.executiveMemberName}
                 </h2>
                 <p className='text-gray-600'>{findKeysByValue(item.role)}</p>

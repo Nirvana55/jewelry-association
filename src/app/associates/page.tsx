@@ -77,19 +77,19 @@ const Associates = async ({
                     key={index}
                     className='bg-white dark:border-gray-700 dark:bg-gray-800'
                   >
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
                       {item.name}
                     </TableCell>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
                       {item.email}
                     </TableCell>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
                       {item.address}
                     </TableCell>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
                       {item.phoneNumber}
                     </TableCell>
-                    <TableCell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
+                    <TableCell className='whitespace-nowrap capitalize font-medium text-gray-900 dark:text-white'>
                       {item.storeName}
                     </TableCell>
                   </TableRow>
