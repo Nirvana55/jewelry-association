@@ -57,13 +57,13 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
                 <h5 className='text-[24px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
                   {item?.title}
                 </h5>
-                <p className='font-[16px] text-gray-700 dark:text-gray-400'>
+                <p className='font-[16px] text-gray-700 dark:text-gray-400 line-clamp-3'>
                   {item?.cardInfoText}
                 </p>
-                <Button className='text-primary-btn-color self-end'>
-                  {item?.readTime}
+                <div className='text-primary-btn-color font-semi-bold self-start flex text-md items-center'>
+                  <p>Read {item?.readTime}</p>
                   <FaArrowRightLong className='ml-2' />
-                </Button>
+                </div>
               </Card>
             </div>
           ))}

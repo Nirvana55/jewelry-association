@@ -73,7 +73,7 @@ const CarouselBar = () => {
   };
 
   return (
-    <div className='relative h-[780px] md:h-[820px]'>
+    <div className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'>
       <div className='relative w-full h-full'>
         {carouselTransitions((style, index) => (
           <animated.div
@@ -122,7 +122,7 @@ const CarouselBar = () => {
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>
-          <Button className='bg-primary-btn-color mt-5 text-white font-medium px-3 py-1 rounded hover:bg-primary-dark transition duration-300'>
+          <Button className='bg-primary-btn-color mt-5 font-semibold text-white px-3 py-1 rounded hover:bg-primary-text hover:scale-110 transition duration-300 '>
             Explore Now
           </Button>
         </div>

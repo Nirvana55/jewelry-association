@@ -43,23 +43,25 @@ const NavHeader = () => {
 
   return (
     <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
-      <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test'>
-        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2'>
-          <div className='flex flex-row gap-8 text-white'>
-            <div className='flex items-center gap-3'>
+      <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test '>
+        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2 animate-fade-left animate-ease-in '>
+          <div className='flex flex-row gap-8 text-white '>
+            <div className='flex items-center gap-3 hover:scale-110 hover:transition hover:border-b-2 duration-300'>
               <BsMailbox />
-              <p className='text-caption'>nepalgja@mos.com.np</p>
+              <p className='text-caption cursor-pointer '>
+                nepalgja@mos.com.np
+              </p>
             </div>
-            <div className='flex items-center gap-3'>
+            <div className='ease-in-out  flex items-center gap-3'>
               <BsClock />
               <p className='text-caption'>Open Hours Sun-Fri</p>
             </div>
           </div>
-          <div className='flex flex-row gap-8 items-center text-white'>
+          <div className='flex flex-row gap-8 items-center text-white '>
             {goldAndSilverPrice.map((item) => (
               <div
                 key={item.name}
-                className='flex flex-row items-center max-md:mr-2 cursor-pointer'
+                className='flex flex-row items-center max-md:mr-2 cursor-pointer hover:scale-110 hover:transition-all duration-300 ease-in-out'
               >
                 <div>
                   <p className='font-semibold text-base'>{item.name}</p>
@@ -86,7 +88,9 @@ const NavHeader = () => {
             {navIconList.map((item, index) => (
               <Link
                 key={index}
-                className={index === 2 ? "mr-1" : ""}
+                className={`${
+                  index === 2 ? "mr-1" : ""
+                } hover:scale-110 duration-300`}
                 href={item.link}
               >
                 {item.icon}
@@ -95,7 +99,7 @@ const NavHeader = () => {
           </div>
         </div>
       </div>
-      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer'>
+      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer animate-fade-right animate-ease-in'>
         <div>
           <p className='cursor-pointer'>Logo</p>
         </div>
@@ -115,12 +119,12 @@ const NavHeader = () => {
           </label>
         </div>
 
-        <div className='hidden xl:flex justify-between items-center'>
-          <div className='flex gap-10 font-semibold'>
+        <div className='hidden xl:flex justify-between items-center '>
+          <div className='flex gap-10 font-semibold '>
             {navList.map((item, index) => (
               <Link
                 key={index}
-                className='text-primary-text text-base tracking-tight md:tracking-normal'
+                className='custom-link hover:scale-110 duration-300 transition '
                 href={item.link}
               >
                 {item.name}
@@ -130,7 +134,7 @@ const NavHeader = () => {
           <div className='hidden xl:block buttonText ml-10'>
             <Button
               onClick={() => router.push(`/contact`)}
-              className='text-white bg-primary-btn-color font-semibold'
+              className='text-white bg-primary-btn-color font-semibold hover:bg-primary-text hover:scale-110 duration-300 transition ease-in-out delay-150'
             >
               Become A Member
             </Button>
