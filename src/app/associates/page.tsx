@@ -1,4 +1,5 @@
 import React from "react";
+import { sanityClient } from "../../../utils/sanity/client";
 import {
   Table,
   TableBody,
@@ -7,9 +8,8 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
-import TablePagination from "../../../components/ui/table-pagination/Pagination";
-import { sanityClient } from "../../../utils/sanity/client";
 import TableSearch from "../../../components/ui/table-search/TableSearch";
+import TablePagination from "../../../components/ui/table-pagination/Pagination";
 
 const tableHeaders = ["Name", "Email", "Address", "Phone Number", "Store Name"];
 
@@ -26,11 +26,11 @@ const Associates = async ({
   searchParams,
 }: {
   searchParams: {
-    query?: string;
+    search?: string;
     page?: string;
   };
 }) => {
-  const search = searchParams?.query || "";
+  const search = searchParams?.search || "";
   const currentPage = Number(searchParams?.page) || 1;
   const lastIds = [];
 
@@ -65,7 +65,7 @@ const Associates = async ({
             </TableHead>
             <TableBody className='divide-y'>
               {data.length > 0 ? (
-                data.map((item: any, index: number) => (
+                data?.map((item: any, index: number) => (
                   <TableRow
                     key={index}
                     className='bg-white dark:border-gray-700 dark:bg-gray-800'
@@ -97,7 +97,7 @@ const Associates = async ({
             </TableBody>
           </Table>
         </div>
-        <TablePagination />
+        {data && data.length > 10 && <TablePagination />}
       </div>
     </div>
   );
