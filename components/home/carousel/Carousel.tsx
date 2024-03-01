@@ -33,7 +33,7 @@ const CarouselBar = (props: CarouselProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCarouselIndex((current) => (current + 1) % imageSlides.length);
-    }, 8000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -50,18 +50,17 @@ const CarouselBar = (props: CarouselProps) => {
       y: "0",
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 4,
       },
     },
     exit: {
       opacity: 0,
       scale: 0.8,
       transition: {
-        duration: 0.5,
+        duration: 4,
       },
     },
   };
-
   const handleNext = () => {
     setDirection("right");
     setCarouselIndex((prev) => (prev + 1) % imageSlides.length);
@@ -75,8 +74,14 @@ const CarouselBar = (props: CarouselProps) => {
   };
 
   const handleSlideChange = (newSlide: number) => {
+    setDirection(newSlide > carouselIndex ? "down" : "up");
     setCarouselIndex(newSlide);
   };
+
+  // const handleAnimationComplete = () => {
+  //   setDirection("down");
+  //   setCarouselIndex((current) => (current + 1) % imageSlides.length);
+  // };
 
   const renderIndicators = () => {
     return data.map((item, index) => (
@@ -99,12 +104,11 @@ const CarouselBar = (props: CarouselProps) => {
     >
       <AnimatePresence>
         <motion.div
-          key={carouselIndex}
           initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-          variants={slideVariants}
           animate='visible'
           exit='exit'
           className='relative h-full'
+          variants={slideVariants}
         >
           <Image
             src={imageSlides[carouselIndex]}
