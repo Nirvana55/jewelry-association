@@ -8,6 +8,7 @@ import { NewsData } from "../../../types/events";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import EventCard from "../../ui/card/EventCard";
+import CustomButton from "../../ui/button/CustomButton";
 
 type NewsSectionProps = {
   newsData: NewsData[];
@@ -16,7 +17,7 @@ type NewsSectionProps = {
 const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
     <section ref={ref} className='bg-primary-background'>
@@ -39,12 +40,11 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
           <EventCard data={newsData} />
         </div>
         <div className='sm:float-right'>
-          <Button
-            onClick={() => router.push(`/event`)}
-            className='bg-primary-btn-color px-5 py-1 max-sm:w-full'
-          >
-            Show All
-          </Button>
+          <CustomButton
+            buttonText='Show All'
+            handleClick={() => router.push(`/event`)}
+            classStyle='max-sm:w-full'
+          />
         </div>
       </div>
     </section>

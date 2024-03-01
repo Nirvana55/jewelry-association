@@ -18,10 +18,10 @@ export const RichTextComponent: PortableTextComponents = {
   },
   listItem: (props: any) => {
     return (
-      <div className='py-2'>
-        <li className='text-xl font-bold'>{props.value.children[0].text}</li>
+      <div className='py-3'>
+        <li className='text-lg font-bold'>{props.value.children[0].text}</li>
 
-        <p className='text-xl'>{props.value.children[1].text}</p>
+        <p className='text-lg'>{props.value.children[1].text}</p>
       </div>
     );
   },
@@ -41,14 +41,16 @@ export const RichTextComponent: PortableTextComponents = {
       props.value.style === "h6"
     ) {
       return (
-        <div className='py-5'>
-          <h3 className='text-3xl font-bold'>{props.value.children[0].text}</h3>
+        <div className='py-7'>
+          <h3 className='text-2xl font-semibold'>
+            {props.value.children[0].text}
+          </h3>
         </div>
       );
     }
 
     if (props.value.style === "normal") {
-      return <p className='text-xl'>{props.value.children[0].text}</p>;
+      return <p className='text-lg'>{props.value.children[0].text}</p>;
     }
   },
   types: {

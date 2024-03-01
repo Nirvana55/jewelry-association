@@ -14,6 +14,7 @@ import { BsGraphDown, BsGraphUp } from "react-icons/bs";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
+import CustomButton from "../button/CustomButton";
 
 const navList = [
   { name: "Home", link: "/" },
@@ -133,12 +134,16 @@ const NavHeader = () => {
             ))}
           </div>
           <div className='hidden xl:block buttonText ml-10'>
-            <Button
+            <CustomButton
+              handleClick={() => router.push(`/contact`)}
+              buttonText='Become a member'
+            />
+            {/* <Button
               onClick={() => router.push(`/contact`)}
               className='text-white bg-primary-btn-color font-semibold hover:bg-primary-text hover:scale-110 duration-300 transition ease-in-out delay-150'
             >
               Become A Member
-            </Button>
+            </Button> */}
           </div>
         </div>
 

@@ -31,9 +31,17 @@ async function getImagesHighlights() {
   return res;
 }
 
+async function getRatesPrice() {
+  const res = await sanityClient.fetch(
+    `*[_type == "rates" ]{  goldPrice,silverPrice}`
+  );
+  return res;
+}
+
 const Home = async () => {
   const newsSectionPost = await getNewsSectionPost();
   const imagesHighlights = await getImagesHighlights();
+  const ratesPrice = await getRatesPrice();
 
   return (
     <>

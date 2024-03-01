@@ -6,7 +6,7 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { builder } from "../../../utils/sanity/client";
 import { NewsData } from "../../../types/events";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type EventCardProps = {
   data: NewsData[];
@@ -59,7 +59,7 @@ const EventCard = (props: EventCardProps) => {
                   </div>
                 </div>
                 <div className='pt-[16px]'>
-                  <h5 className='text-xl md:text-2xl font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
+                  <h5 className='text-xl md:text-2xl font-bold tracking-tight text-gray-900 capitalize dark:text-white line-clamp-1'>
                     {item.title}
                   </h5>
                   <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 line-clamp-3'>

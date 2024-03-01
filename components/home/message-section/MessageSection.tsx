@@ -5,10 +5,11 @@ import Image from "next/image";
 import "./styles.css";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import CustomButton from "../../ui/button/CustomButton";
 
 const MessageSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
     <section ref={ref} className='bg-white animate-fade-left animate-ease-in'>
@@ -36,21 +37,24 @@ const MessageSection = () => {
               </p>
             </div>
 
-            <Button className='max-lg:hidden bg-primary-btn-color mt-5'>
-              Read more
-              <svg
-                className='-mr-1 ml-2 h-4 w-4'
-                fill='currentColor'
-                viewBox='0 0 20 20'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-                  clipRule='evenodd'
-                />
-              </svg>
-            </Button>
+            <CustomButton
+              buttonText='Read more'
+              classStyle='mx-md:hidden'
+              buttonIcon={
+                <svg
+                  className='-mr-1 ml-2 h-4 w-4'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'
+                  />
+                </svg>
+              }
+            />
           </div>
           <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[550px] md:h-[640px]'>
             <Image fill src='/person.jpeg' alt={`images`} />

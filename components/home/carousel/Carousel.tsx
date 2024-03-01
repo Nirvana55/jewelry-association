@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "flowbite-react";
 import "./styles.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   IoIosArrowUp,
   IoIosArrowDown,
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { ImageHighlight } from "../../../types/carousel";
 import { builder } from "../../../utils/sanity/client";
+import CustomButton from "../../ui/button/CustomButton";
 
 type CarouselProps = {
   data: ImageHighlight[];
@@ -20,6 +20,8 @@ type CarouselProps = {
 
 const CarouselBar = (props: CarouselProps) => {
   const { data } = props;
+  const ref = useRef(null);
+
   const imageSlides = data.map((item) => {
     const imagePath = builder.image(item.imageRef).url();
     return imagePath;
@@ -32,7 +34,6 @@ const CarouselBar = (props: CarouselProps) => {
     const interval = setInterval(() => {
       setCarouselIndex((current) => (current + 1) % imageSlides.length);
     }, 8000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -92,7 +93,10 @@ const CarouselBar = (props: CarouselProps) => {
   };
 
   return (
-    <div className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'>
+    <div
+      ref={ref}
+      className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'
+    >
       <AnimatePresence>
         <motion.div
           key={carouselIndex}
@@ -100,7 +104,7 @@ const CarouselBar = (props: CarouselProps) => {
           variants={slideVariants}
           animate='visible'
           exit='exit'
-          className='relative w-full h-full'
+          className='relative h-full'
         >
           <Image
             src={imageSlides[carouselIndex]}
@@ -108,7 +112,7 @@ const CarouselBar = (props: CarouselProps) => {
             alt='carouselImages'
             fill
             quality={100}
-            className='object-cover'
+            sizes='100vw'
           />
         </motion.div>
       </AnimatePresence>
@@ -144,9 +148,7 @@ const CarouselBar = (props: CarouselProps) => {
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>
-          <Button className='bg-primary-btn-color mt-5 font-semibold text-white px-3 py-1 rounded hover:bg-primary-text hover:scale-110 transition duration-300 '>
-            Explore Now
-          </Button>
+          <CustomButton buttonText='Explore Now' classStyle='mt-5' />
         </div>
       </div>
     </div>

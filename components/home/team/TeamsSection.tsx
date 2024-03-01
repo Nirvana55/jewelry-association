@@ -8,7 +8,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const teamData = [
   {
-    image: "/asd.jpg",
+    image: "/president.jpg",
     name: "Bonnie Green",
     role: "CEO/Co-founder",
     facebookLink: "#",
@@ -16,7 +16,7 @@ const teamData = [
     youtubeLink: "#",
   },
   {
-    image: "/asd.jpg",
+    image: "/president.jpg",
     name: "Bonnie Green",
     role: "CEO/Co-founder",
     facebookLink: "#",
@@ -24,7 +24,7 @@ const teamData = [
     youtubeLink: "#",
   },
   {
-    image: "/asd.jpg",
+    image: "/president.jpg",
     name: "Bonnie Green",
     role: "CEO/Co-founder",
     facebookLink: "#",
@@ -32,7 +32,7 @@ const teamData = [
     youtubeLink: "#",
   },
   {
-    image: "/asd.jpg",
+    image: "/president.jpg",
     name: "Bonnie Green",
     role: "CEO/Co-founder",
     facebookLink: "#",
@@ -40,7 +40,7 @@ const teamData = [
     youtubeLink: "#",
   },
   {
-    image: "/asd.jpg",
+    image: "/president.jpg",
     name: "Bonnie Green",
     role: "CEO/Co-founder",
     facebookLink: "#",
@@ -78,7 +78,7 @@ const TeamsSection = () => {
             >
               <div className='relative mx-auto mb-4 w-36 h-36 '>
                 <Image
-                  className='rounded-full'
+                  className='rounded-full object-cover cursor-pointer hover:scale-110 duration-300'
                   fill
                   src={item.image}
                   alt='Bonnie Avatar'
@@ -93,25 +93,25 @@ const TeamsSection = () => {
                 <li className='px-2'>
                   <Link
                     href={item.facebookLink}
-                    className='text-test hover:text-[#39569c] dark:hover:text-white'
+                    className='text-test hover:scale-110 hover:text-[#39569c] dark:hover:text-white'
                   >
-                    <FaFacebook />
+                    <FaFacebook className='hover:scale-110 duration-300' />
                   </Link>
                 </li>
                 <li className='px-2'>
                   <Link
                     href={item.instagramLink}
-                    className='text-pink hover:text-[#d62976] dark:hover:text-white'
+                    className='text-pink hover:scale-110 hover:text-[#d62976] dark:hover:text-white'
                   >
-                    <FaInstagram />
+                    <FaInstagram className='hover:scale-110 duration-300' />
                   </Link>
                 </li>
                 <li className='px-2'>
                   <Link
                     href={item.youtubeLink}
-                    className='text-primary-danger hover:text-[#FF0000] dark:hover:text-white dark:text-gray-300'
+                    className='text-primary-danger  hover:text-[#FF0000] ` dark:hover:text-white dark:text-gray-300'
                   >
-                    <FaYoutube />
+                    <FaYoutube className='hover:scale-110 duration-300' />
                   </Link>
                 </li>
               </ul>
