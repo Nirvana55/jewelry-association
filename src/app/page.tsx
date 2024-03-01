@@ -6,6 +6,7 @@ import TeamsSection from "../../components/home/team/TeamsSection";
 import NewsLetter from "../../components/home/news-subscribe/NewsLetter";
 import { sanityClient } from "../../utils/sanity/client";
 import { NewsData } from "../../types/events";
+import { ImageHighlight } from "../../types/carousel";
 
 async function getNewsSectionPost() {
   const res = await sanityClient.fetch<NewsData[]>(
@@ -23,12 +24,28 @@ async function getNewsSectionPost() {
   return res;
 }
 
+async function getImagesHighlights() {
+  const res = await sanityClient.fetch<ImageHighlight[]>(
+    `*[_type == "imageHighlight" ]{"imageRef": image.asset._ref}`
+  );
+  return res;
+}
+
+async function getRatesPrice() {
+  const res = await sanityClient.fetch(
+    `*[_type == "rates" ]{  goldPrice,silverPrice}`
+  );
+  return res;
+}
+
 const Home = async () => {
   const newsSectionPost = await getNewsSectionPost();
+  const imagesHighlights = await getImagesHighlights();
+  const ratesPrice = await getRatesPrice();
 
   return (
     <>
-      <Carousel />
+      <Carousel data={imagesHighlights} />
       <MessageSection />
       <MotiveSection />
       <TeamsSection />

@@ -6,8 +6,7 @@ import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import JoinAssociation from "../../../../components/event/join-association";
 import SubscribeBlog from "../../../../components/event/subscribe-blog";
 import NoData from "../../../../components/ui/no-data/NoData";
-import { sanityClient } from "../../../../utils/sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { builder, sanityClient } from "../../../../utils/sanity/client";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponent } from "../../../../components/RickTextComponent";
 
@@ -28,7 +27,6 @@ async function getPost(params: string) {
 
 const EventDetails = async ({ params }: { params: { slug: string } }) => {
   const blogCardListData = await getPost(params.slug);
-  const builder = imageUrlBuilder(sanityClient);
 
   return (
     <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>

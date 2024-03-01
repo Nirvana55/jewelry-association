@@ -1,34 +1,53 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "flowbite-react";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   IoIosArrowUp,
   IoIosArrowDown,
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { ImageHighlight } from "../../../types/carousel";
+import { builder } from "../../../utils/sanity/client";
+import CustomButton from "../../ui/button/CustomButton";
 
-const imageSlides = ["/sad3.jpeg", "/sad.jpg", "/sad2.jpeg"];
+type CarouselProps = {
+  data: ImageHighlight[];
+};
 
-const CarouselBar = () => {
+const CarouselBar = (props: CarouselProps) => {
+  const { data } = props;
+  const ref = useRef(null);
+
+  const imageSlides = data.map((item) => {
+    const imagePath = builder.image(item.imageRef).url();
+    return imagePath;
+  });
+
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [direction, setDirection] = useState("left");
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((current) => (current + 1) % imageSlides.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
   const slideVariants = {
     hiddenRight: {
-      x: "100%",
+      y: "10",
       opacity: 0,
     },
     hiddenLeft: {
-      x: "-100%",
+      y: "-10",
       opacity: 0,
     },
     visible: {
-      x: "0",
+      y: "0",
       opacity: 1,
       transition: {
         duration: 1,
@@ -60,7 +79,7 @@ const CarouselBar = () => {
   };
 
   const renderIndicators = () => {
-    return imageSlides.map((item, index) => (
+    return data.map((item, index) => (
       <div
         key={index}
         className={`indicator ${
@@ -74,7 +93,10 @@ const CarouselBar = () => {
   };
 
   return (
-    <div className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'>
+    <div
+      ref={ref}
+      className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'
+    >
       <AnimatePresence>
         <motion.div
           key={carouselIndex}
@@ -82,7 +104,7 @@ const CarouselBar = () => {
           variants={slideVariants}
           animate='visible'
           exit='exit'
-          className='relative w-full h-full'
+          className='relative h-full'
         >
           <Image
             src={imageSlides[carouselIndex]}
@@ -90,7 +112,7 @@ const CarouselBar = () => {
             alt='carouselImages'
             fill
             quality={100}
-            className='object-cover'
+            sizes='100vw'
           />
         </motion.div>
       </AnimatePresence>
@@ -126,9 +148,7 @@ const CarouselBar = () => {
             Track the latest gold and silver rates with our dynamic graphs and
             make informed decisions.
           </p>
-          <Button className='bg-primary-btn-color mt-5 font-semibold text-white px-3 py-1 rounded hover:bg-primary-text hover:scale-110 transition duration-300 '>
-            Explore Now
-          </Button>
+          <CustomButton buttonText='Explore Now' classStyle='mt-5' />
         </div>
       </div>
     </div>

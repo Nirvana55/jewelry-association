@@ -61,12 +61,6 @@ const FooterBar = () => {
       >
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div>
-            {/* <Footer.Brand
-              href='https://flowbite.com'
-              src='https://flowbite.com/docs/images/logo.svg'
-              alt='Flowbite Logo'
-              name='Flowbite'
-            /> */}
             <p>Logo</p>
           </div>
           <div className='grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6'>

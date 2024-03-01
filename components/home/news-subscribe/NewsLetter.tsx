@@ -5,10 +5,11 @@ import { useInView } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
 import { HiMail } from "react-icons/hi";
+import CustomButton from "../../ui/button/CustomButton";
 
 const NewsLetter = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
     <section ref={ref} className=' bg-white dark:bg-gray-900'>
@@ -28,7 +29,7 @@ const NewsLetter = () => {
         </div>
         <div className='pt-[42px] md:pt-[80px]'>
           <form action='#'>
-            <div className='items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex sm:space-y-0'>
+            <div className='items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex sm:space-y-0 '>
               <div className='relative w-full'>
                 <TextInput
                   id='email'
@@ -39,21 +40,19 @@ const NewsLetter = () => {
                 />
               </div>
               <div className='max-sm:hidden md:self-start'>
-                <Button
+                <CustomButton
+                  buttonText='Subscribe'
+                  classStyle='w-full text-sm rounded-none rounded-r-xl'
                   type='submit'
-                  className='w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-btn-color border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
-                >
-                  Subscribe
-                </Button>
+                />
               </div>
             </div>
             <div className='sm:hidden md:self-start my-2'>
-              <Button
+              <CustomButton
+                buttonText='Subscribe'
+                classStyle='w-full text-sm'
                 type='submit'
-                className='w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-btn-color border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
-              >
-                Subscribe
-              </Button>
+              />
             </div>
             <div className='mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300'>
               We care about the protection of your data.
