@@ -1,6 +1,5 @@
 import React from "react";
-import NoData from "../../../components/ui/no-data/NoData";
-import ContactForm from "../../../components/contact-form/ContactForm";
+import ContactForm from "./ContactForm";
 
 const Gallery = () => {
   return (
