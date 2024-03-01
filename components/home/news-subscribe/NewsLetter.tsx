@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, TextInput } from "flowbite-react";
+import { TextInput } from "flowbite-react";
 import { useInView } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
@@ -9,7 +9,7 @@ import CustomButton from "../../ui/button/CustomButton";
 
 const NewsLetter = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref} className=' bg-white dark:bg-gray-900'>

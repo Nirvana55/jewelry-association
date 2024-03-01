@@ -9,7 +9,7 @@ import CustomButton from "../../ui/button/CustomButton";
 
 const MessageSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref} className='bg-white animate-fade-left animate-ease-in'>
