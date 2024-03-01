@@ -10,7 +10,7 @@ const teamData = [
   {
     image: "/president.jpg",
     name: "Bonnie Green",
-    role: "CEO/Co-founder",
+    role: "President",
     facebookLink: "#",
     instagramLink: "#",
     youtubeLink: "#",
@@ -18,15 +18,7 @@ const teamData = [
   {
     image: "/president.jpg",
     name: "Bonnie Green",
-    role: "CEO/Co-founder",
-    facebookLink: "#",
-    instagramLink: "#",
-    youtubeLink: "#",
-  },
-  {
-    image: "/president.jpg",
-    name: "Bonnie Green",
-    role: "CEO/Co-founder",
+    role: "Past President",
     facebookLink: "#",
     instagramLink: "#",
     youtubeLink: "#",
@@ -51,14 +43,13 @@ const teamData = [
 
 const TeamsSection = () => {
   const ref = useRef(null);
+
   const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref} className=' bg-white dark:bg-gray-900'>
       <div
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px] ${
-          isInView ? "animate-fade-right animate-ease-in" : ""
-        }`}
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]`}
       >
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
@@ -70,7 +61,7 @@ const TeamsSection = () => {
             industry.
           </p>
         </div>
-        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-[42px] md:pt-[80px]'>
+        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-[42px] md:pt-[80px]'>
           {teamData.map((item, index) => (
             <div
               key={index}
@@ -88,7 +79,7 @@ const TeamsSection = () => {
               <h3 className='text-base md:text-lg font-bold tracking-tight text-gray-900 dark:text-white'>
                 <Link href='#'>{item.name}</Link>
               </h3>
-              <p className='text-sm'>{item.role}</p>
+              <p className='text-caption font-semibold'>{item.role}</p>
               <ul className='flex justify-center mt-4'>
                 <li className='px-2'>
                   <Link

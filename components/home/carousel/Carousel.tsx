@@ -33,7 +33,7 @@ const CarouselBar = (props: CarouselProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCarouselIndex((current) => (current + 1) % imageSlides.length);
-    }, 8000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -50,18 +50,17 @@ const CarouselBar = (props: CarouselProps) => {
       y: "0",
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 4,
       },
     },
     exit: {
       opacity: 0,
       scale: 0.8,
       transition: {
-        duration: 0.5,
+        duration: 4,
       },
     },
   };
-
   const handleNext = () => {
     setDirection("right");
     setCarouselIndex((prev) => (prev + 1) % imageSlides.length);
@@ -75,8 +74,14 @@ const CarouselBar = (props: CarouselProps) => {
   };
 
   const handleSlideChange = (newSlide: number) => {
+    setDirection(newSlide > carouselIndex ? "down" : "up");
     setCarouselIndex(newSlide);
   };
+
+  // const handleAnimationComplete = () => {
+  //   setDirection("down");
+  //   setCarouselIndex((current) => (current + 1) % imageSlides.length);
+  // };
 
   const renderIndicators = () => {
     return data.map((item, index) => (
@@ -99,12 +104,11 @@ const CarouselBar = (props: CarouselProps) => {
     >
       <AnimatePresence>
         <motion.div
-          key={carouselIndex}
           initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-          variants={slideVariants}
           animate='visible'
           exit='exit'
           className='relative h-full'
+          variants={slideVariants}
         >
           <Image
             src={imageSlides[carouselIndex]}
@@ -117,7 +121,7 @@ const CarouselBar = (props: CarouselProps) => {
         </motion.div>
       </AnimatePresence>
 
-      <div className='bg-test bg-opacity-65 w-full h-[780px] md:h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
+      <div className='bg-test bg-opacity-70 w-full h-[780px] md:h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
 
       <div
         onClick={handlePrevious}
@@ -139,8 +143,8 @@ const CarouselBar = (props: CarouselProps) => {
         {renderIndicators()}
       </div>
 
-      <div className='container z-20 mx-auto'>
-        <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 z-20 rounded'>
+      <div className='z-20 mx-auto'>
+        <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 left-40 z-20 rounded'>
           <p className='text-white font-bold text-5xl uppercase md:text-6xl'>
             Welcome To Negja
           </p>

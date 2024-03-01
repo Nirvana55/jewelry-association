@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "flowbite-react";
 import {
   BsFacebook,
   BsInstagram,
@@ -44,14 +43,17 @@ const NavHeader = () => {
 
   return (
     <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
-      <div className='hidden md:flex flex-row items-center gap-10 py-2 bg-test '>
+      <div className='hidden md:flex flex-row items-center gap-10 py-3 bg-test '>
         <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2 animate-fade-left animate-ease-in '>
           <div className='flex flex-row gap-8 text-white '>
             <div className='flex items-center gap-3 hover:scale-110 duration-300'>
               <BsMailbox />
-              <p className='text-caption cursor-pointer '>
+              <a
+                href='https://gmail.com'
+                className='text-caption cursor-pointer'
+              >
                 nepalgja@mos.com.np
-              </p>
+              </a>
             </div>
             <div className='ease-in-out  flex items-center gap-3'>
               <BsClock />
@@ -101,7 +103,7 @@ const NavHeader = () => {
         </div>
       </div>
 
-      <div className='container py-3 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
+      <div className='container py-2 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
         <div className='animate-fade-right md:animate-ease-in'>
           <p className='cursor-pointer'>Logo</p>
         </div>

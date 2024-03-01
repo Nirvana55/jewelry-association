@@ -17,14 +17,12 @@ type NewsSectionProps = {
 const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref} className='bg-primary-background'>
       <div
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]  ${
-          isInView ? "animate-fade-right animate-ease-in" : ""
-        }`}
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]`}
       >
         <div className='max-w-screen-sm'>
           <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
@@ -36,7 +34,11 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
             of jewelry.
           </p>
         </div>
-        <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center'>
+        <div
+          className={`grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center ${
+            isInView ? "animate-fade-right animate-ease-in" : ""
+          } `}
+        >
           <EventCard data={newsData} />
         </div>
         <div className='sm:float-right'>

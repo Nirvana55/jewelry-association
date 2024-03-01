@@ -12,9 +12,7 @@ const MotiveSection = () => {
   return (
     <section ref={ref} className='bg-background-body'>
       <div
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px] ${
-          isInView ? "animate-fade-right animate-ease-in" : ""
-        }`}
+        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]`}
       >
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
@@ -25,7 +23,7 @@ const MotiveSection = () => {
             the artistry, integrity, and future of the jewelry industry. &quot;
           </Blockquote>
         </div>
-        <div className='space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 pt-[42px] md:pt-[80px]'>
+        <div className='space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-y-0 pt-[42px] md:pt-[80px]'>
           <div>
             <div className='flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-test'>
               <svg
@@ -41,8 +39,8 @@ const MotiveSection = () => {
                 ></path>
               </svg>
             </div>
-            <h3 className='text-[24px] md:text-[32px] text-black font-bold dark:text-white py-[12px] md:py-[24px]'>
-              Networking and Collaboration
+            <h3 className='mb-2 text-[24px] md:text-[32px] text-black font-bold dark:text-white py-[12px] md:py-[24px]'>
+              Networking
             </h3>
             <p className='text-gray-500 text-[16px] tracking-tight md:tracking-normal dark:text-gray-400'>
               Connect with industry professionals and expand your network.
