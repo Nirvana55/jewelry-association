@@ -1,9 +1,8 @@
 import React from "react";
 import NoData from "../../../components/ui/no-data/NoData";
 import Image from "next/image";
-import { sanityClient } from "../../../utils/sanity/client";
+import { builder, sanityClient } from "../../../utils/sanity/client";
 import BoardSearch from "./searchOptions";
-import imageUrlBuilder from "@sanity/image-url";
 import { Roles } from "./enum";
 
 async function getExecutiveBoard(query: { date?: string }) {
@@ -36,7 +35,6 @@ const ExecutiveBoard = async ({
   };
 }) => {
   const date = searchParams?.selectedDate || "";
-  const builder = imageUrlBuilder(sanityClient);
 
   function findKeysByValue(value: string): string[] {
     const keys = Object.keys(Roles).filter(

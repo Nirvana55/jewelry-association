@@ -1,10 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
-import { sanityClient } from "../utils/sanity/client";
+import { builder, sanityClient } from "../utils/sanity/client";
 import { PortableTextComponents } from "@portabletext/react";
-
-const builder = imageUrlBuilder(sanityClient);
 
 export const RichTextComponent: PortableTextComponents = {
   list: (props: any) => {
@@ -30,8 +27,6 @@ export const RichTextComponent: PortableTextComponents = {
   },
   marks: {
     link: (props: any) => {
-      console.log(props);
-
       return <p className='text-xl'>asdsad</p>;
     },
   },

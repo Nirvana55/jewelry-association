@@ -1,11 +1,9 @@
 "use client";
 
-import { Button, Card } from "flowbite-react";
-import imageUrlBuilder from "@sanity/image-url";
+import { Button } from "flowbite-react";
 
 import "./styles.css";
 import { useRouter } from "next/navigation";
-import { sanityClient } from "../../../utils/sanity/client";
 import { NewsData } from "../../../types/events";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
@@ -17,7 +15,6 @@ type NewsSectionProps = {
 
 const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
-  const builder = imageUrlBuilder(sanityClient);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

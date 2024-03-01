@@ -11,10 +11,20 @@ import {
   IoIosArrowBack,
 } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
+import { ImageHighlight } from "../../../types/carousel";
+import { builder } from "../../../utils/sanity/client";
 
-const imageSlides = ["/sad3.jpeg", "/sad.jpg", "/sad2.jpeg"];
+type CarouselProps = {
+  data: ImageHighlight[];
+};
 
-const CarouselBar = () => {
+const CarouselBar = (props: CarouselProps) => {
+  const { data } = props;
+  const imageSlides = data.map((item) => {
+    const imagePath = builder.image(item.imageRef).url();
+    return imagePath;
+  });
+
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [direction, setDirection] = useState("left");
 
@@ -68,7 +78,7 @@ const CarouselBar = () => {
   };
 
   const renderIndicators = () => {
-    return imageSlides.map((item, index) => (
+    return data.map((item, index) => (
       <div
         key={index}
         className={`indicator ${
