@@ -1,12 +1,10 @@
 import React from "react";
 import { sanityClient } from "../../../utils/sanity/client";
-import { Card } from "flowbite-react";
 import Image from "next/image";
 import { Events } from "../../../types/events";
-import imageUrlBuilder from "@sanity/image-url";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import Link from "next/link";
 import NoData from "../../../components/ui/no-data/NoData";
+import EventCard from "../../../components/ui/card/EventCard";
 
 async function getAllPosts() {
   const res = await sanityClient.fetch<Events[]>(
@@ -18,7 +16,6 @@ async function getAllPosts() {
 
 const Event = async () => {
   const blogCardListData = await getAllPosts();
-  const builder = imageUrlBuilder(sanityClient);
 
   const dateFormat = (date: string) => {
     const dateObj = new Date(date);
@@ -82,67 +79,7 @@ const Event = async () => {
         <div className='pt-[42px] md:pt-[80px]'>
           {blogCardListData.length > 0 ? (
             <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
-              {blogCardListData.map((item) => (
-                <Link
-                  href={`/event/${item.slug.current}`}
-                  key={item._id}
-                  className='grid gap-2'
-                >
-                  <div>
-                    <Card
-                      renderImage={() => (
-                        <Image
-                          width={416}
-                          height={300}
-                          src={builder
-                            .image(item.mainImage.asset._ref)
-                            .width(416)
-                            .height(300)
-                            .url()}
-                          alt='images'
-                        />
-                      )}
-                    >
-                      <div className='flex flex-col gap-2'>
-                        <div className='justify-start items-center gap-4 inline-flex'>
-                          <div className='py-1 bg-zinc-100 justify-start items-start flex'>
-                            <div className='text-primary-btn-color bg-blue-100 p-2 rounded text-sm font-semibold leading-[21px]'>
-                              Category
-                            </div>
-                          </div>
-                          <div className='text-black text-[14px] font-semibold leading-[21px]'>
-                            {item.readTime}
-                          </div>
-                        </div>
-                        <div className='pt-[16px]'>
-                          <h5 className='text-xl md:text-2xl font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
-                            {item.title}
-                          </h5>
-                          <p className='font-normal pt-[8px] text-gray-700 dark:text-gray-400 line-clamp-3'>
-                            {item.cardInfoText}
-                          </p>
-                        </div>
-
-                        <div className='flex'>
-                          {/* <div className='inline-flex items-center'>
-                            <Avatar
-                              img='/1.jpeg'
-                              alt='avatar of Jese'
-                              rounded
-                            />
-                            <p className='font-semibold text-gray-700 px-2 self-start dark:text-gray-400'>
-                              {item.author}
-                            </p>
-                          </div> */}
-                          <div className='w-[109px] justify-center items-center gap-2 inline-flex pt-[24px] text-primary-btn-color cursor-pointer'>
-                            Read more <MdKeyboardArrowRight />
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
-                  </div>
-                </Link>
-              ))}
+              <EventCard data={blogCardListData} />
             </div>
           ) : (
             <NoData />

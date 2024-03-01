@@ -23,12 +23,12 @@ dependencies:
   daisyui:
     specifier: ^4.7.2
     version: 4.7.2(postcss@8.4.33)
+  flowbite:
+    specifier: ^2.3.0
+    version: 2.3.0
   flowbite-react:
     specifier: ^0.7.2
     version: 0.7.2(@types/react@18.2.48)(esbuild@0.19.11)(next@14.1.0)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.1)
-  install:
-    specifier: ^0.13.0
-    version: 0.13.0
   next:
     specifier: 14.1.0
     version: 14.1.0(@babel/core@7.23.9)(@opentelemetry/api@1.8.0)(react-dom@18.2.0)(react@18.2.0)
@@ -4968,11 +4968,6 @@ packages:
 
   /inline-style-parser@0.2.2:
     resolution: {integrity: sha512-EcKzdTHVe8wFVOGEYXiW9WmJXPjqi1T+234YpJr98RiFYKHV3cdy1+3mkTE+KHTHxFFLH51SfaGOoUdW+v7ViQ==}
-    dev: false
-
-  /install@0.13.0:
-    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
-    engines: {node: '>= 0.10'}
     dev: false
 
   /internal-slot@1.0.6:
