@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "flowbite-react";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   IoIosArrowUp,
   IoIosArrowDown,
@@ -18,17 +18,25 @@ const CarouselBar = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [direction, setDirection] = useState("left");
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((current) => (current + 1) % imageSlides.length);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const slideVariants = {
     hiddenRight: {
-      x: "100%",
+      y: "10",
       opacity: 0,
     },
     hiddenLeft: {
-      x: "-100%",
+      y: "-10",
       opacity: 0,
     },
     visible: {
-      x: "0",
+      y: "0",
       opacity: 1,
       transition: {
         duration: 1,

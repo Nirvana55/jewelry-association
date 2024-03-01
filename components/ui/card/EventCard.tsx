@@ -25,7 +25,11 @@ const EventCard = (props: EventCardProps) => {
         >
           <motion.div
             whileHover={{ y: -30 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
           >
             <Card
               className='rounded-t-lg'
