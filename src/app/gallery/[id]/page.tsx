@@ -1,6 +1,4 @@
-import { Card } from "flowbite-react";
 import Image from "next/image";
-import Link from "next/link";
 import NoData from "../../../../components/ui/no-data/NoData";
 
 const imageSlides = [
@@ -24,10 +22,10 @@ const Photos = () => {
       </div>
       <div className='pt-[42px] md:pt-[80px]'>
         {imageSlides.length > 0 ? (
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-4 '>
             {imageSlides.map((item) => (
               <div
-                className='relative h-80 max-w-full cursor-pointer'
+                className='relative h-80 max-w-full cursor-pointer hover:scale-105 hover:transition hover:duration-500 hover:ease-in-out'
                 key={item.id}
               >
                 <Image
