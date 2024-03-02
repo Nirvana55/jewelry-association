@@ -1,8 +1,6 @@
 import React from "react";
 import NoData from "../../../components/ui/no-data/NoData";
-import Link from "next/link";
-import { Card } from "flowbite-react";
-import Image from "next/image";
+import GalleryCard from "../../../components/ui/gallery-card/GalleryCard";
 
 const data = [
   { id: 1, albumImage: "/sad.jpg", albumTitle: "This is all about test" },
@@ -27,29 +25,7 @@ const Gallery = () => {
       <div className='pt-[42px] md:pt-[80px]'>
         {data.length > 0 ? (
           <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
-            {data.map((item) => (
-              <Link href={`/gallery/${item.id}`} key={item.id}>
-                <Card
-                  renderImage={() => (
-                    <Image
-                      width={416}
-                      height={300}
-                      src={item.albumImage}
-                      alt='images'
-                    />
-                  )}
-                >
-                  <div>
-                    <h5 className='text-xl md:text-2xl  font-bold tracking-tight text-gray-900 capitalize dark:text-white'>
-                      {item.albumTitle}
-                    </h5>
-                    <p className='text-base md:text-lg pt-[8px]  font-light text-gray-500 sm:text-xl dark:text-gray-400'>
-                      Words that Sparkle
-                    </p>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+            <GalleryCard />
           </div>
         ) : (
           <NoData />
