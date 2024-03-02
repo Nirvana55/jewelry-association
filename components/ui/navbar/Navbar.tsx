@@ -14,6 +14,8 @@ import { BsGraphDown, BsGraphUp } from "react-icons/bs";
 import "./styles.css";
 import { useRouter } from "next/navigation";
 import CustomButton from "../button/CustomButton";
+import { useGetRates } from "../../../api/associates/queries";
+import { Spinner } from "flowbite-react";
 
 const navList = [
   { name: "Home", link: "/" },
@@ -40,6 +42,7 @@ const goldAndSilverPrice = [
 
 const NavHeader = () => {
   const router = useRouter();
+  const getRateData = useGetRates();
 
   return (
     <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
@@ -61,32 +64,40 @@ const NavHeader = () => {
             </div>
           </div>
           <div className='flex flex-row gap-8 items-center text-white '>
-            {goldAndSilverPrice.map((item) => (
-              <div
-                key={item.name}
-                className='flex flex-row items-center max-md:mr-2 cursor-pointer hover:scale-110 hover:transition-all duration-300 ease-in-out'
-              >
+            <>
+              <div className='flex flex-row items-center max-md:mr-2 cursor-pointer hover:scale-110 hover:transition-all duration-300 ease-in-out'>
                 <div>
-                  <p className='font-semibold text-base'>{item.name}</p>
+                  <p className='font-semibold text-base'>Gold Price</p>
                 </div>
                 <div>
-                  {item.name === "Silver" ? (
-                    <BsGraphDown className='mx-2 text-primary-danger text-lg' />
+                  <BsGraphUp className='mx-2 text-teal-500 text-lg' />
+                </div>
+                <p className={`text-base `}>
+                  {getRateData.isLoading ? (
+                    <Spinner />
                   ) : (
-                    <BsGraphUp className='mx-2 text-teal-500 text-lg' />
+                    getRateData?.data[0]?.goldPrice
                   )}
-                </div>
-                <p
-                  className={`text-base  ${
-                    item.name === "Silver"
-                      ? "text-primary-danger"
-                      : "text-teal-500"
-                  }`}
-                >
-                  {item.price}
                 </p>
               </div>
-            ))}
+              <div className='flex flex-row items-center max-md:mr-2 cursor-pointer hover:scale-110 hover:transition-all duration-300 ease-in-out'>
+                <div>
+                  <p className='font-semibold text-base'>Silver Price</p>
+                </div>
+                <div>
+                  <BsGraphDown className='mx-2 text-primary-danger text-lg' />
+                </div>
+                <p className={`text-base `}>
+                  {getRateData.isLoading ? (
+                    <Spinner />
+                  ) : (
+                    getRateData?.data[0]?.silverPrice
+                  )}{" "}
+                </p>
+              </div>
+            </>
+
+            {/* {item.name === "Silver" ? "text-primary-danger" : "text-teal-500"} */}
 
             {navIconList.map((item, index) => (
               <Link
