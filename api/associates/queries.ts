@@ -1,10 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import { sanityClient } from "../../utils/sanity/client";
 
-const getAssociates = async (query: { search?: string; page?: string }) => {
-  const res = await sanityClient.fetch(
-    `*[_type=="associateMembers"  ${
-      query.search ? '&& title match "' + query.search + '"' : ""
-    } ] | order(publishedAt desc)[0...10]`
-  );
+const getRates = async () => {
+  const res = await sanityClient.fetch(`*[_type=="rates"]`);
   return res;
+};
+
+export const useGetRates = () => {
+  return useQuery({
+    queryKey: ["getRates"],
+    queryFn: () => getRates(),
+    refetchOnWindowFocus: true,
+  });
 };

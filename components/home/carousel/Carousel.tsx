@@ -9,7 +9,7 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ImageHighlight } from "../../../types/carousel";
 import { builder } from "../../../utils/sanity/client";
 import CustomButton from "../../ui/button/CustomButton";
@@ -78,11 +78,6 @@ const CarouselBar = (props: CarouselProps) => {
     setCarouselIndex(newSlide);
   };
 
-  // const handleAnimationComplete = () => {
-  //   setDirection("down");
-  //   setCarouselIndex((current) => (current + 1) % imageSlides.length);
-  // };
-
   const renderIndicators = () => {
     return data.map((item, index) => (
       <div
@@ -102,8 +97,9 @@ const CarouselBar = (props: CarouselProps) => {
       ref={ref}
       className='relative h-[780px] md:h-[820px] animate-fade-right animate-ease-in'
     >
-      <AnimatePresence>
+      <AnimatePresence mode='popLayout'>
         <motion.div
+          key={carouselIndex}
           initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
           animate='visible'
           exit='exit'
