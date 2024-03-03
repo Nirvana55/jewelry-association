@@ -71,21 +71,21 @@ const ExecutiveBoard = async ({
           <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-10 pt-[80px]'>
             {data[0].boardMembers.map((item: any) => (
               <div key={item._key}>
-                <div className='relative max-w-full h-[300px] md:h-[250px] shadow border shrink md:shrink-0 my-4 md:my-0'>
+                <div className='relative max-w-full h-[300px] md:h-[250px] my-2 md:my-0'>
                   <Image
                     width={500}
-                    height={300}
+                    height={400}
                     className='rounded-t-lg'
                     loading='lazy'
                     src={builder
                       .image(item.image.asset._ref)
-                      .width(420)
-                      .height(300)
+                      .width(500)
+                      .height(400)
                       .url()}
                     alt='images'
                   />
                 </div>
-                <h2 className='mt-4 font-semibold text-xl text-black capitalize'>
+                <h2 className='font-semibold text-xl text-black capitalize'>
                   {item.executiveMemberName}
                 </h2>
                 <p className='text-gray-600'>{findKeysByValue(item.role)}</p>

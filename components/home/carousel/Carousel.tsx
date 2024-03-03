@@ -39,11 +39,11 @@ const CarouselBar = (props: CarouselProps) => {
 
   const slideVariants = {
     hiddenRight: {
-      y: "10",
+      x: "10",
       opacity: 0,
     },
     hiddenLeft: {
-      y: "-10",
+      x: "-10",
       opacity: 0,
     },
     visible: {

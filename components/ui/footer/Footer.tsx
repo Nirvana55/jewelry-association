@@ -2,6 +2,7 @@
 
 import { Footer } from "flowbite-react";
 import { useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
@@ -61,7 +62,13 @@ const FooterBar = () => {
       >
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div>
-            <p>Logo</p>
+            <Image
+              className='cursor-pointer'
+              src='/logo.jpg'
+              alt='logo'
+              height={400}
+              width={100}
+            />
           </div>
           <div className='grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6'>
             {footerData.map((item, index) => (
