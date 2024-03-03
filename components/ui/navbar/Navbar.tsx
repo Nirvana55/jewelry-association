@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import CustomButton from "../button/CustomButton";
 import { useGetRates } from "../../../api/associates/queries";
 import { Spinner } from "flowbite-react";
+import Image from "next/image";
 
 const navList = [
   { name: "Home", link: "/" },
@@ -116,7 +117,13 @@ const NavHeader = () => {
 
       <div className='container py-2 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
         <div className='animate-fade-right md:animate-ease-in'>
-          <p className='cursor-pointer'>Logo</p>
+          <Image
+            className='cursor-pointer'
+            src='/logo.jpg'
+            alt='logo'
+            height={400}
+            width={100}
+          />
         </div>
 
         {/* input button for nav bar drawer */}
