@@ -1,7 +1,5 @@
 "use client";
 
-import { Button } from "flowbite-react";
-
 import "./styles.css";
 import { useRouter } from "next/navigation";
 import { NewsData } from "../../../types/events";
@@ -17,7 +15,7 @@ type NewsSectionProps = {
 const EventSection = ({ newsData }: NewsSectionProps) => {
   const router = useRouter();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  // const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref} className='bg-primary-background'>
@@ -35,9 +33,7 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
           </p>
         </div>
         <div
-          className={`grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center ${
-            isInView ? "animate-fade-right animate-ease-in" : ""
-          } `}
+          className={`grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 py-[60px] lg:py-[80px] justify-center  `}
         >
           <EventCard data={newsData} />
         </div>
