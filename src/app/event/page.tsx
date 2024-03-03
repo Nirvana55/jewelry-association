@@ -78,7 +78,7 @@ const Event = async () => {
         </div>
         <div className='pt-[42px] md:pt-[80px]'>
           {blogCardListData.length > 0 ? (
-            <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[42px] justify-center cursor-pointer'>
+            <div className='grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-6 justify-center cursor-pointer'>
               <EventCard data={blogCardListData} />
             </div>
           ) : (
