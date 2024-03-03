@@ -10,7 +10,7 @@ const NewsLetter = () => {
   const ref = useRef(null);
 
   return (
-    <section ref={ref} className=' bg-white dark:bg-gray-900'>
+    <section ref={ref} className='bg-white dark:bg-gray-900'>
       <div
         className={`container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px]`}
       >
