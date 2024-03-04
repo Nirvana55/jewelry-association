@@ -13,97 +13,20 @@ import {
 } from "recharts";
 import { AiFillGold } from "react-icons/ai";
 import { PiDiamondsFourBold } from "react-icons/pi";
+import { useGetRates } from "../../../api/associates/queries";
+import { Spinner } from "flowbite-react";
 
 const GraphSection = () => {
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      Gold: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      Gold: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      Gold: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      Gold: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      Gold: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      Gold: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      Gold: 4300,
-      amt: 2100,
-    },
-  ];
+  const getRateData = useGetRates();
 
-  const silverData = [
-    {
-      name: "Page A",
-      uv: 4000,
-      Silver: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      Silver: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      Silver: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      Silver: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      Silver: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      Silver: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      Silver: 4300,
-      amt: 2100,
-    },
-  ];
+  if (getRateData.isLoading) {
+    return (
+      <div className='py-11'>
+        <Spinner />
+        <p className='mt-5'>Loading</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -123,23 +46,23 @@ const GraphSection = () => {
         </div>
 
         <div className='h-[400px] flex-1 w-full'>
-          <ResponsiveContainer width='100%' className='h-[300px] sm:h-[400px]'>
+          <ResponsiveContainer width='100%' height={400}>
             <LineChart
               width={730}
               height={250}
-              data={data}
+              data={getRateData.data || []}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray='3 3' />
-              <XAxis dataKey='name' />
+              <XAxis dataKey='date' />
               <YAxis />
               <Tooltip />
               <Legend />
               <Line
-                strokeWidth={4}
                 type='monotone'
-                dataKey='Gold'
-                stroke='#204634'
+                strokeWidth={4}
+                dataKey='goldPrice'
+                stroke='#82ca9d'
               />
             </LineChart>
           </ResponsiveContainer>
@@ -165,18 +88,18 @@ const GraphSection = () => {
             <LineChart
               width={730}
               height={250}
-              data={silverData}
+              data={getRateData.data || []}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray='3 3' />
-              <XAxis dataKey='name' />
+              <XAxis dataKey='date' />
               <YAxis />
               <Tooltip />
               <Legend />
               <Line
                 strokeWidth={4}
                 type='monotone'
-                dataKey='Silver'
+                dataKey='silverPrice'
                 stroke='#BD2729'
               />
             </LineChart>
