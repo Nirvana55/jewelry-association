@@ -23,7 +23,7 @@ const GraphSection = () => {
     return (
       <div className='py-11'>
         <Spinner />
-        <p className='mt-5'>Loading</p>
+        <p className='mt-5 text-lg text-center text-black'>Loading</p>
       </div>
     );
   }
