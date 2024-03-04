@@ -11,12 +11,12 @@ const footerData = [
     title: "about",
     footerLink: [
       {
-        link: "#",
+        link: "/",
         name: "Jewelry Association",
       },
       {
-        link: "#",
-        name: "About",
+        link: "/associates",
+        name: "Associates",
       },
     ],
   },
@@ -24,24 +24,24 @@ const footerData = [
     title: "Join Us",
     footerLink: [
       {
-        link: "#",
-        name: "Associates",
+        link: "/contact",
+        name: "Contact",
       },
       {
-        link: "#",
+        link: "/executive-board",
         name: "Executive Board",
       },
     ],
   },
   {
-    title: "Legal",
+    title: "Articles",
     footerLink: [
       {
-        link: "#",
+        link: "/event",
         name: "Event",
       },
       {
-        link: "#",
+        link: "/",
         name: "Terms & Conditions",
       },
     ],
@@ -94,9 +94,9 @@ const FooterBar = () => {
             year={2024}
           />
           <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center'>
-            <Footer.Icon className='text-white' href='#' icon={BsFacebook} />
-            <Footer.Icon className='text-white' href='#' icon={BsInstagram} />
-            <Footer.Icon className='text-white' href='#' icon={BsYoutube} />
+            <Footer.Icon className='text-white' href='/' icon={BsFacebook} />
+            <Footer.Icon className='text-white' href='/' icon={BsInstagram} />
+            <Footer.Icon className='text-white' href='/' icon={BsYoutube} />
           </div>
         </div>
       </div>

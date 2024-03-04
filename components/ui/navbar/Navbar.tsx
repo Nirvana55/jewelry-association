@@ -28,9 +28,9 @@ const navList = [
 ];
 
 const navIconList = [
-  { icon: <BsFacebook />, link: "#" },
-  { icon: <BsInstagram />, link: "#" },
-  { icon: <BsTwitter />, link: "#" },
+  { icon: <BsFacebook />, link: "/" },
+  { icon: <BsInstagram />, link: "/" },
+  { icon: <BsTwitter />, link: "/" },
 ];
 
 const goldAndSilverPrice = [
