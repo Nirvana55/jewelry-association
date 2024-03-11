@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import CustomResponsiveContainer from "../../Container";
 
 const teamData = [
   {
@@ -48,9 +49,7 @@ const TeamsSection = () => {
 
   return (
     <section ref={ref} className=' bg-white dark:bg-gray-900'>
-      <div
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]`}
-      >
+      <CustomResponsiveContainer className={`py-[64px] md:py-[112px]`}>
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
             Our Team
@@ -61,7 +60,7 @@ const TeamsSection = () => {
             industry.
           </p>
         </div>
-        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-[42px] md:pt-[80px]'>
+        <div className='grid gap-8 lg:gap-16 sm:grid-cols-2 lg:grid-cols-4 pt-[42px] md:pt-[80px]'>
           {teamData.map((item, index) => (
             <div
               key={index}
@@ -109,7 +108,7 @@ const TeamsSection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </CustomResponsiveContainer>
     </section>
   );
 };

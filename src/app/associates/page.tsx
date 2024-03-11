@@ -10,6 +10,7 @@ import {
 } from "flowbite-react";
 import TableSearch from "../../../components/ui/table-search/TableSearch";
 import TablePagination from "../../../components/ui/table-pagination/Pagination";
+import CustomResponsiveContainer from "../../../components/Container";
 
 const tableHeaders = ["Name", "Email", "Address", "Phone Number", "Store Name"];
 
@@ -44,7 +45,7 @@ const Associates = async ({
   });
 
   return (
-    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
+    <CustomResponsiveContainer className='py-10 cursor animate-fade-right animate-ease-in'>
       <div className='max-w-screen-sm'>
         <h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Our Associates
@@ -106,7 +107,7 @@ const Associates = async ({
         </div>
         {data.length > 1 && <TablePagination />}
       </div>
-    </div>
+    </CustomResponsiveContainer>
   );
 };
 
