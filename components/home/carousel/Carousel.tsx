@@ -140,7 +140,7 @@ const CarouselBar = (props: CarouselProps) => {
         <div className='flex flex-row lg:flex-col max-lg:px-8'>
           {renderIndicators()}
         </div>
-        <div onClick={handleNext} className='cursor-pointer lg:mx-4 lg:mt-5'>
+        <div onClick={handleNext} className='cursor-pointer lg:mx-4 lg:mt-6'>
           <IoIosArrowDown className='hidden lg:block text-white arrowFontSize' />
           <IoIosArrowForward className='block lg:hidden text-white arrowFontSize' />
         </div>
