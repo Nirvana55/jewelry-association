@@ -38,12 +38,12 @@ const Event = async () => {
           Words that Sparkle, Ideas that Shine: Each article is a gem.
         </p>
       </div>
-      <div className='flex flex-wrap justify-start items-center w-full py-[48px] md:py-[80px] lg:w-[1450px] '>
-        <div className='relative w-full h-[221px] md:w-[656px] md:h-[500px] shadow border shrink md:shrink-0 my-4 md:my-0'>
+      <div className='flex flex-wrap justify-start items-center w-full py-[48px] lg:py-[80px] lg:w-[1450px] '>
+        <div className='relative w-full h-[221px] lg:w-[656px] lg:h-[500px] shadow border shrink lg:shrink-0 my-4 lg:my-0'>
           <Image fill src='/1.jpeg' alt={`images`} />
         </div>
-        <div className='grow shrink basis-0 md:pl-12 flex-col justify-start items-start inline-flex'>
-          <div className='self-stretch h-[161px] flex-col justify-start items-start flex'>
+        <div className='grow shrink basis-0 lg:pl-12 flex-col justify-start items-start inline-flex'>
+          <div className='self-stretch h-[180px] flex-col justify-start items-start flex'>
             <div className='justify-start items-center gap-4 inline-flex'>
               <div className='py-1 bg-zinc-100 justify-start items-start flex'>
                 <div className='text-primary-btn-color bg-blue-200 text-[14px] p-2 rounded font-semibold leading-[21px]'>
@@ -54,7 +54,7 @@ const Event = async () => {
                 5 min read
               </div>
             </div>
-            <div className='self-stretch h-[116px] flex-col justify-start items-start pt-[16px] flex'>
+            <div className='self-stretch  max-md:h-[180px] md:h-[161px] flex-col justify-start items-start py-[16px] flex'>
               <div className='self-stretch text-black text-[24px] md:text-[32px] font-bold'>
                 The Importance of Gold and Silver Investments
               </div>
@@ -63,7 +63,7 @@ const Event = async () => {
               </div>
             </div>
           </div>
-          <div className='w-[109px] justify-center items-center gap-2 inline-flex mt-[20px] text-base text-primary-btn-color cursor-pointer'>
+          <div className='w-[109px] max-md:mt-[21px] justify-center items-center gap-2 inline-flex text-base text-primary-btn-color cursor-pointer'>
             Read more <MdKeyboardArrowRight />
           </div>
         </div>

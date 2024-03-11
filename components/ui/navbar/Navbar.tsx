@@ -123,9 +123,9 @@ const NavHeader = () => {
         <input
           id='my-drawer-2'
           type='checkbox'
-          className='xl:hidden drawer-toggle'
+          className='lg:hidden drawer-toggle'
         />
-        <div className='xl:hidden text-primary drawer-button drawer-content menuFont cursor-pointer'>
+        <div className='lg:hidden text-primary drawer-button drawer-content menuFont cursor-pointer'>
           <label
             htmlFor='my-drawer-2'
             className='drawer-button bg-white border-none lg:hidden'
@@ -134,8 +134,8 @@ const NavHeader = () => {
           </label>
         </div>
 
-        <div className='hidden xl:flex justify-between items-center '>
-          <div className='flex gap-10 font-semibold '>
+        <div className='hidden lg:flex justify-between items-center '>
+          <div className='flex lg:gap-8 xl:gap-10 font-semibold '>
             {navList.map((item, index) => (
               <Link
                 key={index}
@@ -146,7 +146,7 @@ const NavHeader = () => {
               </Link>
             ))}
           </div>
-          <div className='hidden xl:block buttonText ml-10'>
+          <div className='hidden lg:block buttonText ml-10'>
             <CustomButton
               handleClick={() => router.push(`/contact`)}
               buttonText='Become a member'
@@ -161,7 +161,7 @@ const NavHeader = () => {
         </div>
 
         {/* drawer */}
-        <div className='drawer-side z-30 xl:hidden'>
+        <div className='drawer-side z-30 lg:hidden'>
           <label
             htmlFor='my-drawer-2'
             aria-label='close sidebar'
