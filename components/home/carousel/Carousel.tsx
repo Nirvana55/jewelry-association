@@ -82,9 +82,7 @@ const CarouselBar = (props: CarouselProps) => {
     return data.map((item, index) => (
       <div
         key={index}
-        className={`indicator ${
-          index === carouselIndex ? "borderBottomIndicatorActive" : ""
-        } text-white lg:py-5 cursor-pointer borderBottomIndicator mx-5 py-1`}
+        className={`indicator  text-white cursor-pointer borderBottomIndicator mx-5 py-1 lg:py-5`}
         onClick={() => handleSlideChange(index)}
       >
         0{index + 1}
@@ -103,7 +101,7 @@ const CarouselBar = (props: CarouselProps) => {
           initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
           animate='visible'
           exit='exit'
-          className='relative h-full'
+          className='relative w-full h-full'
           variants={slideVariants}
         >
           <Image
@@ -111,34 +109,42 @@ const CarouselBar = (props: CarouselProps) => {
             loading='lazy'
             alt='carouselImages'
             fill
+            className='w-full h-full top-0 left-0 max-lg:object-cover rounded-2xl'
             quality={100}
-            sizes='100vw'
           />
         </motion.div>
       </AnimatePresence>
-
       <div className='bg-test bg-opacity-70 w-full h-[780px] md:h-[820px] top-0 bottom-0 left-0 right-0 absolute z-10'></div>
-
-      <div
+      {/* <div
         onClick={handlePrevious}
-        className='z-10 absolute left-[20%] right-[50%] w-0 bottom-10 w- lg:left-7 lg:top-[35%] cursor-pointer'
+        className='z-10 absolute left-10 w-0 bottom-10 lg:left-7 lg:top-[35%] cursor-pointer'
       >
         <IoIosArrowUp className='hidden lg:block text-white arrowFontSize border-spacing-2' />
         <IoIosArrowBack className='block lg:hidden text-white arrowFontSize border-spacing-2' />
       </div>
-
       <div
         onClick={handleNext}
-        className='z-10 absolute right-[20%] w-0  bottom-10 border-solid lg:left-7 lg:top-[70%] cursor-pointer'
+        className='z-10 absolute right-20 w-0 bottom-10 lg:left-7 lg:top-[70%] cursor-pointer'
       >
         <IoIosArrowDown className='hidden lg:block text-white arrowFontSize' />
         <IoIosArrowForward className='block lg:hidden text-white arrowFontSize border-spacing-2' />
       </div>
-
-      <div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 lg:h-0 lg:top-[40%] lg:left-10 text-center z-20 flex flex-row lg:flex-col'>
+      <div className='absolute bottom-10 left-0 right-0 mx-auto w-[100px] transform -translate-x-1/2 lg:h-0 lg:top-[40%] lg:left-10 text-center z-20 flex flex-row lg:flex-col'>
         {renderIndicators()}
+      </div> */}
+      <div className='fixed inset-0 z-20 flex justify-center max-lg:items-end max-lg:py-10 lg:flex-col'>
+        <div onClick={handlePrevious} className='cursor-pointer lg:mx-4'>
+          <IoIosArrowUp className='hidden lg:block text-white arrowFontSize' />
+          <IoIosArrowBack className='block lg:hidden text-white arrowFontSize' />
+        </div>
+        <div className='flex flex-row lg:flex-col max-lg:px-8'>
+          {renderIndicators()}
+        </div>
+        <div onClick={handleNext} className='cursor-pointer lg:mx-4 lg:mt-6'>
+          <IoIosArrowDown className='hidden lg:block text-white arrowFontSize' />
+          <IoIosArrowForward className='block lg:hidden text-white arrowFontSize' />
+        </div>
       </div>
-
       <div className='z-20 mx-auto'>
         <div className='absolute top-[50%] max-[412px]:left-2 max-lg:left-16 max-xl:left-16 left-40 z-20 rounded'>
           <p className='text-white font-bold text-5xl uppercase md:text-6xl'>

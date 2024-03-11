@@ -5,6 +5,7 @@ import { Events } from "../../../types/events";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import NoData from "../../../components/ui/no-data/NoData";
 import EventCard from "../../../components/ui/card/EventCard";
+import CustomResponsiveContainer from "../../../components/Container";
 
 async function getAllPosts() {
   const res = await sanityClient.fetch<Events[]>(
@@ -28,7 +29,7 @@ const Event = async () => {
   };
 
   return (
-    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
+    <CustomResponsiveContainer className='py-10 cursor animate-fade-right animate-ease-in'>
       <div className='max-w-screen-md'>
         <h2 className='text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white'>
           Stay updated with insights
@@ -86,7 +87,7 @@ const Event = async () => {
           )}
         </div>
       </div>
-    </div>
+    </CustomResponsiveContainer>
   );
 };
 

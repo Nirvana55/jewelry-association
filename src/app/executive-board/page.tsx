@@ -4,6 +4,7 @@ import Image from "next/image";
 import { builder, sanityClient } from "../../../utils/sanity/client";
 import BoardSearch from "./searchOptions";
 import { Roles } from "./enum";
+import CustomResponsiveContainer from "../../../components/Container";
 
 async function getExecutiveBoard(query: { date?: string }) {
   const res = await sanityClient.fetch(
@@ -50,7 +51,7 @@ const ExecutiveBoard = async ({
   const { data: boardDates } = await getExecutiveBoardDates();
 
   return (
-    <div className=' container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
+    <CustomResponsiveContainer className='py-10 cursor animate-fade-right animate-ease-in'>
       <div className='flex flex-col lg:flex-row lg:justify-between'>
         <div className='max-w-screen-sm'>
           <h2 className='text-[42px] md:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white'>
@@ -96,7 +97,7 @@ const ExecutiveBoard = async ({
       ) : (
         <NoData />
       )}
-    </div>
+    </CustomResponsiveContainer>
   );
 };
 

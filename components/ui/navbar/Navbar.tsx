@@ -17,6 +17,7 @@ import CustomButton from "../button/CustomButton";
 import { useGetRates } from "../../../api/associates/queries";
 import { Spinner } from "flowbite-react";
 import Image from "next/image";
+import CustomResponsiveContainer from "../../Container";
 
 const navList = [
   { name: "Home", link: "/" },
@@ -33,14 +34,6 @@ const navIconList = [
   { icon: <BsTwitter />, link: "/" },
 ];
 
-const goldAndSilverPrice = [
-  {
-    name: "Gold",
-    price: 100000,
-  },
-  { name: "Silver", price: 50000 },
-];
-
 const NavHeader = () => {
   const router = useRouter();
   const getRateData = useGetRates();
@@ -48,7 +41,7 @@ const NavHeader = () => {
   return (
     <nav className='sticky top-0 z-50 bg-background-body shadow-md'>
       <div className='hidden md:flex flex-row items-center gap-10 py-3 bg-test '>
-        <div className='container mx-auto max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] flex justify-between items-center max-lg:px-1 flex-1 py-2 animate-fade-left animate-ease-in '>
+        <CustomResponsiveContainer className='flex justify-between items-center max-lg:px-1 flex-1 py-2 animate-fade-left animate-ease-in'>
           <div className='flex flex-row gap-8 text-white '>
             <div className='flex items-center gap-3 hover:scale-110 duration-300'>
               <BsMailbox />
@@ -105,17 +98,17 @@ const NavHeader = () => {
                 key={index}
                 className={`${
                   index === 2 ? "mr-1" : ""
-                } hover:scale-110 duration-300`}
+                } sm:max-lg:hidden hover:scale-110 duration-300`}
                 href={item.link}
               >
                 {item.icon}
               </Link>
             ))}
           </div>
-        </div>
+        </CustomResponsiveContainer>
       </div>
 
-      <div className='container py-2 items-center mx-auto flex justify-between max-[390px]:max-w-[360px] max-sm:max-w-[400px] max-lg:max-w-[980px] max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
+      <CustomResponsiveContainer className='py-2 items-center mx-auto flex justify-between md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
         <div className='animate-fade-right md:animate-ease-in'>
           <Image
             className='cursor-pointer'
@@ -191,7 +184,7 @@ const NavHeader = () => {
             </div>
           </ul>
         </div>
-      </div>
+      </CustomResponsiveContainer>
     </nav>
   );
 };
