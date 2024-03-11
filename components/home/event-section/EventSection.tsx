@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import EventCard from "../../ui/card/EventCard";
 import CustomButton from "../../ui/button/CustomButton";
+import CustomResponsiveContainer from "../../Container";
 
 type NewsSectionProps = {
   newsData: NewsData[];
@@ -19,8 +20,8 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
 
   return (
     <section ref={ref} className='bg-primary-background'>
-      <div
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px]`}
+      <CustomResponsiveContainer
+        className={`max-lg:px-2 py-[64px] md:py-[112px]`}
       >
         <div className='max-w-screen-sm'>
           <h2 className='text-[36px] md:text-[42px] font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>
@@ -44,7 +45,7 @@ const EventSection = ({ newsData }: NewsSectionProps) => {
             classStyle='max-sm:w-full'
           />
         </div>
-      </div>
+      </CustomResponsiveContainer>
     </section>
   );
 };

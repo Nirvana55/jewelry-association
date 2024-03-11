@@ -6,6 +6,7 @@ import "./styles.css";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import CustomButton from "../../ui/button/CustomButton";
+import CustomResponsiveContainer from "../../Container";
 
 const MessageSection = () => {
   const ref = useRef(null);
@@ -13,13 +14,12 @@ const MessageSection = () => {
 
   return (
     <section ref={ref} className='bg-white animate-fade-left animate-ease-in'>
-      <div
+      <CustomResponsiveContainer
         id='sad'
-        className={`container mx-auto max-sm:max-w-[400px] max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-2 py-[64px] md:py-[112px] sad ${
+        className={`max-lg:px-2 py-[64px] md:py-[112px] sad ${
           isInView ? "animate-fade-right animate-ease-in" : ""
         }`}
       >
-        {" "}
         <div className='grid xs:grid-cols-1 lg:grid-cols-2 md:text-center lg:text-left gap-10 items-center'>
           <div className='lg:self-center lg:w-[90%] xl:w-[80%]'>
             <h2 className='text-[36px] md:text-[42px] font-bold tracking-normal text-gray-900 dark:text-white'>
@@ -60,7 +60,7 @@ const MessageSection = () => {
             <Image fill src='/person.jpeg' alt={`images`} />
           </div>
         </div>
-      </div>
+      </CustomResponsiveContainer>
     </section>
   );
 };
