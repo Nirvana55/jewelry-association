@@ -4,7 +4,7 @@ import CustomResponsiveContainer from "../../../components/Container";
 
 const Gallery = () => {
   return (
-    <CustomResponsiveContainer className='max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
+    <CustomResponsiveContainer className='py-10 cursor animate-fade-right animate-ease-in'>
       <div className='max-w-screen-sm'>
         <h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Contact Page

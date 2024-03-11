@@ -11,7 +11,7 @@ const CustomResponsiveContainer: FC<
   return (
     <div
       id={id}
-      className={`container mx-auto max-[390px]:max-w-[360px] max-lg:max-w-[980px] ${className}`}
+      className={`container mx-auto max-[390px]:max-w-[360px] max-lg:max-w-[980px] max-lg:px-8 ${className}`}
     >
       {children}
     </div>

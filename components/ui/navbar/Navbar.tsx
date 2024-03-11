@@ -34,14 +34,6 @@ const navIconList = [
   { icon: <BsTwitter />, link: "/" },
 ];
 
-const goldAndSilverPrice = [
-  {
-    name: "Gold",
-    price: 100000,
-  },
-  { name: "Silver", price: 50000 },
-];
-
 const NavHeader = () => {
   const router = useRouter();
   const getRateData = useGetRates();
@@ -106,7 +98,7 @@ const NavHeader = () => {
                 key={index}
                 className={`${
                   index === 2 ? "mr-1" : ""
-                } hover:scale-110 duration-300`}
+                } sm:max-lg:hidden hover:scale-110 duration-300`}
                 href={item.link}
               >
                 {item.icon}
@@ -116,7 +108,7 @@ const NavHeader = () => {
         </CustomResponsiveContainer>
       </div>
 
-      <CustomResponsiveContainer className='py-2 items-center mx-auto flex justify-between max-lg:px-2 md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
+      <CustomResponsiveContainer className='py-2 items-center mx-auto flex justify-between md:gap-32 max-md:drawer md:animate-fade-right md:animate-ease-in'>
         <div className='animate-fade-right md:animate-ease-in'>
           <Image
             className='cursor-pointer'

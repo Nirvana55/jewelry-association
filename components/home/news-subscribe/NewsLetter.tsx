@@ -13,7 +13,7 @@ const NewsLetter = () => {
   return (
     <section ref={ref} className='bg-white dark:bg-gray-900'>
       <CustomResponsiveContainer
-        className={`mx-h-[600px] h-auto max-lg:px-2 py-[64px] md:py-[112px]`}
+        className={`mx-h-[600px] h-auto py-[64px] md:py-[112px]`}
       >
         <div className='max-w-screen-sm'>
           <h2 className='text-4xl md:text-5xl font-bold tracking-tight md:tracking-normal text-gray-900 dark:text-white'>

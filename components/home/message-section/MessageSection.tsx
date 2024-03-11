@@ -1,6 +1,6 @@
 "use client";
 
-import { Blockquote, Button } from "flowbite-react";
+import { Blockquote } from "flowbite-react";
 import Image from "next/image";
 import "./styles.css";
 import { useRef } from "react";
@@ -16,7 +16,7 @@ const MessageSection = () => {
     <section ref={ref} className='bg-white animate-fade-left animate-ease-in'>
       <CustomResponsiveContainer
         id='sad'
-        className={`max-lg:px-2 py-[64px] md:py-[112px] sad ${
+        className={`py-[64px] md:py-[112px] sad ${
           isInView ? "animate-fade-right animate-ease-in" : ""
         }`}
       >
@@ -56,8 +56,13 @@ const MessageSection = () => {
               }
             />
           </div>
-          <div className='relative w-full h-[348px]  md:w-[500px] lg:w-[450px] xl:w-[550px] md:h-[640px]'>
-            <Image fill src='/person.jpeg' alt={`images`} />
+          <div className='relative w-full md:max-lg:justify-self-center h-[348px] md:w-[500px] md:h-[640px] lg:w-[450px] xl:w-[550px] '>
+            <Image
+              className='rounded-xl'
+              fill
+              src='/person.jpeg'
+              alt={`images`}
+            />
           </div>
         </div>
       </CustomResponsiveContainer>

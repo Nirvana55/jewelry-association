@@ -51,7 +51,7 @@ const ExecutiveBoard = async ({
   const { data: boardDates } = await getExecutiveBoardDates();
 
   return (
-    <CustomResponsiveContainer className='max-lg:px-2 py-10 cursor animate-fade-right animate-ease-in'>
+    <CustomResponsiveContainer className='py-10 cursor animate-fade-right animate-ease-in'>
       <div className='flex flex-col lg:flex-row lg:justify-between'>
         <div className='max-w-screen-sm'>
           <h2 className='text-[42px] md:text-[56px] font-bold tracking-tight text-gray-900 dark:text-white'>
