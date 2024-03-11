@@ -78,14 +78,10 @@ const EventDetails = async ({ params }: { params: { slug: string } }) => {
       {blogCardListData ? (
         <>
           <div className='py-[80px]'>
-            <div className='relative lg:h-[600px]'>
+            <div className='relative h-[300px] sm:h-[400px] lg:h-[600px]'>
               <Image
                 fill
-                src={builder
-                  .image(blogCardListData.mainImage.asset._ref)
-                  .width(1312)
-                  .height(600)
-                  .url()}
+                src={builder.image(blogCardListData.mainImage.asset._ref).url()}
                 alt='images'
                 loading='lazy'
               />

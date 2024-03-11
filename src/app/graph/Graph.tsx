@@ -84,7 +84,7 @@ const GraphSection = () => {
         </div>
 
         <div className='h-[400px] flex-1 w-full'>
-          <ResponsiveContainer width='100%' className='h-[300px] sm:h-[400px]'>
+          <ResponsiveContainer width='100%' height={400}>
             <LineChart
               width={730}
               height={250}
